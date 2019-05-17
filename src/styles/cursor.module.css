@@ -1,0 +1,21 @@
+.container {
+  height: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cursor {
+  height: 30px;
+  width: 15px;
+  display: inline-block;
+  margin-left: -12px;
+}
+
+.blink-on {
+  background-color: lime;
+}
+
+.blink-off {
+  background-color: transparent;
+}

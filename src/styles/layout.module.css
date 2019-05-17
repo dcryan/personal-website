@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik");
+@import url("https://fonts.googleapis.com/css?family=VT323");
+
+html {
+  font-family: "VT323", sans-serif;
+  /* font-family: "Rubik", sans-serif; */
+  color: green;
+}
+
+body {
+  /* background-color: #4a4444; */
+  background-color: #000;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "VT323", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: "VT323", sans-serif;
+}
+
+.box-container {
+  background: #e4e4e4;
+  margin: 16px 0;
+  padding: 16px;
+  /* box-shadow: #333 16px 16px; */
+}
+
+.box-container > h1 {
+  margin: 0;
+}

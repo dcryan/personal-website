@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+@import url("https://fonts.googleapis.com/css?family=VT323");
+
+.white {
+  color: white;
+}
+
+.pacifico {
+  font-family: "Pacifico", sans-serif;
+}
+
+.emphasis {
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.source-code-pro {
+  font-family: "Source Code Pro";
+}
+
+.vt323 {
+  font-family: "VT323", sans-serif;
+}

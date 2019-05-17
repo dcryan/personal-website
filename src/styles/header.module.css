@@ -1,0 +1,24 @@
+.daniel,
+.resume,
+.portfolio,
+.contact {
+  text-transform: uppercase;
+  color: lime;
+  padding-right: 16px;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-shadow: 0 0 10px lime;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  font-size: 4rem;
+  line-height: 1;
+}
