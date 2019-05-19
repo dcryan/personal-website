@@ -18,13 +18,15 @@ a:hover {
 }
 
 .social {
+  display: flex;
+  justify-content: space-between;
   grid-area: social;
+  font-size: 1.5rem;
   color: white;
+  color:limegreen;
 }
 
-.resume {
-  font-size: 1.5em;
-  color:limegreen;
+.social > a {
   margin-right: 16px;
 }
 
@@ -43,5 +45,14 @@ a:hover {
     grid-template-areas: 
     "header"
     "social";
+  }
+
+  .links{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .social {
+    margin-top: 8px;
   }
 }

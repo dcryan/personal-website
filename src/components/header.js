@@ -23,26 +23,19 @@ export default function Header() {
         </a>
       </div>
       <div className={styles.social}>
-        <a
-          className={styles.resume}
-          href="https://docs.google.com/document/d/1fvPQO4fVGjo1OBmwrrR7e7kwJpeliLkxMNuVwpDHzpc/edit?usp=sharing"
-        >
-          Resume
-          <FontAwesomeIcon icon="file-download" style={{ marginLeft: 8 }} />
+        <a href="https://docs.google.com/document/d/1fvPQO4fVGjo1OBmwrrR7e7kwJpeliLkxMNuVwpDHzpc/edit?usp=sharing">
+          <FontAwesomeIcon icon="file-download" />
         </a>
-        <a href="https://github.com/dcryan" className={styles.header}>
+        <a href="https://github.com/dcryan">
           <FontAwesomeIcon icon={['fab', 'github']} color="lime-green" />
         </a>
-        <a href="https://twitter.com/dcryan22" className={styles.header}>
+        <a href="https://twitter.com/dcryan22">
           <FontAwesomeIcon icon={['fab', 'twitter']} color="lime-green" />
         </a>
-        <a href="https://www.instagram.com/dcryan22/" className={styles.header}>
+        <a href="https://www.instagram.com/dcryan22/">
           <FontAwesomeIcon icon={['fab', 'instagram']} color="lime-green" />
         </a>
-        <a
-          href="https://stackoverflow.com/users/2997363/dcryan22"
-          className={styles.header}
-        >
+        <a href="https://stackoverflow.com/users/2997363/dcryan22">
           <FontAwesomeIcon
             icon={['fab', 'stack-overflow']}
             color="lime-green"
