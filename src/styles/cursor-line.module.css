@@ -1,9 +1,10 @@
 .container {
-  font-size: 2em;
+  font-size: 3em;
   vertical-align: text-top;
   display: flex;
 }
 
+/* Text has to be 'pre' because we want to render the space for whitespace for the animations. */
 .text {
   white-space: pre-wrap;
 }

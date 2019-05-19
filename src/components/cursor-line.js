@@ -1,15 +1,19 @@
-import React, { Component } from "react"
-import styles from "../styles/cursor-line.module.css"
-import Cursor from "./cursor"
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from '../styles/cursor-line.module.css';
+import Cursor from './cursor';
 
-export default class CursorLine extends Component {
-  render() {
-    return (
-      <div className={styles.container}>
-        <span className={styles.text}> {this.props.text} </span>
+export default function CursorLine({ display, text }) {
+  return (
+    <div className={styles.container}>
+      <span className={styles.text}> {text} </span>
 
-        <Cursor blink={this.props.blink} />
-      </div>
-    )
-  }
+      <Cursor display={display} />
+    </div>
+  );
 }
+
+CursorLine.propTypes = {
+  display: PropTypes.string,
+  text: PropTypes.string,
+};

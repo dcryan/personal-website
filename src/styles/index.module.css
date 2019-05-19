@@ -22,3 +22,7 @@
 .vt323 {
   font-family: "VT323", sans-serif;
 }
+
+.animated-text {
+  margin: 32px 0;
+}

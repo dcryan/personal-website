@@ -1,47 +1,31 @@
-import React, { Component } from "react"
-import styles from "../styles/cursor.module.css"
-import { getNegativePatternsAsPositive } from "fast-glob/out/managers/tasks"
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styles from '../styles/cursor.module.css';
 
 export default class Cursor extends Component {
-  state = { visible: true, isBlinking: false }
-
-  // setCursorBlinkAnimation() {
-  //   if (this.state.isBlinking) return
-
-  //   this.setState({ isBlinking: true })
-  //   setInterval(() => {
-  //     const visible = !this.state.visible
-  //     this.setState({ visible })
-  //   }, 1000)
-  // }
-
-  // stopCursorBlinkAnimation() {
-  //   this.setState({ isBlinking: true })
-  //   clearInterval(cursorInterval)
-  //   this.setState({ visible: true })
-  // }
-
-  // componentDidMount() {
-  // setTimeout(this.setCursorBlinkAnimation, 2000)
-  // }
-
-  // deriveStateFromProps(props) {
-  //   this.setCursorBlinkAnimation()
-  //   return {
-  //     visible: props.visible,
-  //     isBlinking: props.isBlinking,
-  //   }
-  // }
-
   render() {
-    let classNames = this.state.visible
-      ? [styles.cursor, styles.blinkOn].join(" ")
-      : [styles.cursor, styles.blinkOff].join(" ")
+    const { display } = this.props;
+    const classes = [styles.cursor];
+    switch (display) {
+      case 'off':
+        classes.push(styles.hide);
+        break;
+      case 'blink':
+        classes.push(styles.blink);
+        break;
+      default:
+    }
+
+    const classNames = classes.join(' ');
 
     return (
       <div className={styles.container}>
         <div className={classNames} />
       </div>
-    )
+    );
   }
 }
+
+Cursor.propTypes = {
+  display: PropTypes.string, // 'on', 'off', 'blink'
+};

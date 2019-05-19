@@ -1,13 +1,12 @@
-.daniel,
-.resume,
-.portfolio,
-.contact {
+
+.header{
+  grid-area: header;
   text-transform: uppercase;
   color: lime;
   padding-right: 16px;
   font-size: 1.5rem;
   line-height: 1.5;
-  text-shadow: 0 0 10px lime;
+  /* text-shadow: 0 0 10px lime; */
 }
 
 .active {
@@ -18,7 +17,31 @@ a:hover {
   text-decoration: underline;
 }
 
-.header {
-  font-size: 4rem;
-  line-height: 1;
+.social {
+  grid-area: social;
+  color: white;
+}
+
+.resume {
+  font-size: 1.5em;
+  color:limegreen;
+  margin-right: 16px;
+}
+
+@media (min-width: 551px) {
+  .container {
+    display: flex;
+    justify-content: space-between
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto, auto;
+    grid-template-areas: 
+    "header"
+    "social";
+  }
 }
