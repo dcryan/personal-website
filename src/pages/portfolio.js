@@ -52,7 +52,7 @@ export default function Portfolio() {
         </h1>
         <h4>Contract</h4>
         <h4>Technologies used: WordPress, Figma</h4>
-        <p>Designed and devloped their business website.</p>
+        <p>Designed and developed their business website.</p>
       </BoxContainer>
 
       <BoxContainer>
