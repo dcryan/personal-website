@@ -178,7 +178,7 @@ export default function Portfolio() {
       <h1>Side Projects</h1>
 
       <BoxContainer>
-        <h1>Fronttend Dev Meetup</h1>
+        <h1>Frontend Dev Meetup</h1>
         <p>
           Co-hosted meet up to educate engineers in the local area of frontend
           technologies.
@@ -197,7 +197,7 @@ export default function Portfolio() {
       </BoxContainer>
 
       <BoxContainer>
-        <h1>D3 Chart Library</h1>
+        <h1>D3.js Chart Library</h1>
         <p>
           An open source, dynamic, and customizable charting layer using D3.js.
           Includes: An API, iPad gesture support, data filters, and

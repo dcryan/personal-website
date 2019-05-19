@@ -19,7 +19,7 @@ export default class Index extends Component {
     FontAwesomeIcons.init();
 
     await this.cursorLine1();
-    await this.sleep(3000);
+    await this.sleep(5000);
     await this.setState({ cursorDisplay1: 'off' });
     await this.cursorLine2();
     await this.sleep(3000);
@@ -28,7 +28,7 @@ export default class Index extends Component {
   }
 
   cursorLine1 = async () => {
-    const text = 'Hello';
+    const text = 'Hello.';
     this.setState({ cursorDisplay1: 'on' });
 
     for (let i = 1; i <= text.length; i += 1) {
@@ -41,7 +41,7 @@ export default class Index extends Component {
   };
 
   cursorLine2 = async () => {
-    const text = 'My name is Daniel';
+    const text = 'I am Daniel';
     this.setState({ cursorDisplay2: 'on' });
 
     for (let i = 1; i <= text.length; i += 1) {
@@ -54,7 +54,7 @@ export default class Index extends Component {
   };
 
   cursorLine3 = async () => {
-    const text = 'Nice to meet you.';
+    const text = 'Nice to meet you';
     this.setState({ cursorDisplay3: 'on' });
 
     for (let i = 1; i <= text.length; i += 1) {

@@ -2,6 +2,7 @@
   font-size: 3em;
   vertical-align: text-top;
   display: flex;
+  margin-left: -20px;
 }
 
 /* Text has to be 'pre' because we want to render the space for whitespace for the animations. */
