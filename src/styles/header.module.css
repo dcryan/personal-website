@@ -3,7 +3,6 @@
   grid-area: header;
   text-transform: uppercase;
   color: lime;
-  padding-right: 16px;
   font-size: 1.5rem;
   line-height: 1.5;
   /* text-shadow: 0 0 10px lime; */
@@ -15,6 +14,10 @@
 
 a:hover {
   text-decoration: underline;
+}
+
+.links > a {
+    margin-right: 16px;
 }
 
 .social {
@@ -47,12 +50,22 @@ a:hover {
     "social";
   }
 
-  .links{
+  .links {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    margin-right: 0;
   }
+
   .social {
-    margin-top: 8px;
+    margin-top: 16px;
+  }
+
+  .social > a {
+    margin-right: 0;
+  }
+
+  .links > a {
+    margin-right: 0;
   }
 }
