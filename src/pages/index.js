@@ -19,7 +19,7 @@ export default class Index extends Component {
     FontAwesomeIcons.init();
 
     await this.cursorLine1();
-    await this.sleep(5000);
+    await this.sleep(3500);
     await this.setState({ cursorDisplay1: 'off' });
     await this.cursorLine2();
     await this.sleep(3000);
