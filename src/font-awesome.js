@@ -13,6 +13,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 /** SOLID ICONS (PREFIX: fas (default)) */
 import { faFileDownload } from '@fortawesome/pro-solid-svg-icons/faFileDownload';
+import { faExternalLink } from '@fortawesome/pro-solid-svg-icons/faExternalLink';
 
 /** REGULAR ICONS (PREFIX: far) */
 
@@ -28,6 +29,7 @@ export default {
   init: () =>
     library.add(
       faFileDownload,
+      faExternalLink,
       faGithub,
       faTwitter,
       faInstagram,

@@ -4,6 +4,7 @@ import Header from '../components/header';
 import styles from '../styles/index.module.css';
 import CursorLine from '../components/cursor-line';
 import FontAwesomeIcons from '../font-awesome';
+import Portfolio from '../components/portfolio';
 
 export default class Index extends Component {
   state = {
@@ -13,18 +14,39 @@ export default class Index extends Component {
     cursorDisplay2: 'off',
     header3: '',
     cursorDisplay3: 'off',
+    displayPortfolio: false,
   };
 
   async componentDidMount() {
     FontAwesomeIcons.init();
 
+    const visited = sessionStorage.getItem('visited');
+
+    if (visited) {
+      this.setState({
+        header1: 'Hello.',
+        cursorDisplay1: 'off',
+        header2: 'I am Daniel',
+        cursorDisplay2: 'off',
+        header3: 'Nice to meet you',
+        cursorDisplay3: 'blink',
+        displayPortfolio: true,
+      });
+
+      return;
+    }
+
     await this.cursorLine1();
     await this.sleep(3000);
     await this.setState({ cursorDisplay1: 'off' });
     await this.cursorLine2();
-    await this.sleep(3000);
+    await this.sleep(2000);
     await this.setState({ cursorDisplay2: 'off' });
     await this.cursorLine3();
+    await this.sleep(1000);
+    await this.setState({ displayPortfolio: true });
+
+    sessionStorage.setItem('visited', true);
   }
 
   cursorLine1 = async () => {
@@ -82,7 +104,11 @@ export default class Index extends Component {
       cursorDisplay2,
       header3,
       cursorDisplay3,
+      displayPortfolio,
     } = this.state;
+
+    const fadeIn = displayPortfolio ? styles.fadeIn : '';
+    console.log(fadeIn);
 
     return (
       <Layout>
@@ -92,6 +118,11 @@ export default class Index extends Component {
           <CursorLine text={header1} display={cursorDisplay1} />
           <CursorLine text={header2} display={cursorDisplay2} />
           <CursorLine text={header3} display={cursorDisplay3} />
+        </div>
+
+        <div className={fadeIn}>
+          <hr />
+          <Portfolio />
         </div>
       </Layout>
     );
