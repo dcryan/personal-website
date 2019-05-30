@@ -114,8 +114,8 @@ export default class Index extends Component {
     return (
       <Layout>
         <Helmet>
-          <title>Success Page</title>
-          <meta name="description" content="Success Page" />
+          <title>Hello I'm Daniel 👋</title>
+          <meta name="description" content="Hello I'm Daniel 👋" />
         </Helmet>
         <Header />
 

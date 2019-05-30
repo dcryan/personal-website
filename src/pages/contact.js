@@ -7,8 +7,8 @@ export default function contact() {
   return (
     <Layout>
       <Helmet>
-        <title>Success Page</title>
-        <meta name="description" content="Success Page" />
+        <title>Daniel | Contact Page</title>
+        <meta name="description" content="Daniel | Contact Page" />
       </Helmet>
       <Header />
       <form
@@ -16,6 +16,7 @@ export default function contact() {
         action="#"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        name="contact"
       >
         <div className="field half first">
           <input type="hidden" name="bot-field" />
