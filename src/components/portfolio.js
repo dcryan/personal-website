@@ -69,9 +69,6 @@ export default function Portfolio() {
           <TimeLineItemDetails
             url={project.url}
             title={project.title}
-            compensation={project.compensation}
-            softwareType={project.softwareType}
-            technologies={project.technologies}
             details={project.details}
           />
         </TimeLineItem>

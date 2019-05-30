@@ -19,7 +19,8 @@ export const freelancing = [
       'An analytics dashboard that uses React and D3.js to provide regional level insight in real time.',
   },
   {
-    url: 'https://www.risingsunsoberliving.com/',
+    url:
+      'https://itunes.apple.com/us/app/rising-sun-sober-living/id1450655696?mt=8',
     title: 'Rising Sun Sober Living',
     compensation: 'Contract',
     softwareType: 'Mobile App',

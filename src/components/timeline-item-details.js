@@ -8,6 +8,7 @@ export default function TimeLineItemDetails({
   url,
   title,
   compensation,
+  positions,
   softwareType,
   technologies,
   details,
@@ -16,17 +17,33 @@ export default function TimeLineItemDetails({
 
   if (url) {
     titleElem = (
-      <a href={url} className={styles.url}>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={url}
+        className={styles.url}
+      >
         {title}
         <FontAwesomeIcon className={styles.externalLink} icon="external-link" />
       </a>
     );
   }
 
+  let positionsElem;
+
+  if (positions) {
+    positionsElem = positions.map(position => (
+      <h4 className={styles.position}>{position}</h4>
+    ));
+  }
+
   return (
     <BoxContainer>
       <h1 className={styles.title}>{titleElem}</h1>
       <h4 className={styles.compensation}>{compensation}</h4>
+
+      {positionsElem}
+
       <h4 className={styles.softwareType}>{softwareType}</h4>
       <h4 className={styles.technologies}>Technologies Used: {technologies}</h4>
       <p className={styles.details}>{details}</p>
@@ -38,6 +55,7 @@ TimeLineItemDetails.propTypes = {
   url: PropTypes.string,
   title: PropTypes.string,
   compensation: PropTypes.string,
+  positions: PropTypes.array,
   softwareType: PropTypes.string,
   technologies: PropTypes.string,
   details: PropTypes.string,
