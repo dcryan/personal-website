@@ -109,7 +109,6 @@ export default class Index extends Component {
     } = this.state;
 
     const fadeIn = displayPortfolio ? styles.fadeIn : '';
-    console.log(fadeIn);
 
     return (
       <Layout>

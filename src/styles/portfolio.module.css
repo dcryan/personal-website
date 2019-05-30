@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=VT323");
+
+.tab-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 16px 0;
+}
+
+.tab {
+  font-size: 2em;
+  cursor: pointer;
+  font-family: "VT323", sans-serif;
+  background: none;
+  color: #333;
+  border: none;
+  outline: none;
+}
+
+.tab:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: lime;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .tab-container {
+    flex-direction: column;
+  }
+
+.active {
+  background-color: #111;
+}
+}

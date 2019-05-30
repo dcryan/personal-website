@@ -4,7 +4,7 @@ import styles from '../styles/timeline-item.module.css';
 
 export default function TimeLineItem({ placeRight = false, children }) {
   return (
-    <div className={styles.timeContainer}>
+    <div className={[styles.timeContainer, styles.fadeIn].join(' ')}>
       <div className={styles.leftColumn}>{!placeRight && children}</div>
       <svg className={styles.center}>
         <line x1="50%" y1="0%" x2="50%" y2="100%" className={styles.line} />
