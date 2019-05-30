@@ -4,3 +4,9 @@
 .software-type{ }
 .technologies { }
 .details { }
+
+.external-link {
+  margin-left: 16px;
+  font-size: .5em;
+  vertical-align: middle;
+}

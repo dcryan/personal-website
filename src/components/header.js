@@ -11,9 +11,17 @@ export default function Header() {
         <Link to="" activeClassName={styles.active} className={styles.header}>
           Daniel
         </Link>
-        <a href="mailto: d@nielryan.com" className={styles.header}>
+
+        <Link
+          to="contact"
+          activeClassName={styles.active}
+          className={styles.header}
+        >
           Contact
-        </a>
+        </Link>
+        {/* <a href="mailto: d@nielryan.com" className={styles.header}>
+          Contact
+        </a> */}
       </div>
       <div className={styles.social}>
         <a

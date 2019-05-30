@@ -55,3 +55,16 @@
     transform: scale(2);
   }
 }
+
+@media (max-width: 736px) {
+  .time-container {
+    grid-template-columns: 40px auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "center left right";
+  }
+
+  .rightColumn {
+    text-align: left;
+  }
+}

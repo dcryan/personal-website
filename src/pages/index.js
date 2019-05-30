@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import Layout from '../components/layout';
 import Header from '../components/header';
 import styles from '../styles/index.module.css';
@@ -112,7 +113,11 @@ export default class Index extends Component {
 
     return (
       <Layout>
-        <Header isActive="daniel" />
+        <Helmet>
+          <title>Success Page</title>
+          <meta name="description" content="Success Page" />
+        </Helmet>
+        <Header />
 
         <div className={styles.animatedText}>
           <CursorLine text={header1} display={cursorDisplay1} />

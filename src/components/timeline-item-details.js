@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../styles/timeline-item-details.module.css';
 import { BoxContainer } from './layout';
 
@@ -11,13 +12,20 @@ export default function TimeLineItemDetails({
   technologies,
   details,
 }) {
+  let titleElem = title;
+
+  if (url) {
+    titleElem = (
+      <a href={url} className={styles.url}>
+        {title}
+        <FontAwesomeIcon className={styles.externalLink} icon="external-link" />
+      </a>
+    );
+  }
+
   return (
     <BoxContainer>
-      <h1 className={styles.title}>
-        <a href={url} className={styles.url}>
-          {title}
-        </a>
-      </h1>
+      <h1 className={styles.title}>{titleElem}</h1>
       <h4 className={styles.compensation}>{compensation}</h4>
       <h4 className={styles.softwareType}>{softwareType}</h4>
       <h4 className={styles.technologies}>Technologies Used: {technologies}</h4>
