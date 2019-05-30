@@ -34,8 +34,9 @@ export const freelancing = [
     title: 'Game Night Live!',
     compensation: 'Contract',
     softwareType: 'Website',
-    technologies: 'Wordpress, Figma',
-    details: 'Designed and devloped their business website.',
+    technologies: 'Wordpress, Divi, Figma',
+    details:
+      'Designed and developed their public facing website. Drew the design in Figma, and implemented using WordPress and the Divi theme.',
   },
   {
     title: 'Cravly',
@@ -51,8 +52,9 @@ export const freelancing = [
     title: 'Epimoni',
     compensation: 'Contract - Not Completed',
     softwareType: 'Mobile App',
-    technologies: 'Ionic 3, Typescript',
-    details: 'Automated banking peer-to-peer lending platform.',
+    technologies: 'Ionic 3, Typescript. OAuth',
+    details:
+      'Automated banking peer-to-peer lending platform. Worked with a backend team to develop an API',
   },
 ];
 
@@ -149,10 +151,12 @@ export const sideProjects = [
       'Co-hosted meet up to educate engineers in the local area of frontend technologies',
   },
   {
+    url: 'https://tacogato.app/',
     title: 'TacoGato',
     softwareType: 'Mobile App',
     technologies: 'Ionic 1, Firebase, Firebase Auth',
-    details: 'A socially competitive taco counting app.',
+    details:
+      'A socially competitive taco counting app. Join a league and compete with your closest friends.',
   },
   {
     title: 'Boise Code Club',
@@ -203,6 +207,10 @@ export const education = [
         <h4>Bachelor's in Computer Science</h4>
         <h4>Fall 2008 - Spring 2012</h4>
         <h4>Dean's List (GPA > 3.75) - Fall 2008</h4>
+        <h4>
+          Classes: Artificial Intelligence, Distributed Systems, Operating
+          Systems, Cryptology, Networks
+        </h4>
       </div>
     ),
   },
