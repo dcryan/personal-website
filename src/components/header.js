@@ -22,7 +22,7 @@ export default function Header() {
           Contact
         </a>
       </div>
-      <div className={styles.social}>
+      <div className={styles.social} style={{ fontSize: '1.5em' }}>
         <a
           target="_blank"
           rel="noopener noreferrer"

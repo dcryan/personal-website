@@ -109,6 +109,7 @@ export default class Index extends Component {
     } = this.state;
 
     const fadeIn = displayPortfolio ? styles.fadeIn : '';
+    console.log(fadeIn);
 
     return (
       <Layout>
@@ -124,7 +125,7 @@ export default class Index extends Component {
           <CursorLine text={header3} display={cursorDisplay3} />
         </div>
 
-        <div className={fadeIn}>
+        <div className={!displayPortfolio ? styles.hide : ''}>
           <hr />
           <Portfolio />
         </div>
