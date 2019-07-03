@@ -18,9 +18,11 @@ export default class Index extends Component {
     displayPortfolio: false,
   };
 
-  async componentDidMount() {
+  componentWillMount() {
     FontAwesomeIcons.init();
+  }
 
+  async componentDidMount() {
     const visited = sessionStorage.getItem('visited');
 
     if (visited) {
@@ -107,9 +109,6 @@ export default class Index extends Component {
       cursorDisplay3,
       displayPortfolio,
     } = this.state;
-
-    const fadeIn = displayPortfolio ? styles.fadeIn : '';
-    console.log(fadeIn);
 
     return (
       <Layout>

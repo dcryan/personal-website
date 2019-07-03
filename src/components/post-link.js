@@ -9,7 +9,9 @@ const PostLink = ({ post }) => (
       <h2 className={styles.blogTitle}>{post.frontmatter.title}</h2>
     </Link>
     <p className={styles.blogDate}>{post.frontmatter.date}</p>
-    <p className={styles.blogExcerpt}>{post.excerpt}</p>
+    <p className={styles.blogExcerpt}>
+      {post.frontmatter.description || post.excerpt}
+    </p>
   </div>
 );
 

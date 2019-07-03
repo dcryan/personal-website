@@ -75,7 +75,7 @@ export default function Portfolio() {
 
       {activeTab === FREELANCE &&
         freelancing.map((project, index) => (
-          <TimeLineItem placeRight={index % 2 === 1}>
+          <TimeLineItem key={project.title} placeRight={index % 2 === 1}>
             <TimeLineItemDetails
               url={project.url}
               title={project.title}
@@ -89,7 +89,7 @@ export default function Portfolio() {
 
       {activeTab === FULLTIME &&
         fulltimePositions.map((project, index) => (
-          <TimeLineItem placeRight={index % 2 === 1}>
+          <TimeLineItem key={project.title} placeRight={index % 2 === 1}>
             <TimeLineItemDetails
               url={project.url}
               title={project.title}
@@ -102,7 +102,7 @@ export default function Portfolio() {
 
       {activeTab === SIDEPROJECTS &&
         sideProjects.map((project, index) => (
-          <TimeLineItem placeRight={index % 2 === 1}>
+          <TimeLineItem key={project.title} placeRight={index % 2 === 1}>
             <TimeLineItemDetails
               url={project.url}
               title={project.title}
@@ -116,7 +116,7 @@ export default function Portfolio() {
 
       {activeTab === EDUCATION &&
         education.map((project, index) => (
-          <TimeLineItem placeRight={index % 2 === 1}>
+          <TimeLineItem key={project.title} placeRight={index % 2 === 1}>
             <TimeLineItemDetails
               url={project.url}
               title={project.title}

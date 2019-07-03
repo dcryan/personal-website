@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import PostLink from '../components/post-link';
 import Layout from '../components/layout';
 import Header from '../components/header';
@@ -12,15 +12,15 @@ const Blog = ({
     allMarkdownRemark: { edges },
   },
 }) => {
-  const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />);
+  const posts = edges.map(edge => (
+    <PostLink key={edge.node.id} post={edge.node} />
+  ));
 
   FontAwesomeIcons.init();
   return (
     <Layout>
       <Header />
-      <div className={styles.container}>{Posts}</div>
+      <div className={styles.container}>{posts}</div>
     </Layout>
   );
 };
@@ -33,11 +33,11 @@ export default Blog;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id
-          excerpt(pruneLength: 250)
+          excerpt
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             path
