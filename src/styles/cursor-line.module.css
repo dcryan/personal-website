@@ -3,6 +3,8 @@
   vertical-align: text-top;
   display: flex;
   margin-left: -20px;
+  font-family: "VT323", sans-serif;
+  color: green;
 }
 
 /* Text has to be 'pre' because we want to render the space for whitespace for the animations. */

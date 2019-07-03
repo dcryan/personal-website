@@ -4,6 +4,7 @@
   grid-template-rows: auto;
   grid-template-areas: 
     "left center right";
+  color: green;
 }
 
 .leftColumn {

@@ -5,14 +5,10 @@
   color: lime;
   font-size: 1.5rem;
   line-height: 1.5;
-  /* text-shadow: 0 0 10px lime; */
+  font-family: "VT323", sans-serif;
 }
 
 .active {
-  text-decoration: underline;
-}
-
-a:hover {
   text-decoration: underline;
 }
 

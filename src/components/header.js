@@ -12,15 +12,19 @@ export default function Header() {
           Daniel
         </Link>
         <Link
+          to="blog"
+          activeClassName={styles.active}
+          className={styles.header}
+        >
+          Blog
+        </Link>
+        <Link
           to="contact"
           activeClassName={styles.active}
           className={styles.header}
         >
           Contact
         </Link>
-        {/* <a href="mailto: d@nielryan.com" className={styles.header}>
-          Contact/
-        </a> */}
       </div>
       <div className={styles.social} style={{ fontSize: '1.5em' }}>
         <a

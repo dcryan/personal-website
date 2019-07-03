@@ -3,31 +3,21 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 
 html {
-  font-family: "VT323", sans-serif;
-  /* font-family: "Rubik", sans-serif; */
-  color: green;
+  font-family: 'Rubik', sans-serif;
+  color: #aaa
 }
 
 body {
-  /* background-color: #4a4444; */
   background-color: #000;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: "VT323", sans-serif;
-}
-
-p {
-  font-family: 'Source Code Pro', monospace;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  font-family: "VT323", sans-serif;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .box-container {

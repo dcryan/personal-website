@@ -1,0 +1,26 @@
+.container {
+  background-color: #333;
+  border-radius: 8px;
+  padding: 10px;
+  color: #aaa;
+}
+
+.container .blog-title {
+  font-size: 1.5em;
+}
+
+.container .blog-date {
+  font-size: .8em;
+  color: #555;
+}
+
+.container .blog-excerpt {
+  margin-top: 8px;
+
+}
+
+.container h2,
+.container h3,
+.container p {
+  margin: 0;
+}

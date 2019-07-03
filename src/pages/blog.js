@@ -5,10 +5,11 @@ import PostLink from '../components/post-link';
 import Layout from '../components/layout';
 import Header from '../components/header';
 import FontAwesomeIcons from '../font-awesome';
+import styles from '../styles/blog.module.css';
 
 const Blog = ({
   data: {
-    all: { edges },
+    allMarkdownRemark: { edges },
   },
 }) => {
   const Posts = edges
@@ -19,7 +20,7 @@ const Blog = ({
   return (
     <Layout>
       <Header />
-      <div>{Posts}</div>
+      <div className={styles.container}>{Posts}</div>
     </Layout>
   );
 };
