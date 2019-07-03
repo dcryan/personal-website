@@ -11,38 +11,44 @@ export default function Header() {
         <Link to="" activeClassName={styles.active} className={styles.header}>
           Daniel
         </Link>
-        {/* <Link
+        <Link
           to="contact"
           activeClassName={styles.active}
           className={styles.header}
         >
           Contact
-        </Link> */}
-        <a href="mailto: d@nielryan.com" className={styles.header}>
-          Contact
-        </a>
+        </Link>
+        {/* <a href="mailto: d@nielryan.com" className={styles.header}>
+          Contact/
+        </a> */}
       </div>
       <div className={styles.social} style={{ fontSize: '1.5em' }}>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://docs.google.com/document/d/1fvPQO4fVGjo1OBmwrrR7e7kwJpeliLkxMNuVwpDHzpc/edit?usp=sharing"
+          href="https://linkedin.com/in/dcryan"
         >
-          <FontAwesomeIcon icon="file-download" />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/dcryan"
-        >
-          <FontAwesomeIcon icon={['fab', 'github']} color="lime-green" />
+          <FontAwesomeIcon icon={['fab', 'linkedin']} color="lime-green" />
         </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://twitter.com/dcryan22"
         >
-          <FontAwesomeIcon icon={['fab', 'twitter']} color="lime-green" />
+          <FontAwesomeIcon
+            icon={['fab', 'twitter-square']}
+            color="lime-green"
+          />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.facebook.com/dcryan22"
+        >
+          <FontAwesomeIcon
+            icon={['fab', 'facebook-square']}
+            color="lime-green"
+          />
         </a>
         <a
           target="_blank"
@@ -54,12 +60,26 @@ export default function Header() {
         <a
           target="_blank"
           rel="noopener noreferrer"
+          href="https://github.com/dcryan"
+        >
+          <FontAwesomeIcon icon={['fab', 'github-square']} color="lime-green" />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://stackoverflow.com/users/2997363/dcryan22"
         >
           <FontAwesomeIcon
             icon={['fab', 'stack-overflow']}
             color="lime-green"
           />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://docs.google.com/document/d/1fvPQO4fVGjo1OBmwrrR7e7kwJpeliLkxMNuVwpDHzpc/edit?usp=sharing"
+        >
+          <FontAwesomeIcon icon="file-download" />
         </a>
       </div>
     </div>

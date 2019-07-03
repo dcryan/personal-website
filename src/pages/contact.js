@@ -2,8 +2,11 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout';
 import Header from '../components/header';
+import styles from '../styles/contact.module.css';
+import FontAwesomeIcons from '../font-awesome';
 
 export default function contact() {
+  FontAwesomeIcons.init();
   return (
     <Layout>
       <Helmet>
@@ -11,32 +14,48 @@ export default function contact() {
         <meta name="description" content="Daniel | Contact Page" />
       </Helmet>
       <Header />
-      <form
-        method="post"
-        action="#"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        name="contact"
-      >
-        <div className="field half first">
+      <div className={styles.container}>
+        <form
+          className={styles.contact}
+          method="post"
+          action="/success"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          name="contact"
+        >
+          <h3>Say Hi! 👋</h3>
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
-        </div>
-        <div className="field half first">
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" />
-        </div>
-        <div className="field half">
-          <label htmlFor="email">Email</label>
-          <input type="text" name="email" id="email" />
-        </div>
-        <div className="field">
-          <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" rows="6" />
-        </div>
-        <input type="submit" value="Send Message" className="special" />
-        <input type="reset" value="Clear" />
-      </form>
+          <label htmlFor>
+            Name
+            <input placeholder="Your name" type="text" required />
+          </label>
+          <label htmlFor>
+            Email
+            <input placeholder="Your Email Address" type="email" required />
+          </label>
+          <label htmlFor>
+            Phone Number (optional)
+            <input
+              placeholder="Your Phone Number (optional)"
+              type="tel"
+              required
+            />
+          </label>
+          <label htmlFor>
+            Message
+            <textarea placeholder="Type your message here...." required />
+          </label>
+          <button
+            name="submit"
+            type="submit"
+            id="contact-submit"
+            data-submit="...Sending"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     </Layout>
   );
 }

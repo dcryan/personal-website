@@ -8,7 +8,7 @@ import FontAwesomeIcons from '../font-awesome';
 
 const Blog = ({
   data: {
-    allMarkdownRemark: { edges },
+    all: { edges },
   },
 }) => {
   const Posts = edges

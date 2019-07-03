@@ -20,20 +20,24 @@ import { faExternalLink } from '@fortawesome/pro-solid-svg-icons/faExternalLink'
 /** PRO LIGHT ICONS (PREFIX: fal) */
 
 /** BRAND ICONS (PREFIX: fab) */
-import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons/faGithubSquare';
+import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons/faTwitterSquare';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
 import { faStackOverflow } from '@fortawesome/free-brands-svg-icons/faStackOverflow';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
+import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
 
 export default {
   init: () =>
     library.add(
       faFileDownload,
       faExternalLink,
-      faGithub,
-      faTwitter,
+      faGithubSquare,
+      faTwitterSquare,
       faInstagram,
-      faStackOverflow
+      faStackOverflow,
+      faLinkedin,
+      faFacebookSquare
     ),
 };
 
