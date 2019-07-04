@@ -28,23 +28,33 @@ export default function contact() {
           <input type="hidden" name="form-name" value="contact" />
           <label htmlFor>
             Name
-            <input placeholder="Your name" type="text" required />
+            <input placeholder="Your name" name="name" type="text" required />
           </label>
           <label htmlFor>
             Email
-            <input placeholder="Your Email Address" type="email" required />
+            <input
+              placeholder="Your Email Address"
+              name="email"
+              type="email"
+              required
+            />
           </label>
           <label htmlFor>
             Phone Number (optional)
             <input
               placeholder="Your Phone Number (optional)"
               type="tel"
+              name="phone-number"
               required
             />
           </label>
           <label htmlFor>
             Message
-            <textarea placeholder="Type your message here...." required />
+            <textarea
+              placeholder="Type your message here...."
+              name="message"
+              required
+            />
           </label>
           <button
             name="submit"
