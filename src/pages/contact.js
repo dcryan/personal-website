@@ -42,7 +42,7 @@ export default function contact() {
           <label htmlFor>
             Phone Number (optional)
             <input
-              placeholder="Your Phone Number (optional)"
+              placeholder="Your Phone Number"
               type="tel"
               name="phone-number"
               required
