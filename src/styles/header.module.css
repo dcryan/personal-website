@@ -26,7 +26,7 @@
   margin-top: 4px;
 }
 
-.social a:hover {
+.social > a:hover {
   color: lime;
   -webkit-transition: color 0.3s ease-in-out;
   -moz-transition: color 0.3s ease-in-out;
@@ -35,6 +35,10 @@
 
 .social > a {
   margin-right: 16px;
+
+  -webkit-transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 @media (min-width: 551px) {
