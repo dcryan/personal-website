@@ -12,7 +12,7 @@ export const freelancing = [
   },
   {
     title: 'Suds Dashboard',
-    compensation: 'Contract',
+    compensation: 'Contract - Not Completed',
     softwareType: 'Web App',
     technologies: 'D3.js, React, Redux',
     details:
