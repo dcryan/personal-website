@@ -40,13 +40,13 @@ export default class Index extends Component {
     }
 
     await this.cursorLine1();
-    await this.sleep(3000);
+    await this.sleep(2000);
     await this.setState({ cursorDisplay1: 'off' });
     await this.cursorLine2();
-    await this.sleep(2000);
+    await this.sleep(1500);
     await this.setState({ cursorDisplay2: 'off' });
     await this.cursorLine3();
-    await this.sleep(1000);
+    await this.sleep(500);
     await this.setState({ displayPortfolio: true });
 
     sessionStorage.setItem('visited', true);
