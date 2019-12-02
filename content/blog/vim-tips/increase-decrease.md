@@ -1,4 +1,3 @@
-
 ---
 path: "/blog/vim-tips"
 date: "2019-12-1"
