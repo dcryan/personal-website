@@ -55,7 +55,7 @@ export default function Index() {
         };
 
         await cursorLine1();
-        await sleep(2000);
+        await sleep(1000);
         setCursorDisplay1('off');
         await cursorLine2();
         await sleep(500);
