@@ -11,6 +11,7 @@
 
 .center {
   flex: 0 0 40px;
+  position: relative;
 }
 
 .rightColumn {
@@ -18,9 +19,21 @@
 }
 
 .line {
+  width: 40px;
+  height: 100%;
+}
+
+.line line {
   stroke-width: 4px;
-  height: 100px;
   stroke: limegreen;
+}
+
+
+.circleContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .circle {
@@ -54,11 +67,7 @@
 }
 
 @media (max-width: 736px) {
-  .time-container {
-    grid-template-columns: 40px auto auto;
-    grid-template-areas:
-      "center left right";
-  }
+  .time-container {}
 
   .contentRight {
     flex-direction: row-reverse;

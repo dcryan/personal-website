@@ -20,16 +20,20 @@ export default function TimeLineItem({ placeRight = false, children }) {
       >
         {!placeRight && children}
       </div>
-      <svg className={styles.center}>
-        <line x1="50%" y1="0%" x2="50%" y2="100%" className={styles.line} />
-        <circle cx="50%" cy="50%" r="7px" className={styles.circle} />
-        <circle
-          cx="50%"
-          cy="50%"
-          r="10px"
-          className={[styles.circle, styles.pulse].join(' ')}
-        />
-      </svg>
+      <div className={styles.center}>
+        <svg className={styles.line}>
+          <line x1="50%" y1="0%" x2="50%" y2="100%" />
+        </svg>
+        <svg className={styles.circleContainer}>
+          <circle cx="50%" cy="50%" r="7px" className={styles.circle} />
+          <circle
+            cx="50%"
+            cy="50%"
+            r="10px"
+            className={[styles.circle, styles.pulse].join(' ')}
+          />
+        </svg>
+      </div>
       <div
         className={
           placeRight
