@@ -1,7 +1,7 @@
 .time-container {
   display: flex;
   justify-content: space-between;
-  color: green;
+  color: var(--white);
   align-items: stretch;
 }
 
@@ -25,7 +25,7 @@
 
 .line line {
   stroke-width: 4px;
-  stroke: limegreen;
+  stroke: var(--green);
 }
 
 
@@ -37,8 +37,8 @@
 }
 
 .circle {
-  fill: limegreen;
-  stroke: limegreen;
+  fill: var(--green);
+  stroke: var(--green);
   stroke-width: 2px;
   stroke-opacity: 1;
 }

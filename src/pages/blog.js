@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import Header from '../components/header';
 import FontAwesomeIcons from '../font-awesome';
 import styles from '../styles/blog.module.css';
+import HeaderBar from '../components/header-bar';
 
 const Blog = ({
   data: {
@@ -18,10 +19,13 @@ const Blog = ({
 
   FontAwesomeIcons.init();
   return (
-    <Layout>
-      <Header />
-      <div className={styles.container}>{posts}</div>
-    </Layout>
+    <>
+      <HeaderBar />
+      <Layout>
+        <Header />
+        <div className={styles.container}>{posts}</div>
+      </Layout>
+    </>
   );
 };
 

@@ -21,22 +21,6 @@ export default function Template({
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <h1
-        style={{
-          marginTop: 8,
-          marginBottom: 0,
-        }}
-      >
-        {post.frontmatter.title}
-      </h1>
-      <p
-        style={{
-          display: `block`,
-          marginBottom: 8,
-        }}
-      >
-        {post.frontmatter.date}
-      </p>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <hr
         style={{

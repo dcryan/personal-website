@@ -1,9 +1,16 @@
-.url { }
-.title { }
-.compensation{ }
-.software-type{ }
-.technologies { }
-.details { }
+.url {}
+
+.title {
+  color: var(--green)
+}
+
+.compensation {}
+
+.software-type {}
+
+.technologies {}
+
+.details {}
 
 .external-link {
   margin-left: 16px;

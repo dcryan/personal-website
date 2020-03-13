@@ -1,5 +1,5 @@
 ---
-path: "/blog/first-post"
+path: "/blog/react-hooks-redux"
 date: "2019-08-09"
 title: "React Hooks for Replacing Redux"
 description: "Redux is a state container for JS apps. Can we do the same thing now that React Hooks are released?"

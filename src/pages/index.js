@@ -5,7 +5,7 @@ import Header from '../components/header';
 import styles from '../styles/index.module.css';
 import CursorLine from '../components/cursor-line';
 import FontAwesomeIcons from '../font-awesome';
-import Portfolio from '../components/portfolio';
+import HeaderBar from '../components/header-bar';
 
 export default function Index() {
   FontAwesomeIcons.init();
@@ -13,7 +13,6 @@ export default function Index() {
   const [cursorDisplay1, setCursorDisplay1] = useState('off');
   const [header2, setHeader2] = useState('');
   const [cursorDisplay2, setCursorDisplay2] = useState('off');
-  const [displayPortfolio, setDisplayPortfolio] = useState(false);
 
   useEffect(() => {
     async function init() {
@@ -23,7 +22,6 @@ export default function Index() {
         setCursorDisplay1('off');
         setHeader2('Nice to meet you');
         setCursorDisplay2('blink');
-        setDisplayPortfolio(true);
       } else {
         const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -59,7 +57,6 @@ export default function Index() {
         setCursorDisplay1('off');
         await cursorLine2();
         await sleep(500);
-        setDisplayPortfolio(true);
 
         sessionStorage.setItem('visited', true);
       }
@@ -68,22 +65,20 @@ export default function Index() {
   }, []);
 
   return (
-    <Layout>
-      <Helmet>
-        <title>Hello I'm Daniel 👋</title>
-        <meta name="description" content="Hello I'm Daniel 👋" />
-      </Helmet>
-      <Header />
+    <>
+      <HeaderBar></HeaderBar>
+      <Layout>
+        <Helmet>
+          <title>Hello I'm Daniel 👋</title>
+          <meta name="description" content="Hello I'm Daniel 👋" />
+        </Helmet>
+        <Header />
 
-      <div className={styles.animatedText}>
-        <CursorLine text={header1} display={cursorDisplay1} />
-        <CursorLine text={header2} display={cursorDisplay2} />
-      </div>
-
-      <div className={!displayPortfolio ? styles.hide : ''}>
-        <hr />
-        <Portfolio />
-      </div>
-    </Layout>
+        <div className={styles.animatedText}>
+          <CursorLine text={header1} display={cursorDisplay1} />
+          <CursorLine text={header2} display={cursorDisplay2} />
+        </div>
+      </Layout>
+    </>
   );
 }

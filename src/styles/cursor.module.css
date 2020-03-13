@@ -12,17 +12,25 @@
 
   /* We need the margin left because the text has to be 'pre' */
   margin-left: -18px;
-  background-color: lime;
+  background-color: var(--green);
 }
 
 .hide {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 @keyframes blink {
-	0% {opacity: 0}
-	49%{opacity: 0}
-	50% {opacity: 1}
+  0% {
+    opacity: 0
+  }
+
+  49% {
+    opacity: 0
+  }
+
+  50% {
+    opacity: 1
+  }
 }
 
 .blink {

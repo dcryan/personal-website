@@ -5,13 +5,10 @@ import styles from '../styles/post-link.module.css';
 
 const PostLink = ({ post }) => (
   <div className={styles.container}>
-    <Link to={post.frontmatter.path}>
-      <h2 className={styles.blogTitle}>{post.frontmatter.title}</h2>
+    <Link to={post.frontmatter.path} className={styles.blogTitle}>
+      <div>{post.frontmatter.title}</div>
     </Link>
     <p className={styles.blogDate}>{post.frontmatter.date}</p>
-    <p className={styles.blogExcerpt}>
-      {post.frontmatter.description || post.excerpt}
-    </p>
   </div>
 );
 

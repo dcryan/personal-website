@@ -1,19 +1,25 @@
+.main-header {
+  margin-bottom: 1rem;
+}
 
-.header{
+.main-header .header {
+  color: var(--yellow);
+}
+
+.header {
   grid-area: header;
-  text-transform: uppercase;
-  color: lime;
-  font-size: 1.5rem;
+  color: var(--green);
+  font-size: 1.2rem;
   line-height: 1.5;
-  font-family: "VT323", sans-serif;
 }
 
 .active {
   text-decoration: underline;
 }
 
-.links > a {
-    margin-right: 16px;
+.header-divider {
+  margin: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .social {
@@ -22,58 +28,37 @@
   grid-area: social;
   font-size: 1.5rem;
   color: white;
-  color:green;
+  color: var(--green);
   margin-top: 4px;
 }
 
-.social > a:hover {
-  color: lime;
-  -webkit-transition: color 0.3s ease-in-out;
-  -moz-transition: color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out;
-}
 
-.social > a {
+.social>a {
   margin-right: 16px;
-
-  -webkit-transition: color 0.3s ease-in-out;
-  -moz-transition: color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
 }
 
-@media (min-width: 551px) {
-  .container {
-    display: flex;
-    justify-content: space-between
-  }
+.social>a:hover {
+  border-bottom: 2px solid var(--green);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 550px) {
   .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto, auto;
-    grid-template-areas: 
-    "header"
-    "social";
-  }
-
-  .links {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    margin-right: 0;
+    flex-direction: column;
+    align-items: unset;
   }
 
   .social {
     margin-top: 16px;
   }
 
-  .social > a {
-    margin-right: 0;
-  }
-
-  .links > a {
+  .social>a {
     margin-right: 0;
   }
 }

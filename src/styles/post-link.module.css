@@ -1,23 +1,22 @@
 .container {
-  background-color: #333;
-  border-radius: 8px;
-  padding: 10px;
-  color: #aaa;
-  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
 }
 
 .container .blog-title {
-  font-size: 1.5em;
+  font-size: 1rem;
+  color: var(--blue-dark);
 }
 
 .container .blog-date {
-  font-size: .8em;
-  color: #555;
-}
-
-.container .blog-excerpt {
-  margin-top: 8px;
-
+  flex: 0 0 80px;
+  font-size: .8rem;
+  color: rgba(255, 255, 255, 0.2);
+  word-break: keep-all;
+  text-align: right;
+  margin-left: 0.25rem;
 }
 
 .container h2,

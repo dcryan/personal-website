@@ -1,6 +1,6 @@
 ---
 path: "/blog/vim-tips"
-date: "2019-12-1"
+date: "2019-12-01"
 title: "Vim Tips: Increase or Decrease a Number"
 description: "Quick commands for increasing or decreasing a number."
 ---

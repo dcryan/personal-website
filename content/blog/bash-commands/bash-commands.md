@@ -1,6 +1,6 @@
 ---
 path: "/blog/bash-commands"
-date: "2019-12-2"
+date: "2019-12-02"
 title: "Bash Tips: Calendar & Date"
 description: "Today's productivity tips for when you need to view the date, or calendar"
 ---
