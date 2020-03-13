@@ -2,17 +2,33 @@ import React from 'react';
 
 export const freelancing = [
   {
+    url: 'https://clouding.io',
+    title: 'Clouding.io Website',
+    compensation: 'Contract',
+    softwareType: 'Website, Blog, and Knowledge Base',
+    technologies: 'ES6, Webpack, Handlebars, jQuery',
+    details: 'A marketing website for Clouding.io',
+  },
+  {
     url: 'https://itunes.apple.com/us/app/fimarge/id1456114142?mt=8',
     title: 'Fimarge',
     compensation: 'Contract',
-    softwareType: 'Mobile App & PWA',
+    softwareType: 'Android and iOS Mobile App & PWA',
     technologies: 'React, Redux, Cordova',
     details:
       'A PWA providing clients full access to their investment funds. Includes a chat service with advisors.',
   },
   {
+    title: 'NCS Proforma Builder',
+    compensation: 'Contract - in progress',
+    softwareType: 'Web App',
+    technologies: 'Laravel, Google Maps API, jQuery, Puppeteer',
+    details:
+      'An analytics dashboard that uses React and D3.js to provide regional level insight in real time.',
+  },
+  {
     title: 'Suds Dashboard',
-    compensation: 'Contract - Not Completed',
+    compensation: 'Contract',
     softwareType: 'Web App',
     technologies: 'D3.js, React, Redux',
     details:
@@ -37,24 +53,6 @@ export const freelancing = [
     technologies: 'Wordpress, Divi, Figma',
     details:
       'Designed and developed their public facing website. Drew the design in Figma, and implemented using WordPress and the Divi theme.',
-  },
-  {
-    title: 'Cravly',
-    compensation: 'Contract - Not Completed',
-    softwareType: 'Web App',
-    technologies: 'Angular 7, Google Firestore, Google Cloud Functions',
-    details:
-      'Restaurant directory service with a focus on food photography as search criteria.',
-  },
-
-  {
-    url: 'https://epimoniapp.com/',
-    title: 'Epimoni',
-    compensation: 'Contract - Not Completed',
-    softwareType: 'Mobile App',
-    technologies: 'Ionic 3, Typescript. OAuth',
-    details:
-      'Automated banking peer-to-peer lending platform. Worked with a backend team to develop an API',
   },
 ];
 
