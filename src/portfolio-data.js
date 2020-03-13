@@ -7,7 +7,8 @@ export const freelancing = [
     compensation: 'Contract',
     softwareType: 'Website, Blog, and Knowledge Base',
     technologies: 'ES6, Webpack, Handlebars, jQuery',
-    details: 'A marketing website for Clouding.io',
+    details:
+      'Clouding.io is an Infrastructure as a Service company. I built a static site generator using Webpack and handlebars. Animations and actions (i.e., service fees calculator) are all done with custom JS.',
   },
   {
     url: 'https://itunes.apple.com/us/app/fimarge/id1456114142?mt=8',
@@ -16,7 +17,7 @@ export const freelancing = [
     softwareType: 'Android and iOS Mobile App & PWA',
     technologies: 'React, Redux, Cordova',
     details:
-      'A PWA providing clients full access to their investment funds. Includes a chat service with advisors.',
+      'Fimarge is a private brokerage based in Spain. I created iOS and Android mobile apps and a PWA providing clients full access to their investment funds. Includes a chat service with advisors.',
   },
   {
     title: 'NCS Proforma Builder',
@@ -24,7 +25,7 @@ export const freelancing = [
     softwareType: 'Web App',
     technologies: 'Laravel, Google Maps API, jQuery, Puppeteer',
     details:
-      'An analytics dashboard that uses React and D3.js to provide regional level insight in real time.',
+      'NCS is a company that creates proformas for new car wash locations. The proforma builder aggregates data from multiple sources and automatically formats a document in PDF format.',
   },
   {
     title: 'Suds Dashboard',
@@ -32,7 +33,7 @@ export const freelancing = [
     softwareType: 'Web App',
     technologies: 'D3.js, React, Redux',
     details:
-      'An analytics dashboard that uses React and D3.js to provide regional level insight in real time.',
+      'Suds is a data solution company for car wash dealers. I built an analytics dashboard that uses React and D3.js to provide regional level insight in real time.',
   },
   {
     url:
@@ -43,7 +44,7 @@ export const freelancing = [
     technologies:
       'Ionic 3, Typescript, Firebase, Google Cloud Functions, Google Cloud Storage',
     details:
-      'Communication app to manage and analyze residents of 40+ locations',
+      'Rising Sun Sober Living has rehabilitation housing with over 40 locations in the Pacific North West. This app allows managers to track data for their residents.',
   },
   {
     url: 'https://gamenightlive.com',
@@ -52,7 +53,7 @@ export const freelancing = [
     softwareType: 'Website',
     technologies: 'Wordpress, Divi, Figma',
     details:
-      'Designed and developed their public facing website. Drew the design in Figma, and implemented using WordPress and the Divi theme.',
+      'Game Night Live! is an entertainment company based out of Boise, Idaho that holds events nation wide. I designed and developed their public facing website. I drew the design in Figma, and implemented using WordPress and the Divi theme.',
   },
 ];
 
