@@ -46,7 +46,7 @@ export default function TimeLineItemDetails({
 
       <h4 className={styles.softwareType}>{softwareType}</h4>
       <h4 className={styles.technologies}>Technologies Used: {technologies}</h4>
-      <p className={styles.details}>{details}</p>
+      <div className={styles.details}>{details}</div>
     </BoxContainer>
   );
 }

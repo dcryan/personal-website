@@ -1,25 +1,20 @@
 .time-container {
-  display: grid;
-  grid-template-columns: 1fr 40px 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "left center right";
+  display: flex;
+  justify-content: space-between;
   color: green;
+  align-items: stretch;
 }
 
 .leftColumn {
-  grid-area: left;
+  flex: 1 0 calc(50% - 20px);
 }
 
 .center {
-  grid-area: center;
-  width: 40px;
-  height: 100%;
+  flex: 0 0 40px;
 }
 
 .rightColumn {
-  grid-area: right;
-  text-align: right;
+  flex: 1 0 calc(50% - 20px);
 }
 
 .line {
@@ -30,7 +25,7 @@
 
 .circle {
   fill: limegreen;
-  stroke: limegreen; 
+  stroke: limegreen;
   stroke-width: 2px;
   stroke-opacity: 1;
 }
@@ -50,6 +45,7 @@
     stroke-opacity: 1;
     transform: scale(0.3);
   }
+
   to {
     stroke-width: 0;
     stroke-opacity: 0;
@@ -60,12 +56,16 @@
 @media (max-width: 736px) {
   .time-container {
     grid-template-columns: 40px auto auto;
-    grid-template-areas: 
+    grid-template-areas:
       "center left right";
   }
 
-  .rightColumn {
-    text-align: left;
+  .contentRight {
+    flex-direction: row-reverse;
+  }
+
+  .emptyColumn {
+    flex: 0 1 !important;
   }
 }
 
@@ -74,6 +74,11 @@
 }
 
 @keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
