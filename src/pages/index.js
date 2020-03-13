@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout';
 import Header from '../components/header';
@@ -7,128 +7,83 @@ import CursorLine from '../components/cursor-line';
 import FontAwesomeIcons from '../font-awesome';
 import Portfolio from '../components/portfolio';
 
-export default class Index extends Component {
-  state = {
-    header1: '',
-    cursorDisplay1: 'off',
-    header2: '',
-    cursorDisplay2: 'off',
-    header3: '',
-    cursorDisplay3: 'off',
-    displayPortfolio: false,
-  };
+export default function Index() {
+  FontAwesomeIcons.init();
+  const [header1, setHeader1] = useState('');
+  const [cursorDisplay1, setCursorDisplay1] = useState('off');
+  const [header2, setHeader2] = useState('');
+  const [cursorDisplay2, setCursorDisplay2] = useState('off');
+  const [displayPortfolio, setDisplayPortfolio] = useState(false);
 
-  componentWillMount() {
-    FontAwesomeIcons.init();
-  }
+  useEffect(() => {
+    async function init() {
+      const visited = sessionStorage.getItem('visited');
+      if (visited) {
+        setHeader1('Hello.');
+        setCursorDisplay1('off');
+        setHeader2('Nice to meet you');
+        setCursorDisplay2('blink');
+        setDisplayPortfolio(true);
+      } else {
+        const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-  async componentDidMount() {
-    const visited = sessionStorage.getItem('visited');
+        const cursorLine1 = async () => {
+          const text = 'Hello.';
+          setCursorDisplay1('on');
 
-    if (visited) {
-      this.setState({
-        header1: 'Hello.',
-        cursorDisplay1: 'off',
-        header2: 'I am Daniel',
-        cursorDisplay2: 'off',
-        header3: 'Nice to meet you',
-        cursorDisplay3: 'blink',
-        displayPortfolio: true,
-      });
+          for (let i = 1; i <= text.length; i += 1) {
+            await sleep(50);
+            setHeader1(text.slice(0, i));
+          }
 
-      return;
+          await sleep(500);
+          setCursorDisplay1('blink');
+        };
+
+        const cursorLine2 = async () => {
+          const text = 'Nice to meet you';
+          setCursorDisplay2('on');
+
+          for (let i = 1; i <= text.length; i += 1) {
+            await sleep(50);
+            setHeader2(text.slice(0, i));
+          }
+
+          await sleep(500);
+
+          setCursorDisplay2('blink');
+        };
+
+        await cursorLine1();
+        await sleep(2000);
+        setCursorDisplay1('off');
+        await cursorLine2();
+        await sleep(500);
+        setDisplayPortfolio(true);
+
+        sessionStorage.setItem('visited', true);
+      }
     }
+    init();
+  }, []);
 
-    await this.cursorLine1();
-    await this.sleep(2000);
-    await this.setState({ cursorDisplay1: 'off' });
-    await this.cursorLine2();
-    await this.sleep(1500);
-    await this.setState({ cursorDisplay2: 'off' });
-    await this.cursorLine3();
-    await this.sleep(500);
-    await this.setState({ displayPortfolio: true });
+  return (
+    <Layout>
+      <Helmet>
+        <title>Hello I'm Daniel 👋</title>
+        <meta name="description" content="Hello I'm Daniel 👋" />
+      </Helmet>
+      <Header />
 
-    sessionStorage.setItem('visited', true);
-  }
+      <div className={styles.animatedText}>
+        <CursorLine text={header1} display={cursorDisplay1} />
+        <CursorLine text={header2} display={cursorDisplay2} />
+      </div>
 
-  cursorLine1 = async () => {
-    const text = 'Hello.';
-    this.setState({ cursorDisplay1: 'on' });
-
-    for (let i = 1; i <= text.length; i += 1) {
-      await this.sleepRand();
-      this.setState({ header1: text.slice(0, i) });
-    }
-
-    await this.sleep(500);
-    this.setState({ cursorDisplay1: 'blink' });
-  };
-
-  cursorLine2 = async () => {
-    const text = 'I am Daniel';
-    this.setState({ cursorDisplay2: 'on' });
-
-    for (let i = 1; i <= text.length; i += 1) {
-      await this.sleepRand();
-      this.setState({ header2: text.slice(0, i) });
-    }
-
-    await this.sleep(500);
-    this.setState({ cursorDisplay2: 'blink' });
-  };
-
-  cursorLine3 = async () => {
-    const text = 'Nice to meet you';
-    this.setState({ cursorDisplay3: 'on' });
-
-    for (let i = 1; i <= text.length; i += 1) {
-      await this.sleepRand();
-      this.setState({ header3: text.slice(0, i) });
-    }
-
-    await this.sleep(500);
-
-    this.setState({ cursorDisplay3: 'blink' });
-  };
-
-  sleepRand = () => {
-    const ms = Math.random() * 500;
-    return this.sleep(ms);
-  };
-
-  sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-  render() {
-    const {
-      header1,
-      cursorDisplay1,
-      header2,
-      cursorDisplay2,
-      header3,
-      cursorDisplay3,
-      displayPortfolio,
-    } = this.state;
-
-    return (
-      <Layout>
-        <Helmet>
-          <title>Hello I'm Daniel 👋</title>
-          <meta name="description" content="Hello I'm Daniel 👋" />
-        </Helmet>
-        <Header />
-
-        <div className={styles.animatedText}>
-          <CursorLine text={header1} display={cursorDisplay1} />
-          <CursorLine text={header2} display={cursorDisplay2} />
-          <CursorLine text={header3} display={cursorDisplay3} />
-        </div>
-
-        <div className={!displayPortfolio ? styles.hide : ''}>
-          <hr />
-          <Portfolio />
-        </div>
-      </Layout>
-    );
-  }
+      <div className={!displayPortfolio ? styles.hide : ''}>
+        <hr />
+        <Portfolio />
+      </div>
+    </Layout>
+  );
 }
