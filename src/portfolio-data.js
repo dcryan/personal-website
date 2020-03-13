@@ -144,6 +144,13 @@ export const fulltimePositions = [
 
 export const sideProjects = [
   {
+    url: 'https://github.com/dcryan/personal-website',
+    title: 'Personal Website',
+    softwareType: 'Website',
+    technologies: 'Gatsby, React, GraphQL',
+    details: 'My personal website with my portfolio and blog.',
+  },
+  {
     title: 'Frontend Dev Meetup',
     details:
       'Co-hosted meet up to educate engineers in the local area of frontend technologies',
