@@ -4,24 +4,27 @@
   color: var(--green)
 }
 
-.compensation {}
+.compensation {
+  margin-top: 0.5rem;
+}
 
-.software-type {}
+.software-type {
+  margin-top: 0.5rem;
+}
 
 .technologies {
+  margin-top: 0.5rem;
   margin-bottom: 0;
 }
 
-.technology-pills {
-  margin-bottom: 1rem;
-}
-
 .details {
+  margin-top: 0.5rem;
   font-size: 0.8rem;
 }
 
 .details ul {
   padding-inline-start: 1rem;
+  margin: 0;
 }
 
 .external-link {

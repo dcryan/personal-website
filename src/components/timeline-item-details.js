@@ -53,7 +53,7 @@ export default function TimeLineItemDetails({
 
   return (
     <BoxContainer>
-      <h1 className={styles.title}>{titleElem}</h1>
+      <h2 className={styles.title}>{titleElem}</h2>
       <h4 className={styles.compensation}>{compensation}</h4>
 
       {positionsElem}

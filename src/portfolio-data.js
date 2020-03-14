@@ -6,7 +6,7 @@ export const freelancing = [
     title: 'Clouding.io Website',
     compensation: 'Contract',
     softwareType: 'Website, Blog, and Knowledge Base',
-    technologies: ['ES6', 'Webpack', 'Handlebars', 'Query'],
+    technologies: ['ES6', 'Webpack', 'Handlebars', 'jQuery'],
     details:
       'Clouding.io is an Infrastructure as a Service company. I built a static site generator using Webpack and handlebars. Animations and actions (e.g., service fees calculator) are all done with custom JS.',
   },
