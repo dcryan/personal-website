@@ -16,7 +16,6 @@ export default function Template({
   const { previous, next } = pageContext;
   return (
     <Layout>
-      <Header />
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}

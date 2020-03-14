@@ -13,7 +13,6 @@ export default function success() {
         <title>Daniel | Contact Page</title>
         <meta name="description" content="Daniel | Contact Page" />
       </Helmet>
-      <Header />
       <div className={styles.text}>
         <h3>Thank you for your message!</h3>
         <h4>I'll get back to you shortly :)</h4>

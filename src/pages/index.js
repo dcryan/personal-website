@@ -5,7 +5,6 @@ import Header from '../components/header';
 import styles from '../styles/index.module.css';
 import CursorLine from '../components/cursor-line';
 import FontAwesomeIcons from '../font-awesome';
-import HeaderBar from '../components/header-bar';
 
 export default function Index() {
   FontAwesomeIcons.init();
@@ -52,6 +51,7 @@ export default function Index() {
           setCursorDisplay2('blink');
         };
 
+        await sleep(500);
         await cursorLine1();
         await sleep(1000);
         setCursorDisplay1('off');
@@ -66,14 +66,11 @@ export default function Index() {
 
   return (
     <>
-      <HeaderBar></HeaderBar>
+      <Helmet>
+        <title>Hello I'm Daniel 👋</title>
+        <meta name="description" content="Hello I'm Daniel 👋" />
+      </Helmet>
       <Layout>
-        <Helmet>
-          <title>Hello I'm Daniel 👋</title>
-          <meta name="description" content="Hello I'm Daniel 👋" />
-        </Helmet>
-        <Header />
-
         <div className={styles.animatedText}>
           <CursorLine text={header1} display={cursorDisplay1} />
           <CursorLine text={header2} display={cursorDisplay2} />

@@ -63,7 +63,7 @@
 }
 
 .fadeIn {
-  animation: fadeIn ease 1s;
+  animation: fadeIn ease 0.6s;
 }
 
 @keyframes fadeIn {

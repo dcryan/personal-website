@@ -1,8 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout';
-import Header from '../components/header';
-import HeaderBar from '../components/header-bar';
 import styles from '../styles/contact.module.css';
 import FontAwesomeIcons from '../font-awesome';
 
@@ -10,13 +8,11 @@ export default function contact() {
   FontAwesomeIcons.init();
   return (
     <>
-      <HeaderBar />
+      <Helmet>
+        <title>Daniel | Contact Page</title>
+        <meta name="description" content="Come say hello :)" />
+      </Helmet>
       <Layout>
-        <Helmet>
-          <title>Daniel | Contact Page</title>
-          <meta name="description" content="Daniel | Contact Page" />
-        </Helmet>
-        <Header />
         <div className={styles.container}>
           <form
             className={styles.contact}
@@ -26,10 +22,10 @@ export default function contact() {
             data-netlify-honeypot="bot-field"
             name="contact"
           >
-            <h3>Say Hi! 👋</h3>
+            <h3>Say hi! 👋</h3>
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="form-name" value="contact" />
-            <label htmlFor>
+            <label htmlFor="name">
               name*
               <input placeholder="Your name" name="name" type="text" required />
             </label>
@@ -64,7 +60,7 @@ export default function contact() {
               id="contact-submit"
               data-submit="...Sending"
             >
-              Submit
+              submit
             </button>
           </form>
         </div>

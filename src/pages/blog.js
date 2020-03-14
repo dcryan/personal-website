@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 import PostLink from '../components/post-link';
 import Layout from '../components/layout';
-import Header from '../components/header';
 import FontAwesomeIcons from '../font-awesome';
 import styles from '../styles/blog.module.css';
-import HeaderBar from '../components/header-bar';
 
 const Blog = ({
   data: {
@@ -20,9 +19,11 @@ const Blog = ({
   FontAwesomeIcons.init();
   return (
     <>
-      <HeaderBar />
+      <Helmet>
+        <title>Blog</title>
+        <meta name="description" content="Thoughts and ideas of yours truly." />
+      </Helmet>
       <Layout>
-        <Header />
         <div className={styles.container}>{posts}</div>
       </Layout>
     </>

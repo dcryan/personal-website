@@ -90,6 +90,7 @@ export default function Header() {
           </a>
         </div>
       </div>
+      <hr />
     </>
   );
 }

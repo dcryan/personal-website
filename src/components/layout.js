@@ -1,9 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/layout.module.css';
+import Header from './header';
+import HeaderBar from './header-bar';
 
 export default function Layout({ children }) {
-  return <div className={styles.layout}>{children}</div>;
+  return (
+    <>
+      <HeaderBar />
+      <div className={styles.layout}>
+        <Header />
+        <div className={styles.fadeIn}>{children}</div>
+      </div>
+    </>
+  );
 }
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),

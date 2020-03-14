@@ -3,16 +3,12 @@
 
 :root {
   --white: #fff;
-  --background: #272C35;
-  --background-dark: #20252C;
-  --green: #7BBD5C;
-  --green-dark: rgb(110, 169, 82);
-  --purple: #CC6DDB;
-  --red: ##EA4A5F;
-  --yellow: #FFD700;
-  --orange: #D6955C;
-  --blue: #389EF2;
-  --blue-dark: #00698D;
+  --background: #282C34;
+  --green: #98C379;
+  --purple: #BF74D5;
+  --red: #E06C75;
+  --yellow: #E5C07B;
+  --blue: #56B6C2;
 }
 
 html {
@@ -49,7 +45,7 @@ h6 {
 }
 
 body {
-  background-color: var(--background-dark);
+  background-color: var(--background);
 }
 
 a {
@@ -80,4 +76,18 @@ hr {
   margin: 0 auto;
   max-width: 1024px;
   padding: 0 0.5rem;
+}
+
+.fadeIn {
+  animation: fadeIn ease 0.6s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

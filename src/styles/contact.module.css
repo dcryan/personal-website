@@ -9,7 +9,7 @@
   padding: 25px;
   margin: 50px 0;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact h3 {
@@ -23,14 +23,17 @@
 .contact input,
 .contact textarea,
 .contact button {
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .contact label {
-  font-size: 0.7rem;
-  color: var(--green);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
   margin-left: 10px;
-  margin-bottom: 4px;
+}
+
+.contact label:focus-within {
+  color: var(--yellow);
 }
 
 .contact input,
@@ -38,29 +41,43 @@
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: transparent;
-  margin: 0 0 5px;
+  margin: 0.125rem 0 5px;
   padding: 10px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   border-radius: 4px;
   outline: none;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 1rem;
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+.contact input[value]:focus,
+.contact textarea[value]:focus {
+  border-color: var(--yellow) !important;
+}
+
+.contact input:not([value]):focus:valid,
+.contact textarea:not([value]):focus:valid {
+  border-color: var(--green) !important;
+}
+
+.contact input:not([value]):focus:invalid,
+.contact textarea:not([value]):focus:invalid {
+  border-color: var(--red) !important;
 }
 
 .contact textarea {
   height: 100px;
-  max-width: 100%;
   resize: none;
 }
 
 .contact button[type="submit"] {
   cursor: pointer;
   width: 100%;
-  border: none;
-  background: var(--green);
-  color: #fff;
+  background-color: transparent;
+  border: 1px solid var(--red);
+  color: var(--red);
   margin: 0 0 5px;
   padding: 10px;
   font-size: 1rem;
@@ -73,8 +90,23 @@
 }
 
 .contact button[type="submit"]:hover {
-  background: var(--green-dark);
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+  text-decoration: underline;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: red !important;
+  -webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
+  color: red !important;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  /* border-color: rgba(255, 255, 255, 0.2) !important; */
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
 }
