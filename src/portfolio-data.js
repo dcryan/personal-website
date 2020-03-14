@@ -8,7 +8,7 @@ export const freelancing = [
     softwareType: 'Website, Blog, and Knowledge Base',
     technologies: 'ES6, Webpack, Handlebars, jQuery',
     details:
-      'Clouding.io is an Infrastructure as a Service company. I built a static site generator using Webpack and handlebars. Animations and actions (i.e., service fees calculator) are all done with custom JS.',
+      'Clouding.io is an Infrastructure as a Service company. I built a static site generator using Webpack and handlebars. Animations and actions (e.g., service fees calculator) are all done with custom JS.',
   },
   {
     url: 'https://itunes.apple.com/us/app/fimarge/id1456114142?mt=8',
