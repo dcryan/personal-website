@@ -6,7 +6,7 @@ export const freelancing = [
     title: 'Clouding.io Website',
     compensation: 'Contract',
     softwareType: 'Website, Blog, and Knowledge Base',
-    technologies: 'ES6, Webpack, Handlebars, jQuery',
+    technologies: ['ES6', 'Webpack', 'Handlebars', 'Query'],
     details:
       'Clouding.io is an Infrastructure as a Service company. I built a static site generator using Webpack and handlebars. Animations and actions (e.g., service fees calculator) are all done with custom JS.',
   },
@@ -15,7 +15,7 @@ export const freelancing = [
     title: 'Fimarge',
     compensation: 'Contract',
     softwareType: 'Android and iOS Mobile App & PWA',
-    technologies: 'React, Redux, Cordova',
+    technologies: ['React', 'Redux', 'Cordova'],
     details:
       'Fimarge is a private brokerage based in Spain. I created iOS and Android mobile apps and a PWA providing clients full access to their investment funds. Includes a chat service with advisors.',
   },
@@ -23,7 +23,7 @@ export const freelancing = [
     title: 'NCS Proforma Builder',
     compensation: 'Contract - in progress',
     softwareType: 'Web App',
-    technologies: 'Laravel, Google Maps API, jQuery, Puppeteer',
+    technologies: ['Laravel', 'Google Maps API', 'jQuery', 'Puppeteer'],
     details:
       'NCS is a company that creates proformas for new car wash locations. The proforma builder aggregates data from multiple sources and automatically formats a document in PDF format.',
   },
@@ -31,7 +31,7 @@ export const freelancing = [
     title: 'Suds Dashboard',
     compensation: 'Contract',
     softwareType: 'Web App',
-    technologies: 'D3.js, React, Redux',
+    technologies: ['D3.js', 'React', 'Redux'],
     details:
       'Suds is a data solution company for car wash dealers. I built an analytics dashboard that uses React and D3.js to provide regional level insight in real time.',
   },
@@ -41,8 +41,13 @@ export const freelancing = [
     title: 'Rising Sun Sober Living',
     compensation: 'Contract',
     softwareType: 'Mobile App',
-    technologies:
-      'Ionic 3, Typescript, Firebase, Google Cloud Functions, Google Cloud Storage',
+    technologies: [
+      'Ionic 3',
+      'Typescript',
+      'Firebase',
+      'Google Cloud Functions',
+      'Google Cloud Storage',
+    ],
     details:
       'Rising Sun Sober Living has rehabilitation housing with over 40 locations in the Pacific North West. This app allows managers to track data for their residents.',
   },
@@ -51,7 +56,7 @@ export const freelancing = [
     title: 'Game Night Live!',
     compensation: 'Contract',
     softwareType: 'Website',
-    technologies: 'Wordpress, Divi, Figma',
+    technologies: ['Wordpress', 'Divi', 'Figma'],
     details:
       'Game Night Live! is an entertainment company based out of Boise, Idaho that holds events nation wide. I designed and developed their public facing website. I drew the design in Figma, and implemented using WordPress and the Divi theme.',
   },
@@ -62,8 +67,15 @@ export const fulltimePositions = [
     url: 'https://tsheets.com',
     title: 'TSheets Inc. an Intuit Company',
     positions: ["Mobile Software Engineer(iOS & Android): Oct '15 - Jan '19"],
-    technologies:
-      'Objective C, Swift, Java 6, XML, SQLite, XCode, Android Studio',
+    technologies: [
+      'Objective C',
+      'Swift',
+      'Java 6',
+      'XML',
+      'SQLite',
+      'XCode',
+      'Android Studio',
+    ],
     details: (
       <ul>
         <li>
@@ -129,8 +141,15 @@ export const fulltimePositions = [
 
     title: 'SAP - Advantage Database Team',
     positions: ["Software Intern: Mar '11 - Mar '12"],
-    technologies:
-      'jQuery, jQuery Mobile, oData, dataJS, Apache Web Service, Advantage Database Server, Advantage Web Server',
+    technologies: [
+      'jQuery',
+      'jQuery Mobile',
+      'oData',
+      'dataJS',
+      'Apache Web Service',
+      'Advantage Database Server',
+      'Advantage Web Server',
+    ],
     details: (
       <ul>
         <li>
@@ -148,7 +167,7 @@ export const sideProjects = [
     url: 'https://github.com/dcryan/personal-website',
     title: 'Personal Website',
     softwareType: 'Website',
-    technologies: 'Gatsby, React, GraphQL',
+    technologies: ['Gatsby', 'React', 'GraphQL'],
     details: 'My personal website with my portfolio and blog.',
   },
   {
@@ -160,7 +179,7 @@ export const sideProjects = [
     url: 'https://tacogato.app/',
     title: 'TacoGato',
     softwareType: 'Mobile App',
-    technologies: 'Ionic 1, Firebase, Firebase Auth',
+    technologies: ['Ionic 1', 'Firebase', 'Firebase Auth'],
     details:
       'A socially competitive taco counting app. Join a league and compete with your closest friends.',
   },
@@ -172,6 +191,7 @@ export const sideProjects = [
   {
     title: 'D3.js Chart Library',
     softwareType: 'Open Source Library',
+    technologies: ['D3.js'],
     details:
       'An open source, dynamic, and customizable charting layer using D3.js. Includes: An API, iPad gesture support, data filters, and modern/mobile/IE7 & 8 browser support.',
   },
@@ -180,7 +200,7 @@ export const sideProjects = [
     title: 'Boise Art Hunt',
     compensation: 'Hack-a-thon',
     softwareType: 'Web App',
-    technologies: 'Angular, Heroku, Google Maps API (JS)',
+    technologies: ['Angular', 'Heroku', 'Google Maps API (JS)'],
     details:
       'A scavenger hunt game using geofencing to claim 600+ public art pieces rewarding the user with badges. The app was seeded with the Boise GIS data',
   },
@@ -189,7 +209,7 @@ export const sideProjects = [
     title: 'Treefort Music Fest Mobile App',
     compensation: 'Volunteer',
     softwareType: 'Mobile App',
-    technologies: 'Ionic 1, AWS DynamoDB',
+    technologies: ['Ionic 1', 'AWS DynamoDB'],
     details:
       'Artist, music, and scheduling app for Treefort Music Fest, built by a team of 10 volunteer developers.',
   },
@@ -198,7 +218,7 @@ export const sideProjects = [
     title: 'Line-o-meter App for Treefort',
     compensation: 'Volunteer',
     softwareType: 'Responsive Web App',
-    technologies: 'Angular, Cordova',
+    technologies: ['Angular', 'Cordova'],
     details:
       'A line status app for Boise Treefort Music Fest, used to provide line length to venue goers so they can predict whether or not to see a particular show. This project gave us permission to take over the mobile app the following year.',
   },

@@ -8,9 +8,21 @@
 
 .software-type {}
 
-.technologies {}
+.technologies {
+  margin-bottom: 0;
+}
 
-.details {}
+.technology-pills {
+  margin-bottom: 1rem;
+}
+
+.details {
+  font-size: 0.8rem;
+}
+
+.details ul {
+  padding-inline-start: 1rem;
+}
 
 .external-link {
   margin-left: 16px;

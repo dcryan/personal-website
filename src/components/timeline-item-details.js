@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../styles/timeline-item-details.module.css';
 import { BoxContainer } from './layout';
+import Pill from './pill';
 
 export default function TimeLineItemDetails({
   url,
@@ -37,6 +38,19 @@ export default function TimeLineItemDetails({
     ));
   }
 
+  let technologySection;
+  if (technologies) {
+    const technologyPills = technologies.map(technology => (
+      <Pill key={technology}>{technology}</Pill>
+    ));
+    technologySection = (
+      <>
+        <h4 className={styles.technologies}>Technologies:</h4>
+        <div className={styles.technologyPills}>{technologyPills}</div>
+      </>
+    );
+  }
+
   return (
     <BoxContainer>
       <h1 className={styles.title}>{titleElem}</h1>
@@ -45,7 +59,7 @@ export default function TimeLineItemDetails({
       {positionsElem}
 
       <h4 className={styles.softwareType}>{softwareType}</h4>
-      <h4 className={styles.technologies}>Technologies Used: {technologies}</h4>
+      {technologySection}
       <div className={styles.details}>{details}</div>
     </BoxContainer>
   );
