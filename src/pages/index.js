@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout';
-import Header from '../components/header';
 import styles from '../styles/index.module.css';
 import CursorLine from '../components/cursor-line';
+import HackingDialog from '../components/hacking-dialog';
 import FontAwesomeIcons from '../font-awesome';
 
 export default function Index() {
@@ -12,6 +12,7 @@ export default function Index() {
   const [cursorDisplay1, setCursorDisplay1] = useState('off');
   const [header2, setHeader2] = useState('');
   const [cursorDisplay2, setCursorDisplay2] = useState('off');
+  const [showHackingDialog, setShowHackingDialog] = useState(false);
 
   useEffect(() => {
     async function init() {
@@ -60,6 +61,8 @@ export default function Index() {
 
         sessionStorage.setItem('visited', true);
       }
+
+      setShowHackingDialog(true);
     }
     init();
   }, []);
@@ -71,10 +74,10 @@ export default function Index() {
         <meta name="description" content="Hello I'm Daniel 👋" />
       </Helmet>
       <Layout>
-        <div className={styles.animatedText}>
-          <CursorLine text={header1} display={cursorDisplay1} />
-          <CursorLine text={header2} display={cursorDisplay2} />
-        </div>
+        <CursorLine text={header1} display={cursorDisplay1} />
+        <CursorLine text={header2} display={cursorDisplay2} />
+
+        {showHackingDialog && <HackingDialog />}
       </Layout>
     </>
   );

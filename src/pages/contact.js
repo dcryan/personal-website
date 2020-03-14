@@ -22,7 +22,7 @@ export default function contact() {
             data-netlify-honeypot="bot-field"
             name="contact"
           >
-            <h3>Say hi! 👋</h3>
+            <h3>Hello world! 👋</h3>
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="form-name" value="contact" />
             <label htmlFor="name">

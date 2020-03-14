@@ -6,6 +6,7 @@ import Cursor from './cursor';
 export default function CursorLine({ display, text }) {
   return (
     <div className={styles.container}>
+      {text !== '' && <span className={styles.chevron}>></span>}
       <span className={styles.text}> {text} </span>
 
       <Cursor display={display} />

@@ -1,0 +1,32 @@
+.dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: var(--red);
+
+  border: 1px solid var(--red);
+  border-radius: 0.25rem;
+  padding: 20px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0
+  }
+
+  50% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0
+  }
+}
+
+.flash {
+  animation: flash 1s infinite;
+}

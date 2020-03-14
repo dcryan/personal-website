@@ -1,13 +1,17 @@
 .container {
-  font-size: 3em;
   vertical-align: text-top;
   display: flex;
-  margin-left: -20px;
-  font-family: "VT323", sans-serif;
   color: var(--green);
+}
+
+.chevron {
+  font-size: 1.8em;
+  color: rgba(255, 255, 255, 0.2);
 }
 
 /* Text has to be 'pre' because we want to render the space for whitespace for the animations. */
 .text {
+  font-size: 2.5em;
+  font-family: "VT323", sans-serif;
   white-space: pre-wrap;
 }

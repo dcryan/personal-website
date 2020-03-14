@@ -9,8 +9,8 @@ export default function success() {
   return (
     <>
       <Helmet>
-        <title>danielryan.xyz | 404</title>
-        <meta name="description" content="danielryan.xyz | 404" />
+        <title>404 Not Found</title>
+        <meta name="description" content="¯\_(ツ)_/¯" />
       </Helmet>
       <Layout>
         <div className={styles.text}>
