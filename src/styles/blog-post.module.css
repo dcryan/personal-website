@@ -1,0 +1,49 @@
+.content {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  color: var(--blue);
+}
+
+
+.content code {
+  padding: 0.1rem 0.3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+  font-weight: bold;
+}
+
+.content pre {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.content pre code {
+  font-weight: normal;
+  background: none;
+  border-radius: none;
+  display: block;
+  padding: 0;
+}
+
+.content blockquote {
+  border-left: 3px solid var(--purple);
+  padding: 0.0125rem 1rem;
+  margin: 0.5rem;
+}
+
+.content blockquote p {
+  margin: 0.25rem 0;
+}
+
+.content a {
+  color: var(--purple)
+}
