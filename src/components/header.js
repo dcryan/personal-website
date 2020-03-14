@@ -8,8 +8,8 @@ export default function Header() {
   return (
     <>
       <div className={styles.mainHeader}>
-        <Link to="" activeClassName={styles.active} className={styles.header}>
-          danielryan.xyz
+        <Link to="" className={styles.header}>
+          {'<danielryan.xyz />'}
         </Link>
       </div>
       <div className={styles.container}>

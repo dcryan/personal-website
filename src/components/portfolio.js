@@ -48,28 +48,28 @@ export default function Portfolio() {
           className={freelanceClass}
           onClick={freelanceClicked}
         >
-          <div>Freelance</div>
+          <div>freelance</div>
         </button>
         <button
           type="button"
           className={fulltimeClass}
           onClick={fulltimeClicked}
         >
-          <div>Full-time Positions</div>
+          <div>full-time positions</div>
         </button>
         <button
           type="button"
           className={sideProjectsClass}
           onClick={sideProjectsClicked}
         >
-          <div>Side Projects</div>
+          <div>side projects</div>
         </button>
         <button
           type="button"
           className={educationClass}
           onClick={educationClicked}
         >
-          <div>Education</div>
+          <div>education</div>
         </button>
       </div>
 

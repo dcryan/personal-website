@@ -63,8 +63,8 @@
   color: #fff;
   margin: 0 0 5px;
   padding: 10px;
-  font-size: 15px;
-  border-radius: 8px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
   outline: none;
 
   -webkit-transition: background 0.3s ease-in-out;
@@ -73,7 +73,7 @@
 }
 
 .contact button[type="submit"]:hover {
-  background: var(--green);
+  background: var(--green-dark);
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;

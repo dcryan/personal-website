@@ -30,31 +30,30 @@ export default function contact() {
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="form-name" value="contact" />
             <label htmlFor>
-              Name
+              name*
               <input placeholder="Your name" name="name" type="text" required />
             </label>
             <label htmlFor>
-              Email
+              email*
               <input
-                placeholder="Your Email Address"
+                placeholder="Your email address"
                 name="email"
                 type="email"
                 required
               />
             </label>
             <label htmlFor>
-              Phone Number (optional)
+              phone number
               <input
-                placeholder="Your Phone Number"
+                placeholder="Your phone number"
                 type="tel"
                 name="phone-number"
-                required
               />
             </label>
             <label htmlFor>
-              Message
+              message*
               <textarea
-                placeholder="Type your message here...."
+                placeholder="Type your message here..."
                 name="message"
                 required
               />

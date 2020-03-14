@@ -5,10 +5,6 @@
   align-items: stretch;
 }
 
-.leftColumn {
-  flex: 1 0 calc(50% - 20px);
-}
-
 .center {
   flex: 0 0 40px;
   position: relative;
@@ -63,18 +59,6 @@
     stroke-width: 0;
     stroke-opacity: 0;
     transform: scale(2);
-  }
-}
-
-@media (max-width: 736px) {
-  .time-container {}
-
-  .contentRight {
-    flex-direction: row-reverse;
-  }
-
-  .emptyColumn {
-    flex: 0 1 !important;
   }
 }
 
