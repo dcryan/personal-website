@@ -2,11 +2,13 @@
   display: inline-block;
   padding: 0.25rem 0.5rem;
   color: var(--white);
-  background-color: var(--blue);
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.25rem;
   margin-top: 0.25rem;
   margin-right: 0.25rem;
   font-weight: bold;
+  font-size: 0.7rem;
 }
 
 .container:first-child {
