@@ -34,7 +34,7 @@ export default function TimeLineItemDetails({
 
   if (positions) {
     positionsElem = positions.map(position => (
-      <h4 className={styles.position}>{position}</h4>
+      <h5 className={styles.position}>{position}</h5>
     ));
   }
 
@@ -45,20 +45,33 @@ export default function TimeLineItemDetails({
     ));
     technologySection = (
       <>
-        <h4 className={styles.technologies}>Technologies:</h4>
+        <h5 className={styles.technologies}>Technologies:</h5>
         <div className={styles.technologyPills}>{technologyPills}</div>
       </>
+    );
+  }
+
+  let compensationElem;
+  if (compensation) {
+    compensationElem = (
+      <h5 className={styles.compensation}>Project Type: {compensation}</h5>
+    );
+  }
+
+  let softwareTypeElem;
+  if (softwareType) {
+    softwareTypeElem = (
+      <h5 className={styles.softwareType}>Software overview: {softwareType}</h5>
     );
   }
 
   return (
     <BoxContainer>
       <h2 className={styles.title}>{titleElem}</h2>
-      <h4 className={styles.compensation}>{compensation}</h4>
 
+      {compensationElem}
       {positionsElem}
-
-      <h4 className={styles.softwareType}>{softwareType}</h4>
+      {softwareTypeElem}
       {technologySection}
       <div className={styles.details}>{details}</div>
     </BoxContainer>
