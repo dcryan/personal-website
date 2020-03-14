@@ -7,5 +7,5 @@ export default function Pill({ children }) {
 }
 
 Pill.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  children: PropTypes.string,
 };

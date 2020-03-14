@@ -34,7 +34,9 @@ export default function TimeLineItemDetails({
 
   if (positions) {
     positionsElem = positions.map(position => (
-      <h5 className={styles.position}>{position}</h5>
+      <h5 key={position} className={styles.position}>
+        {position}
+      </h5>
     ));
   }
 
@@ -65,6 +67,18 @@ export default function TimeLineItemDetails({
     );
   }
 
+  let detailsElem;
+  if (details) {
+    if (Array.isArray(details)) {
+      const listItems = details.map(detail => <li key={detail}>{detail}</li>);
+      detailsElem = (
+        <div className={styles.details}>
+          <ul>{listItems}</ul>
+        </div>
+      );
+    }
+  }
+
   return (
     <BoxContainer>
       <h2 className={styles.title}>{titleElem}</h2>
@@ -73,7 +87,7 @@ export default function TimeLineItemDetails({
       {positionsElem}
       {softwareTypeElem}
       {technologySection}
-      <div className={styles.details}>{details}</div>
+      {detailsElem}
     </BoxContainer>
   );
 }
@@ -84,6 +98,10 @@ TimeLineItemDetails.propTypes = {
   compensation: PropTypes.string,
   positions: PropTypes.array,
   softwareType: PropTypes.string,
-  technologies: PropTypes.string,
-  details: PropTypes.string,
+  technologies: PropTypes.array,
+  details: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.array,
+  ]),
 };

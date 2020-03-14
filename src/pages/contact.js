@@ -29,7 +29,7 @@ export default function contact() {
               name*
               <input placeholder="Your name" name="name" type="text" required />
             </label>
-            <label htmlFor>
+            <label htmlFor="email">
               email*
               <input
                 placeholder="Your email address"
@@ -38,7 +38,7 @@ export default function contact() {
                 required
               />
             </label>
-            <label htmlFor>
+            <label htmlFor="phone-number">
               phone number
               <input
                 placeholder="Your phone number"
@@ -46,7 +46,7 @@ export default function contact() {
                 name="phone-number"
               />
             </label>
-            <label htmlFor>
+            <label htmlFor="message">
               message*
               <textarea
                 placeholder="Type your message here..."

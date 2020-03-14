@@ -76,31 +76,13 @@ export const fulltimePositions = [
       'XCode',
       'Android Studio',
     ],
-    details: (
-      <ul>
-        <li>
-          Lead engineer for designing and developing a location engine that
-          would monitor a user’s location while on the clock. Used by
-          approximately 12k unique users a day.
-        </li>
-        <li>
-          Improved the reliability of the sync engine between mobile and backend
-          databases.
-        </li>
-        <li>
-          Worked with a team to develop a scheduling feature that provided $30k
-          of revenue within the first year.
-        </li>
-        <li>
-          Advocated and spearheaded the migration of SVN to Git. Educated the
-          mobile team in Git workflow.
-        </li>
-        <li>
-          Designed and implemented a filter bar, the most requested feature, for
-          one of our most used pages.
-        </li>
-      </ul>
-    ),
+    details: [
+      'Lead engineer for designing and developing a location engine that would monitor a user’s location while on the clock. Used by approximately 12k unique users a day.',
+      'Improved the reliability of the sync engine between mobile and backend databases.',
+      'Worked with a team to develop a scheduling feature that provided $30k of revenue within the first year.',
+      'Advocated and spearheaded the migration of SVN to Git. Educated the mobile team in Git workflow.',
+      'Designed and implemented a filter bar, the most requested feature, for one of our most used pages.',
+    ],
   },
 
   {
@@ -110,30 +92,14 @@ export const fulltimePositions = [
       "Frontend Software Engineer: Mar '14 - Oct '15",
       "Full-stack Software Engineer: Mar '12 - Mar '14",
     ],
-    details: (
-      <ul>
-        <li>
-          Led a frontend team to design and implement a charting library using
-          D3 (see D3 Chart Library below).
-        </li>
-        <li>
-          Co-developed a Population Health single page application in Angular 1
-          to pioneer its use in the future.
-        </li>
-        <li>
-          Co-developed a testing framework in Jasmine to maintain a level of
-          code quality within the product.
-        </li>
-        <li>
-          Spearheaded the migration from vanilla CSS to LESS. Educated and
-          mentored a team of 10 engineers.
-        </li>
-        <li>
-          Co-developed a Gulp build system, running JS linting, jasmine tests,
-          etc helping maintain code quality.
-        </li>
-      </ul>
-    ),
+    technologies: ['AngularJS', 'Backbone', 'LESS', 'Java Spring'],
+    details: [
+      'Led a frontend team to design and implement a charting library using D3 (see D3 Chart Library below).',
+      'Co-developed a Population Health single page application in Angular 1 to pioneer its use in the future.',
+      'Co-developed a testing framework in Jasmine to maintain a level of code quality within the product.',
+      'Spearheaded the migration from vanilla CSS to LESS. Educated and mentored a team of 10 engineers.',
+      'Co-developed a Gulp build system, running JS linting, jasmine tests, etc helping maintain code quality.',
+    ],
   },
 
   {
@@ -150,15 +116,9 @@ export const fulltimePositions = [
       'Advantage Database Server',
       'Advantage Web Server',
     ],
-    details: (
-      <ul>
-        <li>
-          Designed and implemented a web-based configuration utility that
-          configures a database using oData calls to communicate between the
-          client and server.
-        </li>
-      </ul>
-    ),
+    details: [
+      'Designed and implemented a web-based configuration utility that configures a database using oData calls to communicate between the client and server.',
+    ],
   },
 ];
 
