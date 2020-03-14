@@ -9,7 +9,7 @@
 .content h4,
 .content h5,
 .content h6 {
-  color: var(--blue);
+  color: var(--green);
 }
 
 
@@ -39,6 +39,7 @@
   border-left: 3px solid var(--purple);
   padding: 0.0125rem 1rem;
   margin: 0.5rem;
+  color: var(--purple);
 }
 
 .content blockquote p {
@@ -46,5 +47,5 @@
 }
 
 .content a {
-  color: var(--purple)
+  color: var(--blue);
 }
