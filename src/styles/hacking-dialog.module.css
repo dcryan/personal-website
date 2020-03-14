@@ -13,6 +13,12 @@
   white-space: nowrap;
 }
 
+.dialog-title {
+  color: var(--red);
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+}
+
 @keyframes flash {
   0% {
     opacity: 0
