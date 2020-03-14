@@ -57,13 +57,8 @@
   border-color: var(--yellow) !important;
 }
 
-.contact input:not([value]):focus:valid,
-.contact textarea:not([value]):focus:valid {
-  border-color: var(--green) !important;
-}
-
-.contact input:not([value]):focus:invalid,
-.contact textarea:not([value]):focus:invalid {
+.contact input:not(:placeholder-shown):invalid,
+.contact textarea:not(:placeholder-shown):invalid {
   border-color: var(--red) !important;
 }
 
@@ -93,20 +88,16 @@
   text-decoration: underline;
 }
 
-/* Change the white to any color ;) */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  background-color: red !important;
-  -webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
-  color: red !important;
-  border-width: 1px;
-  border-radius: 0.25rem;
-  /* border-color: rgba(255, 255, 255, 0.2) !important; */
-}
-
-/*Change text in autofill textbox*/
-input:-webkit-autofill {
-  -webkit-text-fill-color: white !important;
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--white) !important;
+  transition: background-color 5000s ease-in-out 0s;
+  background-color: var(--background) !important;
 }
