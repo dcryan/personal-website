@@ -23,7 +23,7 @@ const Blog = ({
         <title>Blog</title>
         <meta name="description" content="Thoughts and ideas of yours truly." />
       </Helmet>
-      <Layout>
+      <Layout color="blue">
         <div className={styles.container}>{posts}</div>
       </Layout>
     </>

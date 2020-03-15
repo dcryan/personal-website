@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import styles from '../styles/cursor-line.module.css';
 import Cursor from './cursor';
 
-export default function CursorLine({ display, text }) {
+export default function CursorLine({ display, text, active }) {
   return (
     <div className={styles.container}>
-      {text !== '' && <span className={styles.chevron}>></span>}
+      {active && <span className={styles.chevron}>></span>}
       <span className={styles.text}>
         {text}
 
@@ -19,4 +19,5 @@ export default function CursorLine({ display, text }) {
 CursorLine.propTypes = {
   display: PropTypes.string,
   text: PropTypes.string,
+  active: PropTypes.bool,
 };

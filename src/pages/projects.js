@@ -12,7 +12,7 @@ export default function Resume() {
         <title>Projects</title>
         <meta name="description" content="Projects" />
       </Helmet>
-      <Layout>
+      <Layout color="yellow">
         <Portfolio />
       </Layout>
     </>

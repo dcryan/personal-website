@@ -12,7 +12,7 @@ export default function contact() {
         <title>Daniel | Contact Page</title>
         <meta name="description" content="Come say hello :)" />
       </Helmet>
-      <Layout>
+      <Layout color="red">
         <div className={styles.container}>
           <form
             className={styles.contact}

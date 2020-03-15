@@ -4,3 +4,23 @@
   background-color: var(--green);
   margin-bottom: 0.5rem;
 }
+
+.green {
+  background-color: var(--green);
+  box-shadow: 0 0px 3px var(--green);
+}
+
+.yellow {
+  background-color: var(--yellow);
+  box-shadow: 0 0px 3px var(--yellow);
+}
+
+.blue {
+  background-color: var(--blue);
+  box-shadow: 0 0px 3px var(--blue);
+}
+
+.red {
+  background-color: var(--red);
+  box-shadow: 0 0px 3px var(--red);
+}
