@@ -4,7 +4,7 @@ import styles from '../styles/home-links.module.css';
 
 export default function HomeLinks() {
   return (
-    <div className={styles.container}>
+    <div className={[styles.container, styles.fadeIn].join(' ')}>
       <HomeLink to="projects" color="yellow">
         projects
       </HomeLink>
