@@ -3,7 +3,7 @@
 }
 
 .main-header .header {
-  color: var(--yellow);
+  color: var(--green);
 }
 
 .header {
@@ -11,6 +11,22 @@
   color: var(--green);
   font-size: 1.3rem;
   line-height: 1.5;
+}
+
+.green {
+  color: var(--green)
+}
+
+.red {
+  color: var(--red)
+}
+
+.yellow {
+  color: var(--yellow);
+}
+
+.blue {
+  color: var(--blue);
 }
 
 .active {

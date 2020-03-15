@@ -17,7 +17,7 @@ export default function Header() {
           <Link
             to="projects"
             activeClassName={styles.active}
-            className={styles.header}
+            className={[styles.header, styles.yellow].join(' ')}
           >
             projects
           </Link>
@@ -25,7 +25,7 @@ export default function Header() {
           <Link
             to="blog"
             activeClassName={styles.active}
-            className={styles.header}
+            className={[styles.header, styles.blue].join(' ')}
           >
             blog
           </Link>
@@ -33,7 +33,7 @@ export default function Header() {
           <Link
             to="contact"
             activeClassName={styles.active}
-            className={styles.header}
+            className={[styles.header, styles.red].join(' ')}
           >
             contact
           </Link>

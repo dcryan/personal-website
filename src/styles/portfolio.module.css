@@ -20,7 +20,7 @@
 }
 
 .active {
-  color: var(--green);
+  color: var(--yellow);
   text-decoration: underline;
 }
 

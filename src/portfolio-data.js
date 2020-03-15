@@ -190,13 +190,13 @@ export const education = [
     title: 'Boise State University',
     details: (
       <div>
-        <h4>Bachelor's in Computer Science</h4>
-        <h4>Fall 2008 - Spring 2012</h4>
-        <h4>Dean's List (GPA > 3.75) - Fall 2008</h4>
-        <h4>
+        <h5>Bachelor's in Computer Science</h5>
+        <h5>Fall 2008 - Spring 2012</h5>
+        <h5>Dean's List (GPA > 3.75) - Fall 2008</h5>
+        <h5>
           Classes: Artificial Intelligence, Distributed Systems, Operating
           Systems, Cryptology, Networks
-        </h4>
+        </h5>
       </div>
     ),
   },

@@ -76,6 +76,8 @@ export default function TimeLineItemDetails({
           <ul>{listItems}</ul>
         </div>
       );
+    } else {
+      detailsElem = <div className={styles.details}>{details}</div>;
     }
   }
 

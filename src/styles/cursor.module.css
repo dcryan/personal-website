@@ -10,8 +10,6 @@
   width: 16px;
   display: inline-block;
 
-  /* We need the margin left because the text has to be 'pre' */
-  margin-left: -15px;
   background-color: var(--green);
 }
 

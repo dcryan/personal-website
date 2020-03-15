@@ -21,7 +21,7 @@
 
 .line line {
   stroke-width: 4px;
-  stroke: var(--green);
+  stroke: var(--yellow);
 }
 
 
@@ -33,8 +33,8 @@
 }
 
 .circle {
-  fill: var(--green);
-  stroke: var(--green);
+  fill: var(--yellow);
+  stroke: var(--yellow);
   stroke-width: 2px;
   stroke-opacity: 1;
 }

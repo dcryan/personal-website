@@ -1,7 +1,7 @@
 .url {}
 
 .title {
-  color: var(--green)
+  color: var(--yellow)
 }
 
 .compensation {
@@ -9,16 +9,16 @@
 }
 
 .software-type {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .technologies {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   margin-bottom: 0;
 }
 
 .details {
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
   font-size: 0.8rem;
 }
 
