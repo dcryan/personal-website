@@ -73,8 +73,8 @@ export default function Index() {
   return (
     <>
       <Helmet>
-        <title>Hello I'm Daniel 👋</title>
-        <meta name="description" content="Hello I'm Daniel 👋" />
+        <title>Hello. 👋</title>
+        <meta name="description" content="Hello. I'm Daniel 👋" />
       </Helmet>
       <Layout hideHeader>
         <CursorLine text={header1} display={cursorDisplay1} />
