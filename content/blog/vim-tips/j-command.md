@@ -27,7 +27,7 @@ through all the whitespace until it's in the correct position.
 <br />
 <br />
 
-![](../../gifs/j-command/before-j.gif)
+![](../../../gifs/j-command/before-j.gif)
 
 <br />
 <br />
@@ -59,7 +59,7 @@ You can now simply press `JJJJJ` (`J`x5) and you will be able to join the entire
 <br />
 <br />
 
-![](../../gifs/j-command/after-j.gif)
+![](../../../gifs/j-command/after-j.gif)
 
 <br />
 <br />
@@ -73,7 +73,7 @@ guys know the answer to that one.
 <br />
 <br />
 
-![](../../gifs/j-command/after-j-exact.gif)
+![](../../../gifs/j-command/after-j-exact.gif)
 
 <br />
 <br />
@@ -85,7 +85,7 @@ Even better yet, you can pair this with any kind of visual command.
 <br />
 <br />
 
-![](../../gifs/j-command/after-j-visual.gif)
+![](../../../gifs/j-command/after-j-visual.gif)
 
 <br />
 <br />
