@@ -5,8 +5,6 @@ title: "React Hooks for Replacing Redux"
 description: "Redux is a state container for JS apps. Can we do the same thing now that React Hooks are released?"
 ---
 
-# React Hooks for Replacing Redux
-
 [Slides from presentation](https://docs.google.com/presentation/d/13UeoCwjvOpdTXezWQr0YuOoe8qiI6ID-a6_nTsheiqg/edit?usp=sharing)
 
 ## Background

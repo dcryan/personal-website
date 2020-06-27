@@ -5,8 +5,6 @@ title: "Bash Tips: Calendar & Date"
 description: "Today's productivity tips for when you need to view the date, or calendar"
 ---
 
-# Bash Tips: Calendar & Date
-
 I just learned about this tiny utility within Bash. It's nothing special, but just loved how easy and how clean it was.
 
 Within a terminal window, executing the `cal` command will provide you with a calendar. The following is an example:

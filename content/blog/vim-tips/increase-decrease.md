@@ -1,11 +1,9 @@
 ---
-path: "/blog/vim-tips"
+path: "/blog/vim-tips/increase-decrease"
 date: "2019-12-01"
 title: "Vim Tips: Increase or Decrease a Number"
 description: "Quick commands for increasing or decreasing a number."
 ---
-
-# Increase or Decrease a number in Vim
 
 Found from this Vim resource: [Increase or Decrease Number](https://vim.fandom.com/wiki/Increasing_or_decreasing_numbers)
 

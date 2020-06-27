@@ -25,6 +25,7 @@
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-sass": "^2.1.24",
     "gatsby-plugin-sharp": "^2.3.4",
+    "gatsby-remark-interactive-gifs": "^1.0.3",
     "gatsby-source-filesystem": "^2.1.39",
     "gatsby-source-wordpress": "^3.1.50",
     "gatsby-transformer-remark": "^2.6.38",

@@ -43,6 +43,7 @@
   border-left: 3px solid var(--blue);
   padding: 0.0125rem 1rem;
   margin: 0.5rem;
+  font-size: 1rem;
   font-style: italic;
 }
 
