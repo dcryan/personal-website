@@ -5,7 +5,7 @@ title: "Vim Tips: What you didn't know about the J command"
 description: "The J command can do that? Awesome trick to join lines using the J command."
 ---
 
-# Joining Lines with `J`
+# Vim Tips: Joining Lines with **J**
 
 Take this example:
 
