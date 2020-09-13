@@ -68,4 +68,12 @@ Let's not forget that we also have `<C-x>`.
 
 ![](../../../gifs/increment-ascending/decrement-monkey.gif)
 
+<br />
+
+ALSO, this command can be repeatable with `.`
+
+![](../../../gifs/increment-ascending/repeatable.gif)
+
+<br />
+
 Now go out, and show off your new party trick. 💪
