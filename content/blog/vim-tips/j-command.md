@@ -7,6 +7,8 @@ description: "The J command can do that? Awesome trick to join lines using the J
 
 # Vim Tips: Joining Lines with **J**
 
+Check out the [YouTube Video here](https://www.youtube.com/watch?v=s7bn7omnSU4&t=9s&ab_channel=DanielRyan).
+
 Take this example:
 
 ```js
