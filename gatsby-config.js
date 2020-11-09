@@ -30,10 +30,12 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'none',
-        head: true,
+        trackingIds: [process.env.GOOGLE_ANALYTICS_TRACKING_ID],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
   ],
