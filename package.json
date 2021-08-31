@@ -28,7 +28,7 @@
     "gatsby-plugin-sharp": "^2.3.4",
     "gatsby-remark-interactive-gifs": "^1.0.3",
     "gatsby-source-filesystem": "^2.1.39",
-    "gatsby-source-wordpress": "^3.1.50",
+    "gatsby-source-wordpress": "^4.0.8",
     "gatsby-transformer-remark": "^2.6.38",
     "gatsby-transformer-sharp": "^2.3.6",
     "prop-types": "^15.7.2",
