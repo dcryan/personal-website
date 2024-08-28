@@ -91,3 +91,8 @@ Be aware of the type of client you're committing to
 
 Too many times I've seen clients super energized about the project, that ghost
 their freelancer.
+
+
+Bonus) What else have you tried?
+
+Have they tried other solutions, and why did they fail?
