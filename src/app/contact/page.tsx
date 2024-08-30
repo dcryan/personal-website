@@ -1,8 +1,25 @@
+"use client";
+
 import React from "react";
 import HeaderBar from "@/components/HeaderBar";
 import Header from "@/components/Header";
+import { useRouter } from "next/navigation";
 
 export default function Contact() {
+  const router = useRouter();
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    await fetch("/__forms.html", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    });
+
+    router.push("/success");
+  };
+
   return (
     <main className="h-screen bg-gray-800">
       <HeaderBar color="red" />
@@ -13,15 +30,13 @@ export default function Contact() {
           className="p-6 my-12 rounded-md border border-gray-700"
           method="post"
           action="/success"
+          onSubmit={handleFormSubmit}
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
           name="contact"
         >
           <h3 className="text-2xl font-bold text-rose-400 mb-4">
             Hello world! 👋
           </h3>
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="contact" />
 
           <label htmlFor="name" className="text-xs text-gray-400 ml-2">
             name*
