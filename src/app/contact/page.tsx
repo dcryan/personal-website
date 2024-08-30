@@ -8,13 +8,18 @@ import { useRouter } from "next/navigation";
 export default function Contact() {
   const router = useRouter();
 
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.target as HTMLFormElement);
+
+    const formDataEntries = Array.from(formData.entries()).filter(
+      ([_, value]) => typeof value === "string",
+    ) as [string, string][];
+
     await fetch("/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: new URLSearchParams(formDataEntries).toString(),
     });
 
     router.push("/success");
