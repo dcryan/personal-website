@@ -20,8 +20,8 @@ export default function Header() {
           {"<danielryan.xyz />"}
         </Link>
       </div>
-      <div className="flex justify-between items-center py-2 px-4 text-xl">
-        <div>
+      <div className="flex justify-between items-center flex-wrap gap-4 py-2 px-4">
+        <div className="flex-auto text-xl">
           <Link href="projects" className="text-yellow-400 hover:underline">
             projects
           </Link>
@@ -38,7 +38,7 @@ export default function Header() {
             contact
           </Link>
         </div>
-        <div className="flex justify-between text-gray-500 mt-1 gap-4">
+        <div className="flex flex-1 justify-between text-2xl text-gray-500 mt-1 gap-4">
           <a
             target="_blank"
             rel="noopener noreferrer"
