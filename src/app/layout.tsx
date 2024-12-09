@@ -20,7 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <GoogleTagManager gtmId="G-QMT4TLZLJ1" />
+      <body className={`${ibmPlexMono.className}`}>{children}</body>
     </html>
   );
 }
