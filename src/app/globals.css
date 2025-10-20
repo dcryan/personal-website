@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* iOS Safari viewport fixes */
+html {
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent pull-to-refresh and bounce scrolling on iOS */
+html, body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* :root { */
 /*   --white: #fff;         /* bg-white or text-white */
 /*   --background: #282C34; /* bg-gray-800 */
