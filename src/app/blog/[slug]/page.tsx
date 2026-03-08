@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import HeaderBar from "@/components/HeaderBar";
@@ -13,14 +14,15 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   if (!post) {
     return { title: "Post Not Found" };
   }
   return {
-    title: `${post.title} | Daniel Ryan`,
+    title: post.title,
     description: post.description,
   };
 }
@@ -28,22 +30,29 @@ export async function generateMetadata({
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();
   }
 
   return (
-    <main className="min-h-screen bg-gray-800">
+    <main className="min-h-screen">
       <HeaderBar color="blue" />
       <Header />
       <article className="max-w-3xl mx-auto px-6 py-12">
+        <Link
+          href="/blog"
+          className="text-onedark-blue hover:text-white transition-colors text-sm mb-6 inline-block"
+        >
+          &larr; Back to blog
+        </Link>
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-white">{post.title}</h1>
-          <time className="text-sm text-gray-500 mt-2 block">
+          <time className="text-sm text-onedark-gutter mt-2 block">
             {new Date(post.date).toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",

@@ -3,6 +3,41 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { createHighlighter, type Highlighter } from "shiki";
+
+let highlighterPromise: Promise<Highlighter> | null = null;
+
+function getHighlighter() {
+  if (!highlighterPromise) {
+    highlighterPromise = createHighlighter({
+      themes: ["one-dark-pro"],
+      langs: [
+        "javascript",
+        "typescript",
+        "bash",
+        "json",
+        "css",
+        "html",
+        "jsx",
+        "tsx",
+        "python",
+        "swift",
+        "sql",
+        "text",
+      ],
+    });
+  }
+  return highlighterPromise;
+}
+
+function decodeHtmlEntities(str: string): string {
+  return str
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+}
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
@@ -65,7 +100,40 @@ export async function getPostBySlug(
   }
 
   const processedContent = await remark().use(html).process(post.content);
-  const htmlContent = processedContent.toString();
+  let htmlContent = processedContent.toString();
+
+  const highlighter = await getHighlighter();
+
+  // Replace code blocks with language class
+  htmlContent = htmlContent.replace(
+    /<pre><code class="language-(\w+)">([\s\S]*?)<\/code><\/pre>/g,
+    (_, lang, code) => {
+      const decoded = decodeHtmlEntities(code.trim());
+      try {
+        return highlighter.codeToHtml(decoded, {
+          lang,
+          theme: "one-dark-pro",
+        });
+      } catch {
+        return highlighter.codeToHtml(decoded, {
+          lang: "text",
+          theme: "one-dark-pro",
+        });
+      }
+    }
+  );
+
+  // Replace code blocks without language class
+  htmlContent = htmlContent.replace(
+    /<pre><code>([\s\S]*?)<\/code><\/pre>/g,
+    (_, code) => {
+      const decoded = decodeHtmlEntities(code.trim());
+      return highlighter.codeToHtml(decoded, {
+        lang: "text",
+        theme: "one-dark-pro",
+      });
+    }
+  );
 
   return {
     ...post,
