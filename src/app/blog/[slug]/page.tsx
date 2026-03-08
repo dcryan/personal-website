@@ -55,7 +55,7 @@ export default async function BlogPost({
           &larr; back to blog
         </Link>
         <header className="mb-8">
-          <h1 className="text-3xl font-bold text-white">{post.title}</h1>
+          <h1 className="text-2xl font-bold text-white">{post.title}</h1>
           <time className="text-sm text-onedark-gutter mt-2 block">
             {new Date(post.date).toLocaleDateString("en-US", {
               year: "numeric",
