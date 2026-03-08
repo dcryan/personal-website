@@ -13,14 +13,14 @@ output "ses_domain_identity_arn" {
   value       = module.ses.ses_domain_identity_arn
 }
 
-output "ses_verification_token" {
-  description = "TXT record value to add to DNS for SES domain verification"
-  value       = module.ses.ses_verification_token
+output "route53_zone_id" {
+  description = "Route 53 hosted zone ID for the domain"
+  value       = module.route53.zone_id
 }
 
-output "ses_dkim_tokens" {
-  description = "DKIM CNAME record tokens to add to DNS for email authentication"
-  value       = module.ses.ses_dkim_tokens
+output "route53_name_servers" {
+  description = "Name servers to set at your domain registrar"
+  value       = module.route53.name_servers
 }
 
 output "account_id" {

@@ -28,3 +28,11 @@ module "api_gateway" {
   lambda_invoke_arn   = module.lambda.invoke_arn
   allowed_origins     = var.allowed_origins
 }
+
+module "route53" {
+  source = "./modules/route53"
+
+  domain                 = var.domain
+  ses_verification_token = module.ses.ses_verification_token
+  ses_dkim_tokens        = module.ses.ses_dkim_tokens
+}
