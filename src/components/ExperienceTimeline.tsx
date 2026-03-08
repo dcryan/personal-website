@@ -1,12 +1,10 @@
-"use client";
-
-import { useState } from "react";
 import type {
   WorkExperience,
   SideProject,
   Volunteer,
   Education,
 } from "@/data/portfolio";
+import CollapsibleDetails from "@/components/CollapsibleDetails";
 
 type Props = {
   experience: WorkExperience[];
@@ -88,12 +86,6 @@ export default function ExperienceTimeline({
   volunteer,
   education,
 }: Props) {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
-
-  const toggle = (key: string) => {
-    setExpanded((prev) => ({ ...prev, [key]: !prev[key] }));
-  };
-
   return (
     <div className="max-w-3xl mx-auto px-6 pb-16">
       {/* Experience */}
@@ -101,11 +93,9 @@ export default function ExperienceTimeline({
         <SectionHeader command="cat experience.log" />
         {experience.map((job, idx) => {
           const isLast = idx === experience.length - 1;
-          const key = `exp-${idx}`;
-          const isExpanded = expanded[key] ?? false;
 
           return (
-            <TreeGutter key={key} isLast={isLast}>
+            <TreeGutter key={`exp-${idx}`} isLast={isLast}>
               <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
                 <div className="flex items-start justify-between gap-3 flex-wrap">
                   <div>
@@ -131,29 +121,7 @@ export default function ExperienceTimeline({
                   </p>
                 )}
                 {job.details.length > 0 && (
-                  <>
-                    <button
-                      onClick={() => toggle(key)}
-                      className="text-onedark-gutter hover:text-onedark-fg text-sm mt-2 transition-colors"
-                    >
-                      {isExpanded ? "▼ Hide details" : "▶ Show details"}
-                    </button>
-                    {isExpanded && (
-                      <ul className="mt-2 space-y-1">
-                        {job.details.map((detail, i) => (
-                          <li
-                            key={i}
-                            className="text-onedark-fg text-sm flex"
-                          >
-                            <span className="text-onedark-gutter mr-2 select-none shrink-0">
-                              {i === job.details.length - 1 ? "└" : "├"}
-                            </span>
-                            <span>{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </>
+                  <CollapsibleDetails details={job.details} />
                 )}
               </div>
             </TreeGutter>
