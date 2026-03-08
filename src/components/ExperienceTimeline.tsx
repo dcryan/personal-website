@@ -71,7 +71,7 @@ function CompanyName({ url, name }: { url?: string; name: string }) {
         rel="noopener noreferrer"
         className="text-onedark-yellow hover:underline"
       >
-        {name} <IoOpenOutline className="inline text-sm" />
+        {name} <IoOpenOutline className="inline-block text-sm align-middle" />
       </a>
     );
   }
