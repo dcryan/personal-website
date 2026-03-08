@@ -1,7 +1,7 @@
 ---
 path: "/blog/vim-tips/increment-ascending"
 date: "2020-09-12"
-title: "Vim Tips: Increment a list to be ascending"
+title: "Vim Tips: Increment a List to Be Ascending"
 description: "Quick commands for incrementing a list to be ascending."
 slug: "vim-increment-ascending"
 ---

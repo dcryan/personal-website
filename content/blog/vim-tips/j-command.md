@@ -1,7 +1,7 @@
 ---
 path: "/blog/vim-tips/j-command"
 date: "2020-06-27"
-title: "Vim Tips: What you didn't know about the J command"
+title: "Vim Tips: What You Didn't Know About the J Command"
 description: "The J command can do that? Awesome trick to join lines using the J command."
 slug: "vim-j-command"
 ---
