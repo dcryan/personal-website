@@ -52,7 +52,7 @@ function TreeGutter({
 }) {
   return (
     <div className="flex items-start">
-      <div className="shrink-0 w-6 text-onedark-gutter select-none text-lg leading-none mt-[0.35rem]">
+      <div className="shrink-0 w-6 text-onedark-gutter select-none text-lg leading-none mt-[1.1rem]">
         {isLast ? "└" : "├"}
       </div>
       <div className="flex-1">
