@@ -87,8 +87,22 @@ export default function ExperienceTimeline({
 }: Props) {
   return (
     <div className="max-w-3xl mx-auto px-6 pb-16">
+      {/* Section Jump Nav */}
+      <nav className="mt-12 mb-8" aria-label="Page sections">
+        <div className="mb-2">
+          <span className="text-onedark-gutter">daniel@barcelona:~$</span>{" "}
+          <span className="text-onedark-fg">ls ./</span>
+        </div>
+        <div className="flex flex-wrap gap-x-4 gap-y-1 ml-1">
+          <a href="#experience" className="text-onedark-yellow hover:underline">experience/</a>
+          <a href="#side-projects" className="text-onedark-yellow hover:underline">side-projects/</a>
+          <a href="#volunteer" className="text-onedark-yellow hover:underline">volunteer/</a>
+          <a href="#education" className="text-onedark-yellow hover:underline">education/</a>
+        </div>
+      </nav>
+
       {/* Experience */}
-      <section className="mt-12">
+      <section id="experience" className="scroll-mt-32">
         <SectionHeader command="cat experience.log" />
         {experience.map((job, idx) => {
           const isLast = idx === experience.length - 1;
@@ -129,7 +143,7 @@ export default function ExperienceTimeline({
       </section>
 
       {/* Side Projects */}
-      <section className="mt-12">
+      <section id="side-projects" className="mt-12 scroll-mt-32">
         <SectionHeader command="cat side-projects.log" />
         {sideProjects.map((project, idx) => {
           const isLast = idx === sideProjects.length - 1;
@@ -166,7 +180,7 @@ export default function ExperienceTimeline({
       </section>
 
       {/* Volunteer */}
-      <section className="mt-12">
+      <section id="volunteer" className="mt-12 scroll-mt-32">
         <SectionHeader command="cat volunteer.log" />
         {volunteer.map((vol, idx) => {
           const isLast = idx === volunteer.length - 1;
@@ -189,7 +203,7 @@ export default function ExperienceTimeline({
       </section>
 
       {/* Education */}
-      <section className="mt-12">
+      <section id="education" className="mt-12 scroll-mt-32">
         <SectionHeader command="cat education.log" />
         {education.map((edu, idx) => {
           const isLast = idx === education.length - 1;
