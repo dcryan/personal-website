@@ -45,8 +45,19 @@ This is a personal website built with Next.js 14 (App Router) and TypeScript. De
 - `Header` - Terminal prompt header with `<danielryan.xyz />` branding, `daniel@barcelona:~$` prompt, nav links, social icons
 - `ExperienceTimeline` - Client component with ASCII tree timeline and collapsible work experience details
 
+### Contact Form Backend (Terraform)
+
+- `terraform/` - Modular Terraform for AWS contact form backend
+  - `modules/ses/` - SES domain identity and DKIM verification
+  - `modules/lambda/` - Lambda function with IAM roles (least privilege)
+  - `modules/api-gateway/` - HTTP API v2 with CORS and Lambda integration
+  - `lambda/contact/index.mjs` - Node.js 20 Lambda handler (validates, sends email via SES)
+- Deploy: `cd terraform && terraform init && terraform plan -var-file=terraform.tfvars`
+- Requires: `terraform.tfvars` (copy from `terraform.tfvars.example`)
+- API endpoint output used by `/contact` page to POST form submissions
+
 ### Configuration
 
 - `amplify.yml` - AWS Amplify build spec (Node 20, HSTS headers, build cache)
-- `vercel.json` - Legacy config (www→non-www redirect configured in Amplify Console instead)
+- `vercel.json` - Legacy config (www->non-www redirect configured in Amplify Console instead)
 - `next.config.mjs` - Allows images from images.unsplash.com
