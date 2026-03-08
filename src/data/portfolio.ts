@@ -245,7 +245,7 @@ export const experience: WorkExperience[] = [
     company: "WhiteCloud Analytics (Relias)",
     role: "Frontend Software Engineer",
     type: "Full-time",
-    period: "Mar 2012 - Oct 2015",
+    period: "Mar 2013 - Oct 2015",
     location: "Boise, Idaho",
     technologies: [
       "AngularJS",
@@ -253,8 +253,9 @@ export const experience: WorkExperience[] = [
       "D3.js",
       "jQuery",
       "LESS",
-      "Java Spring",
-      "MySQL",
+      "JavaScript",
+      "CSS",
+      "Gulp",
     ],
     summary:
       "Collaborative team development using Angular and Spring to build data analysis applications for Health Systems.",
@@ -265,6 +266,22 @@ export const experience: WorkExperience[] = [
       "Spearheaded the migration from vanilla CSS to LESS and mentored a team of 10 engineers.",
       "Co-developed a Gulp build system running JS linting, Jasmine tests, and asset compilation.",
     ],
+  },
+  {
+    url: "https://whitecloud.com",
+    company: "WhiteCloud Analytics (Relias)",
+    role: "Full Stack Software Engineer",
+    type: "Full-time",
+    period: "Mar 2012 - Mar 2013",
+    location: "Boise, Idaho",
+    technologies: [
+      "JavaScript",
+      "Java Spring",
+      "jQuery",
+      "MySQL",
+    ],
+    summary: "",
+    details: [],
   },
   {
     url: "https://sap.com",
