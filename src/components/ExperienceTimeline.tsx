@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import type {
   WorkExperience,
   SideProject,
@@ -14,22 +17,18 @@ type Props = {
   education: Education[];
 };
 
-function SectionHeader({
-  command,
-}: {
-  command: string;
-}) {
-  return (
-    <div className="mb-4">
-      <span className="text-onedark-gutter">daniel@barcelona:~$</span>{" "}
-      <span className="text-onedark-fg">{command}</span>
-    </div>
-  );
-}
+const tabs = [
+  { key: "experience", label: "experience/", command: "cat experience.log" },
+  { key: "side-projects", label: "side-projects/", command: "cat side-projects.log" },
+  { key: "volunteer", label: "volunteer/", command: "cat volunteer.log" },
+  { key: "education", label: "education/", command: "cat education.log" },
+] as const;
+
+type TabKey = (typeof tabs)[number]["key"];
 
 function TechPill({ tech }: { tech: string }) {
   return (
-    <span className="inline-block text-xs border border-onedark-selection text-onedark-gutter rounded-full px-2 py-0.5">
+    <span className="inline-block text-xs border border-onedark-gutter/50 text-onedark-fg rounded-full px-2 py-0.5">
       {tech}
     </span>
   );
@@ -79,159 +78,176 @@ function CompanyName({ url, name }: { url?: string; name: string }) {
   return <span className="text-onedark-yellow">{name}</span>;
 }
 
+function ExperienceSection({ items }: { items: WorkExperience[] }) {
+  return (
+    <>
+      {items.map((job, idx) => (
+        <TreeGutter key={`exp-${idx}`} isLast={idx === items.length - 1}>
+          <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
+            <div className="flex items-start justify-between gap-3 flex-wrap">
+              <div>
+                <span className="text-lg font-semibold">
+                  <CompanyName url={job.url} name={job.company} />
+                </span>
+                <span className="text-white"> · {job.role}</span>
+              </div>
+              <TypeBadge type={job.type} />
+            </div>
+            <p className="text-sm text-onedark-fg mt-1">
+              {job.period}
+              {job.location && <> · {job.location}</>}
+            </p>
+            <div className="flex flex-wrap gap-2 mt-3">
+              {job.technologies.map((tech) => (
+                <TechPill key={tech} tech={tech} />
+              ))}
+            </div>
+            {job.summary && (
+              <p className="text-onedark-fg text-sm mt-3">
+                {job.summary}
+              </p>
+            )}
+            {job.details.length > 0 && (
+              <CollapsibleDetails details={job.details} />
+            )}
+          </div>
+        </TreeGutter>
+      ))}
+    </>
+  );
+}
+
+function SideProjectsSection({ items }: { items: SideProject[] }) {
+  return (
+    <>
+      {items.map((project, idx) => (
+        <TreeGutter key={`proj-${idx}`} isLast={idx === items.length - 1}>
+          <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
+            <div className="flex items-start justify-between gap-3 flex-wrap">
+              <div>
+                <span className="text-lg font-semibold">
+                  <CompanyName url={project.url} name={project.title} />
+                </span>
+                {project.softwareType && (
+                  <span className="text-onedark-fg text-sm ml-2">
+                    {project.softwareType}
+                  </span>
+                )}
+              </div>
+            </div>
+            {project.technologies && project.technologies.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-2">
+                {project.technologies.map((tech) => (
+                  <TechPill key={tech} tech={tech} />
+                ))}
+              </div>
+            )}
+            <p className="text-onedark-fg text-sm mt-2">
+              {project.details}
+            </p>
+          </div>
+        </TreeGutter>
+      ))}
+    </>
+  );
+}
+
+function VolunteerSection({ items }: { items: Volunteer[] }) {
+  return (
+    <>
+      {items.map((vol, idx) => (
+        <TreeGutter key={`vol-${idx}`} isLast={idx === items.length - 1}>
+          <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
+            <span className="text-lg font-semibold text-white">
+              {vol.organization}
+            </span>
+            <span className="text-onedark-fg"> · {vol.role}</span>
+            <p className="text-sm text-onedark-fg mt-1">
+              {vol.period}
+            </p>
+            <p className="text-onedark-fg text-sm mt-2">{vol.details}</p>
+          </div>
+        </TreeGutter>
+      ))}
+    </>
+  );
+}
+
+function EducationSection({ items }: { items: Education[] }) {
+  return (
+    <>
+      {items.map((edu, idx) => (
+        <TreeGutter key={`edu-${idx}`} isLast={idx === items.length - 1}>
+          <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
+            <span className="text-lg font-semibold">
+              <CompanyName url={edu.url} name={edu.title} />
+            </span>
+            <p className="text-sm text-onedark-fg mt-1">
+              {edu.degree} · {edu.period}
+            </p>
+            {edu.honors && (
+              <p className="text-onedark-fg text-sm mt-2">
+                {edu.honors}
+              </p>
+            )}
+            {edu.courses && (
+              <p className="text-onedark-fg text-sm mt-2">
+                <span className="text-onedark-gutter">Courses:</span>{" "}
+                {edu.courses}
+              </p>
+            )}
+          </div>
+        </TreeGutter>
+      ))}
+    </>
+  );
+}
+
 export default function ExperienceTimeline({
   experience,
   sideProjects,
   volunteer,
   education,
 }: Props) {
+  const [activeTab, setActiveTab] = useState<TabKey>("experience");
+  const activeCommand = tabs.find((t) => t.key === activeTab)!.command;
+
   return (
     <div className="max-w-3xl mx-auto px-6 pb-16">
-      {/* Section Jump Nav */}
+      {/* Tab Nav */}
       <nav className="mt-12 mb-8" aria-label="Page sections">
         <div className="mb-2">
           <span className="text-onedark-gutter">daniel@barcelona:~$</span>{" "}
           <span className="text-onedark-fg">ls ./</span>
         </div>
         <div className="flex flex-wrap gap-x-4 gap-y-1 ml-1">
-          <a href="#experience" className="text-onedark-yellow hover:underline">experience/</a>
-          <a href="#side-projects" className="text-onedark-yellow hover:underline">side-projects/</a>
-          <a href="#volunteer" className="text-onedark-yellow hover:underline">volunteer/</a>
-          <a href="#education" className="text-onedark-yellow hover:underline">education/</a>
+          {tabs.map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`transition-colors ${
+                activeTab === tab.key
+                  ? "text-onedark-yellow underline"
+                  : "text-onedark-gutter hover:text-onedark-yellow"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
       </nav>
 
-      {/* Experience */}
-      <section id="experience" className="scroll-mt-32">
-        <SectionHeader command="cat experience.log" />
-        {experience.map((job, idx) => {
-          const isLast = idx === experience.length - 1;
+      {/* Active Section */}
+      <section>
+        <div className="mb-4">
+          <span className="text-onedark-gutter">daniel@barcelona:~$</span>{" "}
+          <span className="text-onedark-fg">{activeCommand}</span>
+        </div>
 
-          return (
-            <TreeGutter key={`exp-${idx}`} isLast={isLast}>
-              <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
-                <div className="flex items-start justify-between gap-3 flex-wrap">
-                  <div>
-                    <span className="text-lg font-semibold">
-                      <CompanyName url={job.url} name={job.company} />
-                    </span>
-                    <span className="text-white"> · {job.role}</span>
-                  </div>
-                  <TypeBadge type={job.type} />
-                </div>
-                <p className="text-sm text-onedark-gutter mt-1">
-                  {job.period}
-                  {job.location && <> · {job.location}</>}
-                </p>
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {job.technologies.map((tech) => (
-                    <TechPill key={tech} tech={tech} />
-                  ))}
-                </div>
-                {job.summary && (
-                  <p className="text-onedark-gutter text-sm mt-3">
-                    {job.summary}
-                  </p>
-                )}
-                {job.details.length > 0 && (
-                  <CollapsibleDetails details={job.details} />
-                )}
-              </div>
-            </TreeGutter>
-          );
-        })}
-      </section>
-
-      {/* Side Projects */}
-      <section id="side-projects" className="mt-12 scroll-mt-32">
-        <SectionHeader command="cat side-projects.log" />
-        {sideProjects.map((project, idx) => {
-          const isLast = idx === sideProjects.length - 1;
-
-          return (
-            <TreeGutter key={`proj-${idx}`} isLast={isLast}>
-              <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
-                <div className="flex items-start justify-between gap-3 flex-wrap">
-                  <div>
-                    <span className="text-lg font-semibold">
-                      <CompanyName url={project.url} name={project.title} />
-                    </span>
-                    {project.softwareType && (
-                      <span className="text-onedark-gutter text-sm ml-2">
-                        {project.softwareType}
-                      </span>
-                    )}
-                  </div>
-                </div>
-                {project.technologies && project.technologies.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {project.technologies.map((tech) => (
-                      <TechPill key={tech} tech={tech} />
-                    ))}
-                  </div>
-                )}
-                <p className="text-onedark-fg text-sm mt-2">
-                  {project.details}
-                </p>
-              </div>
-            </TreeGutter>
-          );
-        })}
-      </section>
-
-      {/* Volunteer */}
-      <section id="volunteer" className="mt-12 scroll-mt-32">
-        <SectionHeader command="cat volunteer.log" />
-        {volunteer.map((vol, idx) => {
-          const isLast = idx === volunteer.length - 1;
-
-          return (
-            <TreeGutter key={`vol-${idx}`} isLast={isLast}>
-              <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
-                <span className="text-lg font-semibold text-white">
-                  {vol.organization}
-                </span>
-                <span className="text-onedark-fg"> · {vol.role}</span>
-                <p className="text-sm text-onedark-gutter mt-1">
-                  {vol.period}
-                </p>
-                <p className="text-onedark-fg text-sm mt-2">{vol.details}</p>
-              </div>
-            </TreeGutter>
-          );
-        })}
-      </section>
-
-      {/* Education */}
-      <section id="education" className="mt-12 scroll-mt-32">
-        <SectionHeader command="cat education.log" />
-        {education.map((edu, idx) => {
-          const isLast = idx === education.length - 1;
-
-          return (
-            <TreeGutter key={`edu-${idx}`} isLast={isLast}>
-              <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
-                <span className="text-lg font-semibold">
-                  <CompanyName url={edu.url} name={edu.title} />
-                </span>
-                <p className="text-sm text-onedark-fg mt-1">
-                  {edu.degree} · {edu.period}
-                </p>
-                {edu.honors && (
-                  <p className="text-onedark-gutter text-sm mt-2">
-                    {edu.honors}
-                  </p>
-                )}
-                {edu.courses && (
-                  <p className="text-onedark-gutter text-sm mt-2">
-                    <span className="text-onedark-selection">Courses:</span>{" "}
-                    {edu.courses}
-                  </p>
-                )}
-              </div>
-            </TreeGutter>
-          );
-        })}
+        {activeTab === "experience" && <ExperienceSection items={experience} />}
+        {activeTab === "side-projects" && <SideProjectsSection items={sideProjects} />}
+        {activeTab === "volunteer" && <VolunteerSection items={volunteer} />}
+        {activeTab === "education" && <EducationSection items={education} />}
       </section>
     </div>
   );
