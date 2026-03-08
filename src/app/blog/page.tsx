@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Header from "@/components/Header";
-import HeaderBar from "@/components/HeaderBar";
 import { getAllPosts } from "@/lib/blog";
 
 export default function Blog() {
@@ -8,8 +7,7 @@ export default function Blog() {
 
   return (
     <main className="min-h-screen">
-      <HeaderBar color="blue" />
-      <Header />
+      <Header barColor="blue" />
       <section className="max-w-3xl mx-auto px-6 pb-16">
         <div className="mt-12 mb-6">
           <span className="text-onedark-gutter">daniel@barcelona:~$</span>{" "}

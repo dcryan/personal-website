@@ -7,9 +7,23 @@ import {
   IoLogoLinkedin,
 } from "react-icons/io5";
 
-export default function Header() {
+type HeaderProps = {
+  barColor?: "green" | "yellow" | "blue" | "red";
+};
+
+const barColorClasses = {
+  green: "bg-onedark-green shadow-onedark-green",
+  yellow: "bg-onedark-yellow shadow-onedark-yellow",
+  blue: "bg-onedark-blue shadow-onedark-blue",
+  red: "bg-onedark-red shadow-onedark-red",
+};
+
+export default function Header({ barColor }: HeaderProps) {
   return (
-    <header>
+    <header className="sticky top-0 z-50 bg-onedark-bg">
+      {barColor && (
+        <div className={`w-full h-1 shadow-md ${barColorClasses[barColor]}`} />
+      )}
       <div className="mb-1 py-2 px-4">
         <Link href="/" className="text-onedark-green text-2xl">
           {"<danielryan.xyz />"}

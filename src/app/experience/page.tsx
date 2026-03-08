@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import HeaderBar from "@/components/HeaderBar";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import {
   experience,
@@ -11,8 +10,7 @@ import {
 export default function Experience() {
   return (
     <main className="min-h-screen">
-      <HeaderBar color="yellow" />
-      <Header />
+      <Header barColor="yellow" />
       <h1 className="sr-only">Experience</h1>
       <ExperienceTimeline
         experience={experience}

@@ -1,12 +1,10 @@
 import Link from "next/link";
-import HeaderBar from "@/components/HeaderBar";
 import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <HeaderBar color="green" />
-      <Header />
+      <Header barColor="green" />
 
       <div className="mt-16 px-6 max-w-2xl mx-auto space-y-8">
         {/* whoami */}

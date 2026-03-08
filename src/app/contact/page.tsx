@@ -2,7 +2,6 @@
 
 import { useRef, useState, useEffect, useCallback, type SyntheticEvent } from "react";
 import Script from "next/script";
-import HeaderBar from "@/components/HeaderBar";
 import Header from "@/components/Header";
 import { useRouter } from "next/navigation";
 
@@ -83,8 +82,7 @@ export default function Contact() {
 
   return (
     <main className="min-h-screen">
-      <HeaderBar color="red" />
-      <Header />
+      <Header barColor="red" />
 
       <div className="max-w-md w-full mx-auto px-6 pb-16">
         <div className="mt-12 mb-6">

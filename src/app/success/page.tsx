@@ -1,11 +1,9 @@
-import HeaderBar from "@/components/HeaderBar";
 import Header from "@/components/Header";
 
 export default function Success() {
   return (
     <main className="h-screen min-h-screen">
-      <HeaderBar color="red" />
-      <Header />
+      <Header barColor="red" />
 
       <div className="flex flex-col mt-32 px-4 max-w-md mx-auto">
         <p className="mb-4">

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
-import HeaderBar from "@/components/HeaderBar";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 
 export function generateStaticParams() {
@@ -41,8 +40,7 @@ export default async function BlogPost({
 
   return (
     <main className="min-h-screen">
-      <HeaderBar color="blue" />
-      <Header />
+      <Header barColor="blue" />
       <article className="max-w-3xl mx-auto px-6 pb-16">
         <div className="mt-12 mb-6">
           <span className="text-onedark-gutter">daniel@barcelona:~$</span>{" "}
