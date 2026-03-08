@@ -51,14 +51,17 @@ function TreeGutter({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex">
+    <div className="relative flex">
       <div className="shrink-0 w-6 text-onedark-gutter select-none">
         {isLast ? "└" : "├"}
       </div>
-      <div className="flex-1 relative">
-        {!isLast && (
-          <div className="absolute top-0 bottom-0 ml-[-1.07rem] border-l border-onedark-gutter" />
-        )}
+      {!isLast && (
+        <div
+          className="absolute border-l border-onedark-gutter"
+          style={{ left: "0.5ch", top: "1.2em", bottom: "-1.5rem" }}
+        />
+      )}
+      <div className="flex-1">
         <div className="ml-2 pb-6">{children}</div>
       </div>
     </div>
