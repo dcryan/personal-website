@@ -10,33 +10,29 @@ export default function Blog() {
     <main className="min-h-screen">
       <HeaderBar color="blue" />
       <Header />
-      <section className="max-w-3xl mx-auto px-6 py-12">
-        <p className="text-onedark-green mb-4 text-sm">
-          <span className="text-onedark-green">daniel</span>
-          <span className="text-onedark-fg">@</span>
-          <span className="text-onedark-blue">barcelona</span>
-          <span className="text-onedark-fg">:~$ </span>
+      <section className="max-w-3xl mx-auto px-6 pb-16">
+        <div className="mt-12 mb-6">
+          <span className="text-onedark-gutter">daniel@barcelona:~$</span>{" "}
           <span className="text-onedark-fg">ls blog/</span>
-        </p>
-        <h1 className="text-3xl font-bold text-white mb-8">Blog</h1>
-        <div className="space-y-0">
+        </div>
+        <div>
           {posts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="block border-b border-onedark-selection py-6 hover:bg-onedark-currentline transition-colors group"
+              className="block border-b border-onedark-selection px-3 py-5 hover:bg-onedark-currentline rounded-lg transition-colors group"
             >
-              <h2 className="text-xl font-bold text-white group-hover:text-onedark-blue transition-colors">
+              <h2 className="text-lg font-bold text-white group-hover:text-onedark-blue transition-colors">
                 {post.title}
               </h2>
-              <time className="text-sm text-onedark-gutter mt-1 block">
+              <time className="text-xs text-onedark-gutter mt-1 block">
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
                 })}
               </time>
-              <p className="text-onedark-fg mt-2">{post.description}</p>
+              <p className="text-onedark-fg text-sm mt-2">{post.description}</p>
             </Link>
           ))}
         </div>

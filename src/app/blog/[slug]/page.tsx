@@ -43,12 +43,16 @@ export default async function BlogPost({
     <main className="min-h-screen">
       <HeaderBar color="blue" />
       <Header />
-      <article className="max-w-3xl mx-auto px-6 py-12">
+      <article className="max-w-3xl mx-auto px-6 pb-16">
+        <div className="mt-12 mb-6">
+          <span className="text-onedark-gutter">daniel@barcelona:~$</span>{" "}
+          <span className="text-onedark-fg">cat blog/{slug}.md</span>
+        </div>
         <Link
           href="/blog"
           className="text-onedark-blue hover:text-white transition-colors text-sm mb-6 inline-block"
         >
-          &larr; Back to blog
+          &larr; back to blog
         </Link>
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-white">{post.title}</h1>

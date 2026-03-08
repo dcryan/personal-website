@@ -26,17 +26,17 @@ export default function Contact() {
   };
 
   return (
-    <main className="h-screen min-h-screen">
+    <main className="min-h-screen">
       <HeaderBar color="red" />
       <Header />
 
-      <div className="max-w-md w-full mx-auto">
-        <p className="px-6 mt-8 mb-2">
-          <span className="text-onedark-green">$ </span>
+      <div className="max-w-md w-full mx-auto px-6 pb-16">
+        <div className="mt-12 mb-6">
+          <span className="text-onedark-gutter">daniel@barcelona:~$</span>{" "}
           <span className="text-onedark-fg">./contact.sh</span>
-        </p>
+        </div>
         <form
-          className="p-6 my-4 rounded-md border border-onedark-selection"
+          className="p-6 rounded-lg border border-onedark-selection hover:bg-onedark-currentline/30 transition-colors"
           method="post"
           action="/success"
           onSubmit={handleFormSubmit}
@@ -47,7 +47,7 @@ export default function Contact() {
             Hello world!
           </h1>
 
-          <label className="text-xs text-onedark-gutter ml-2">
+          <label className="block text-xs text-onedark-gutter ml-1 mb-2">
             name*
             <input
               placeholder="Your name"
@@ -55,11 +55,11 @@ export default function Contact() {
               id="name"
               type="text"
               required
-              className="w-full mt-0.5 mb-1 p-2 bg-transparent box-border border border-onedark-selection rounded-md text-sm text-onedark-fg focus:border-onedark-red focus:outline-none"
+              className="w-full mt-1 p-2 bg-transparent border border-onedark-selection rounded-md text-sm text-onedark-fg placeholder:text-onedark-selection focus:border-onedark-red focus:outline-none transition-colors"
             />
           </label>
 
-          <label className="text-xs text-onedark-gutter ml-2">
+          <label className="block text-xs text-onedark-gutter ml-1 mb-2">
             email*
             <input
               placeholder="Your email address"
@@ -67,29 +67,30 @@ export default function Contact() {
               id="email"
               type="email"
               required
-              className="w-full mt-0.5 mb-1 p-2 bg-transparent box-border border border-onedark-selection rounded-md text-sm text-onedark-fg focus:border-onedark-red focus:outline-none"
+              className="w-full mt-1 p-2 bg-transparent border border-onedark-selection rounded-md text-sm text-onedark-fg placeholder:text-onedark-selection focus:border-onedark-red focus:outline-none transition-colors"
             />
           </label>
 
-          <label className="text-xs text-onedark-gutter ml-2">
+          <label className="block text-xs text-onedark-gutter ml-1 mb-2">
             phone number
             <input
               placeholder="Your phone number"
               type="tel"
               name="phone-number"
               id="phone-number"
-              className="w-full mt-0.5 mb-1 p-2 bg-transparent box-border border border-onedark-selection rounded-md text-sm text-onedark-fg focus:border-onedark-red focus:outline-none"
+              className="w-full mt-1 p-2 bg-transparent border border-onedark-selection rounded-md text-sm text-onedark-fg placeholder:text-onedark-selection focus:border-onedark-red focus:outline-none transition-colors"
             />
           </label>
 
-          <label className="text-xs text-onedark-gutter ml-2">
+          <label className="block text-xs text-onedark-gutter ml-1 mb-2">
             message*
             <textarea
               placeholder="Type your message here..."
               name="message"
               id="message"
               required
-              className="w-full mt-0.5 mb-1 p-2 bg-transparent box-border border border-onedark-selection rounded-md text-sm text-onedark-fg focus:border-onedark-red focus:outline-none"
+              rows={4}
+              className="w-full mt-1 p-2 bg-transparent border border-onedark-selection rounded-md text-sm text-onedark-fg placeholder:text-onedark-selection focus:border-onedark-red focus:outline-none transition-colors resize-y"
             />
           </label>
 
@@ -98,7 +99,7 @@ export default function Contact() {
             type="submit"
             id="contact-submit"
             data-submit="...Sending"
-            className="w-full mt-4 text-onedark-red p-2 rounded-md border border-onedark-red hover:bg-onedark-currentline transition-colors"
+            className="w-full mt-4 text-onedark-red p-2 rounded-md border border-onedark-red hover:bg-onedark-red/20 transition-colors"
           >
             submit
           </button>
