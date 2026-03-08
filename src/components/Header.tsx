@@ -1,5 +1,3 @@
-import React from "react";
-
 import Link from "next/link";
 
 import {
@@ -12,7 +10,7 @@ import {
 
 export default function Header() {
   return (
-    <div>
+    <header>
       <div className="mb-1 py-2 px-4">
         <Link href="/" className="text-onedark-green text-2xl">
           {"<danielryan.xyz />"}
@@ -25,7 +23,7 @@ export default function Header() {
         <span className="text-onedark-fg">:~$ </span>
         <span className="terminal-cursor">_</span>
       </div>
-      <div className="flex justify-between items-center flex-wrap gap-4 py-2 px-4">
+      <nav aria-label="Main navigation" className="flex justify-between items-center flex-wrap gap-4 py-2 px-4">
         <div className="flex-auto text-xl">
           <Link
             href="/experience"
@@ -66,6 +64,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             href="https://linkedin.com/in/dcryan"
+            aria-label="LinkedIn profile (opens in new tab)"
             className="hover:text-white inline-flex items-center gap-0.5"
           >
             <IoLogoLinkedin />
@@ -75,6 +74,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.instagram.com/dcryan22/"
+            aria-label="Instagram profile (opens in new tab)"
             className="hover:text-white inline-flex items-center gap-0.5"
           >
             <IoLogoInstagram />
@@ -84,6 +84,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/dcryan"
+            aria-label="GitHub profile (opens in new tab)"
             className="hover:text-white inline-flex items-center gap-0.5"
           >
             <IoLogoGithub />
@@ -93,14 +94,15 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             href="https://docs.google.com/document/d/1fvPQO4fVGjo1OBmwrrR7e7kwJpeliLkxMNuVwpDHzpc/edit?usp=sharing"
+            aria-label="Resume (opens in new tab)"
             className="hover:text-white inline-flex items-center gap-0.5"
           >
             <IoDocumentTextOutline />
             <IoOpenOutline className="text-xs" />
           </a>
         </div>
-      </div>
+      </nav>
       <div className="w-full h-px my-1 bg-onedark-selection"></div>
-    </div>
+    </header>
   );
 }

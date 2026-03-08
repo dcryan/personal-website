@@ -17,12 +17,12 @@ export default function Home() {
               whoami
             </span>
           </div>
-          <p
-            className="text-white text-lg mt-1 animate-fade-in"
+          <h1
+            className="text-white text-lg mt-1 animate-fade-in font-normal"
             style={{ animationDelay: "0.6s" }}
           >
             Daniel Ryan
-          </p>
+          </h1>
         </div>
 
         {/* location */}
@@ -47,7 +47,7 @@ export default function Home() {
         </div>
 
         {/* ls ~/ navigation */}
-        <div>
+        <nav aria-label="Site sections">
           <div className="flex items-center gap-2">
             <span className="text-onedark-green font-bold">$</span>
             <span className="text-onedark-fg">ls ~/</span>
@@ -75,7 +75,7 @@ export default function Home() {
               <span className="text-onedark-red">contact/</span>
             </Link>
           </div>
-        </div>
+        </nav>
       </div>
     </main>
   );

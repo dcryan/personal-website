@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Daniel | Contact Page",
-  description: "Come say hello :)",
+  title: "Daniel | Message Sent",
+  description: "Your message has been sent successfully",
 };
 
 export default function RootLayout({
