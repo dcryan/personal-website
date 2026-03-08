@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
+import Script from "next/script";
 import "./globals.css";
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -47,7 +48,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleTagManager gtmId="G-QMT4TLZLJ1" />
-      <body className={`${ibmPlexMono.className} bg-onedark-bg text-onedark-fg`}>{children}</body>
+      <body className={`${ibmPlexMono.className} bg-onedark-bg text-onedark-fg`}>
+        {children}
+        <Script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "1ebae342835246b3a859d411d47a868e"}'
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }
