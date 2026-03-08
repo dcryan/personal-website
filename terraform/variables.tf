@@ -45,3 +45,9 @@ variable "amplify_service_role_arn" {
   description = "IAM service role ARN for Amplify (created via console)"
   type        = string
 }
+
+variable "turnstile_secret_key" {
+  description = "Cloudflare Turnstile secret key for bot verification"
+  type        = string
+  sensitive   = true
+}

@@ -27,3 +27,9 @@ variable "aws_region" {
   description = "AWS region where SES is configured"
   type        = string
 }
+
+variable "turnstile_secret_key" {
+  description = "Cloudflare Turnstile secret key for bot verification"
+  type        = string
+  sensitive   = true
+}

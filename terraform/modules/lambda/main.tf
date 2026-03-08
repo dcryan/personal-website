@@ -77,9 +77,10 @@ resource "aws_lambda_function" "contact" {
 
   environment {
     variables = {
-      RECIPIENT_EMAIL = var.recipient_email
-      SENDER_EMAIL    = var.sender_email
-      AWS_SES_REGION  = var.aws_region
+      RECIPIENT_EMAIL    = var.recipient_email
+      SENDER_EMAIL       = var.sender_email
+      AWS_SES_REGION     = var.aws_region
+      TURNSTILE_SECRET_KEY = var.turnstile_secret_key
     }
   }
 }

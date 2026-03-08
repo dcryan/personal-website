@@ -11,12 +11,13 @@ module "ses" {
 module "lambda" {
   source = "./modules/lambda"
 
-  project_name    = var.project_name
-  environment     = var.environment
-  recipient_email = var.recipient_email
-  sender_email    = var.sender_email
-  ses_arn         = module.ses.ses_domain_identity_arn
-  aws_region      = var.aws_region
+  project_name         = var.project_name
+  environment          = var.environment
+  recipient_email      = var.recipient_email
+  sender_email         = var.sender_email
+  ses_arn              = module.ses.ses_domain_identity_arn
+  aws_region           = var.aws_region
+  turnstile_secret_key = var.turnstile_secret_key
 }
 
 module "api_gateway" {

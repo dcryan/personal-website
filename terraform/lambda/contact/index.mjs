@@ -4,6 +4,7 @@ const ses = new SESClient({ region: process.env.AWS_SES_REGION });
 
 const RECIPIENT_EMAIL = process.env.RECIPIENT_EMAIL;
 const SENDER_EMAIL = process.env.SENDER_EMAIL;
+const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY;
 
 const headers = {
   "Content-Type": "application/json",
@@ -40,6 +41,26 @@ export async function handler(event) {
 
     const { name, email, message } = body;
     const phone = body["phone-number"] || "";
+    const turnstileToken = body["cf-turnstile-response"];
+
+    // Verify Turnstile token
+    if (!turnstileToken) {
+      return response(400, { error: "Verification required." });
+    }
+
+    const turnstileRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        secret: TURNSTILE_SECRET,
+        response: turnstileToken,
+      }),
+    });
+
+    const turnstileData = await turnstileRes.json();
+    if (!turnstileData.success) {
+      return response(400, { error: "Verification failed. Please try again." });
+    }
 
     // Validate required fields
     const errors = [];

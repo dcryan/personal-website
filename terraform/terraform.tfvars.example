@@ -7,3 +7,4 @@ allowed_origins         = ["https://danielryan.xyz", "https://www.danielryan.xyz
 project_name            = "personal-website"
 github_repository       = "https://github.com/your-user/your-repo"
 amplify_service_role_arn = "arn:aws:iam::123456789012:role/AmplifyServiceRole"
+turnstile_secret_key    = "your-turnstile-secret-key"
