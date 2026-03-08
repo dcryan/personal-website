@@ -228,7 +228,7 @@ export default function ExperienceTimeline({
               className={`transition-colors ${
                 activeTab === tab.key
                   ? "text-onedark-yellow underline"
-                  : "text-onedark-gutter hover:text-onedark-yellow"
+                  : "text-onedark-fg underline decoration-onedark-gutter hover:text-onedark-yellow"
               }`}
             >
               {tab.label}
