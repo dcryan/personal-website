@@ -22,7 +22,7 @@ export default function Blog() {
               href={`/blog/${post.slug}`}
               className="block border-b border-onedark-selection px-3 py-5 hover:bg-onedark-currentline rounded-lg transition-colors group"
             >
-              <h2 className="text-lg font-bold text-white group-hover:text-onedark-blue transition-colors">
+              <h2 className="text-lg font-bold text-onedark-blue group-hover:underline transition-colors">
                 {post.title}
               </h2>
               <time className="text-xs text-onedark-gutter mt-1 block">
