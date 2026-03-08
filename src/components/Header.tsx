@@ -5,7 +5,6 @@ import {
   IoLogoGithub,
   IoLogoInstagram,
   IoLogoLinkedin,
-  IoOpenOutline,
 } from "react-icons/io5";
 
 export default function Header() {
@@ -68,7 +67,6 @@ export default function Header() {
             className="hover:text-white inline-flex items-center gap-0.5"
           >
             <IoLogoLinkedin />
-            <IoOpenOutline className="text-xs" />
           </a>
           <a
             target="_blank"
@@ -78,7 +76,6 @@ export default function Header() {
             className="hover:text-white inline-flex items-center gap-0.5"
           >
             <IoLogoInstagram />
-            <IoOpenOutline className="text-xs" />
           </a>
           <a
             target="_blank"
@@ -88,7 +85,6 @@ export default function Header() {
             className="hover:text-white inline-flex items-center gap-0.5"
           >
             <IoLogoGithub />
-            <IoOpenOutline className="text-xs" />
           </a>
           <a
             target="_blank"
@@ -98,7 +94,6 @@ export default function Header() {
             className="hover:text-white inline-flex items-center gap-0.5"
           >
             <IoDocumentTextOutline />
-            <IoOpenOutline className="text-xs" />
           </a>
         </div>
       </nav>

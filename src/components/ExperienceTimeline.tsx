@@ -4,6 +4,7 @@ import type {
   Volunteer,
   Education,
 } from "@/data/portfolio";
+import { IoOpenOutline } from "react-icons/io5";
 import CollapsibleDetails from "@/components/CollapsibleDetails";
 
 type Props = {
@@ -73,7 +74,7 @@ function CompanyName({ url, name }: { url?: string; name: string }) {
         rel="noopener noreferrer"
         className="text-onedark-yellow hover:underline"
       >
-        {name} ↗
+        {name} <IoOpenOutline className="inline text-sm" />
       </a>
     );
   }
