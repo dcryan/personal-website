@@ -11,3 +11,69 @@
 /*   --yellow: #E5C07B;     /* bg-yellow-400 */
 /*   --blue: #56B6C2;       /* bg-teal-400 */
 /* } */
+
+/* Blog post content styles */
+.blog-content {
+  @apply text-gray-300 leading-relaxed;
+}
+
+.blog-content h1 {
+  @apply text-2xl font-bold text-white mt-8 mb-4;
+}
+
+.blog-content h2 {
+  @apply text-xl font-bold text-white mt-8 mb-3;
+}
+
+.blog-content h3 {
+  @apply text-lg font-bold text-white mt-6 mb-2;
+}
+
+.blog-content p {
+  @apply mb-4;
+}
+
+.blog-content a {
+  @apply text-teal-400 underline hover:text-teal-300 transition-colors;
+}
+
+.blog-content blockquote {
+  @apply border-l-4 border-gray-600 pl-4 italic text-gray-400 my-4;
+}
+
+.blog-content ul,
+.blog-content ol {
+  @apply ml-6 mb-4 space-y-1;
+}
+
+.blog-content ul {
+  @apply list-disc;
+}
+
+.blog-content ol {
+  @apply list-decimal;
+}
+
+.blog-content pre {
+  @apply bg-gray-900 rounded-lg p-4 overflow-x-auto my-4 text-sm;
+}
+
+.blog-content pre code {
+  @apply bg-transparent p-0;
+}
+
+.blog-content code {
+  @apply bg-gray-700 px-1.5 py-0.5 rounded text-sm text-teal-300;
+}
+
+.blog-content strong {
+  @apply text-white font-bold;
+}
+
+.blog-content em {
+  @apply italic;
+}
+
+.blog-content hr {
+  @apply border-gray-700 my-8;
+}
