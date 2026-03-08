@@ -57,8 +57,8 @@ function TreeGutter({
       </div>
       {!isLast && (
         <div
-          className="absolute border-l border-onedark-gutter"
-          style={{ left: "0.5ch", top: "1.2em", bottom: "-1.5rem" }}
+          className="absolute bg-onedark-gutter"
+          style={{ left: "calc(0.5ch - 0.5px)", width: "1.5px", top: "1.2em", bottom: "-1.5rem" }}
         />
       )}
       <div className="flex-1">
