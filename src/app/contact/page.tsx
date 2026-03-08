@@ -1,21 +1,58 @@
 "use client";
 
-import { useState, type SyntheticEvent } from "react";
+import { useRef, useState, useEffect, useCallback, type SyntheticEvent } from "react";
+import Script from "next/script";
 import HeaderBar from "@/components/HeaderBar";
 import Header from "@/components/Header";
 import { useRouter } from "next/navigation";
 
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (element: HTMLElement, options: Record<string, unknown>) => void;
+      reset: (widgetId?: string) => void;
+    };
+  }
+}
+
 const CONTACT_API = "https://uh016457ti.execute-api.us-east-1.amazonaws.com/contact";
+const TURNSTILE_SITE_KEY = "0x4AAAAAACoBZt99Fb4iUWS7";
 
 export default function Contact() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef<HTMLDivElement>(null);
+
+  const renderTurnstile = useCallback(() => {
+    if (turnstileRef.current && window.turnstile) {
+      turnstileRef.current.innerHTML = "";
+      window.turnstile.render(turnstileRef.current, {
+        sitekey: TURNSTILE_SITE_KEY,
+        theme: "dark",
+        callback: (token: string) => setTurnstileToken(token),
+        "expired-callback": () => setTurnstileToken(""),
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (window.turnstile && turnstileRef.current) {
+      renderTurnstile();
+    }
+  }, [renderTurnstile]);
 
   const handleFormSubmit = async (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitting(true);
     setError("");
+
+    if (!turnstileToken) {
+      setError("Please complete the verification.");
+      setSubmitting(false);
+      return;
+    }
 
     const formData = new FormData(event.currentTarget);
 
@@ -28,6 +65,7 @@ export default function Contact() {
           email: formData.get("email"),
           "phone-number": formData.get("phone-number"),
           message: formData.get("message"),
+          "cf-turnstile-response": turnstileToken,
         }),
       });
 
@@ -108,19 +146,27 @@ export default function Contact() {
             />
           </label>
 
+          <div ref={turnstileRef} className="mt-3" />
+
           {error && (
             <p className="text-onedark-red text-sm mt-2">{error}</p>
           )}
 
           <button
             type="submit"
-            disabled={submitting}
+            disabled={submitting || !turnstileToken}
             className="w-full mt-4 text-onedark-red font-bold p-2.5 rounded-md border border-onedark-red hover:bg-onedark-red/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {submitting ? "sending..." : "submit"}
           </button>
         </form>
       </div>
+
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
+        strategy="afterInteractive"
+        onReady={renderTurnstile}
+      />
     </main>
   );
 }
