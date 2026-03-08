@@ -2,19 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root { */
-/*   --white: #fff;         /* bg-white or text-white */
-/*   --background: #282C34; /* bg-gray-800 */
-/*   --green: #98C379;      /* bg-green-400 */
-/*   --purple: #BF74D5;     /* bg-fuchsia-500 */
-/*   --red: #E06C75;        /* bg-rose-500 */
-/*   --yellow: #E5C07B;     /* bg-yellow-400 */
-/*   --blue: #56B6C2;       /* bg-teal-400 */
-/* } */
+/* Terminal cursor blink animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+/* Typing animation for home page */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.typing-line {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 0.8s steps(20) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-in forwards;
+  opacity: 0;
+}
 
 /* Blog post content styles */
 .blog-content {
-  @apply text-gray-300 leading-relaxed;
+  @apply text-onedark-fg leading-relaxed;
 }
 
 .blog-content h1 {
@@ -34,11 +57,17 @@
 }
 
 .blog-content a {
-  @apply text-teal-400 underline hover:text-teal-300 transition-colors;
+  @apply text-onedark-blue underline hover:text-white transition-colors;
+}
+
+/* External link indicator */
+.blog-content a[href^="http"]::after {
+  content: " ↗";
+  font-size: 0.75em;
 }
 
 .blog-content blockquote {
-  @apply border-l-4 border-gray-600 pl-4 italic text-gray-400 my-4;
+  @apply border-l-4 border-onedark-selection pl-4 italic text-onedark-gutter my-4;
 }
 
 .blog-content ul,
@@ -54,8 +83,9 @@
   @apply list-decimal;
 }
 
+/* Let Shiki handle background colors on pre blocks */
 .blog-content pre {
-  @apply bg-gray-900 rounded-lg p-4 overflow-x-auto my-4 text-sm;
+  @apply rounded-lg p-4 overflow-x-auto my-4 text-sm;
 }
 
 .blog-content pre code {
@@ -63,7 +93,7 @@
 }
 
 .blog-content code {
-  @apply bg-gray-700 px-1.5 py-0.5 rounded text-sm text-teal-300;
+  @apply bg-onedark-selection px-1.5 py-0.5 rounded text-sm text-onedark-blue;
 }
 
 .blog-content strong {
@@ -75,5 +105,5 @@
 }
 
 .blog-content hr {
-  @apply border-gray-700 my-8;
+  @apply border-onedark-selection my-8;
 }

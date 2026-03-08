@@ -8,6 +8,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        onedark: {
+          bg: "#282C34",
+          fg: "#ABB2BF",
+          gutter: "#636D83",
+          selection: "#3E4451",
+          currentline: "#2C313A",
+          green: "#98C379",
+          yellow: "#E5C07B",
+          red: "#E06C75",
+          blue: "#56B6C2",
+          purple: "#C678DD",
+          orange: "#D19A66",
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
