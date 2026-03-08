@@ -76,7 +76,7 @@ function CompanyName({ url, name }: { url?: string; name: string }) {
       </a>
     );
   }
-  return <span className="text-white">{name}</span>;
+  return <span className="text-onedark-yellow">{name}</span>;
 }
 
 export default function ExperienceTimeline({
@@ -101,7 +101,7 @@ export default function ExperienceTimeline({
                     <span className="text-lg font-semibold">
                       <CompanyName url={job.url} name={job.company} />
                     </span>
-                    <span className="text-onedark-fg"> · {job.role}</span>
+                    <span className="text-white"> · {job.role}</span>
                   </div>
                   <TypeBadge type={job.type} />
                 </div>
