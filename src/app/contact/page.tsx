@@ -1,28 +1,46 @@
 "use client";
 
-import type { SyntheticEvent } from "react";
+import { useState, type SyntheticEvent } from "react";
 import HeaderBar from "@/components/HeaderBar";
 import Header from "@/components/Header";
 import { useRouter } from "next/navigation";
 
+const CONTACT_API = "https://uh016457ti.execute-api.us-east-1.amazonaws.com/contact";
+
 export default function Contact() {
   const router = useRouter();
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleFormSubmit = async (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setSubmitting(true);
+    setError("");
+
     const formData = new FormData(event.currentTarget);
 
-    const formDataEntries = Array.from(formData.entries()).filter(
-      ([, value]) => typeof value === "string",
-    ) as [string, string][];
+    try {
+      const res = await fetch(CONTACT_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          "phone-number": formData.get("phone-number"),
+          message: formData.get("message"),
+        }),
+      });
 
-    await fetch("/__forms.html", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formDataEntries).toString(),
-    });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "Something went wrong. Please try again.");
+      }
 
-    router.push("/success");
+      router.push("/success");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -37,11 +55,7 @@ export default function Contact() {
         </div>
         <form
           className="p-6 rounded-lg border border-onedark-gutter/40"
-          method="post"
-          action="/success"
           onSubmit={handleFormSubmit}
-          data-netlify="true"
-          name="contact"
         >
           <h1 className="text-2xl font-bold text-onedark-red mb-5">
             Hello world!
@@ -94,14 +108,16 @@ export default function Contact() {
             />
           </label>
 
+          {error && (
+            <p className="text-onedark-red text-sm mt-2">{error}</p>
+          )}
+
           <button
-            name="submit"
             type="submit"
-            id="contact-submit"
-            data-submit="...Sending"
-            className="w-full mt-4 text-onedark-red font-bold p-2.5 rounded-md border border-onedark-red hover:bg-onedark-red/20 transition-colors"
+            disabled={submitting}
+            className="w-full mt-4 text-onedark-red font-bold p-2.5 rounded-md border border-onedark-red hover:bg-onedark-red/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            submit
+            {submitting ? "sending..." : "submit"}
           </button>
         </form>
       </div>
