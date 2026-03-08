@@ -135,9 +135,6 @@ export async function getPostBySlug(
     }
   );
 
-  // Strip the first h1 since the page template renders the title from frontmatter
-  htmlContent = htmlContent.replace(/<h1>[\s\S]*?<\/h1>/, "");
-
   return {
     ...post,
     htmlContent,
