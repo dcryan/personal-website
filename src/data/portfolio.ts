@@ -335,7 +335,7 @@ export const sideProjects: SideProject[] = [
       "Cross-platform HIIT interval timer for iOS and Android. Features background-safe countdowns, audio cues with smart music ducking, configurable work/rest intervals, haptic feedback, and light/dark mode. Published via EAS Build.",
   },
   {
-    url: "https://danielryan.xyz/",
+    url: "https://github.com/dcryan/personal-website",
     title: "DanielRyan.xyz",
     softwareType: "Website",
     technologies: ["Next.js", "React", "Tailwind CSS"],
