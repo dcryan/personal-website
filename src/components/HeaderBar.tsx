@@ -7,10 +7,10 @@ export default function HeaderBar({ color }: HeaderBarProps) {
     <div
       className={[
         "w-full h-1 mb-2 shadow-md",
-        color === "green" ? "bg-green-400 shadow-green-400" : "",
-        color === "yellow" ? "bg-yellow-400 shadow-yellow-400" : "",
-        color === "blue" ? "bg-teal-400 shadow-teal-400" : "",
-        color === "red" ? "bg-rose-500 shadow-rose-500" : "",
+        color === "green" ? "bg-onedark-green shadow-onedark-green" : "",
+        color === "yellow" ? "bg-onedark-yellow shadow-onedark-yellow" : "",
+        color === "blue" ? "bg-onedark-blue shadow-onedark-blue" : "",
+        color === "red" ? "bg-onedark-red shadow-onedark-red" : "",
       ]
         .filter(Boolean)
         .join(" ")}
