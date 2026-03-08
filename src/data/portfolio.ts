@@ -342,6 +342,7 @@ export const sideProjects: SideProject[] = [
     details: "This personal website and portfolio.",
   },
   {
+    url: "https://www.filamidaho.org/",
     title: "Fil-Am Website",
     softwareType: "Website",
     details:
