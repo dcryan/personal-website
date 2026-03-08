@@ -6,8 +6,6 @@ description: "Quick commands for incrementing a list to be ascending."
 slug: "vim-increment-ascending"
 ---
 
-# Vim Tips: Increment a List To Be Ascending
-
 ## TLDR;
 
 Visual Select rows to increase then press `g<C-a>`
