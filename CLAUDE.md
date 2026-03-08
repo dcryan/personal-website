@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture
 
-This is a personal website built with Next.js 14 (App Router) and TypeScript. Deployed on Vercel.
+This is a personal website built with Next.js 14 (App Router) and TypeScript. Deployed on AWS Amplify.
 
 ### Project Structure
 
@@ -27,7 +27,7 @@ This is a personal website built with Next.js 14 (App Router) and TypeScript. De
 - `/experience` - Experience page with ASCII timeline, collapsible details, side projects, volunteer, education
 - `/blog` - Blog listing page (reads markdown from content/blog/)
 - `/blog/[slug]` - Individual blog post pages (statically generated, Shiki syntax highlighting)
-- `/contact` - Contact form (uses Netlify Forms, client component)
+- `/contact` - Contact form (client component, needs backend integration)
 - `/success` - Form submission success page
 
 ### Styling
@@ -47,5 +47,6 @@ This is a personal website built with Next.js 14 (App Router) and TypeScript. De
 
 ### Configuration
 
-- `vercel.json` - Redirects www to non-www, HSTS headers
+- `amplify.yml` - AWS Amplify build spec (Node 20, HSTS headers, build cache)
+- `vercel.json` - Legacy config (www→non-www redirect configured in Amplify Console instead)
 - `next.config.mjs` - Allows images from images.unsplash.com
