@@ -1,26 +1,27 @@
-export type FreelanceProject = {
+export type WorkExperience = {
   url?: string;
-  title: string;
-  compensation: string;
-  softwareType: string;
+  company: string;
+  role: string;
+  type: "Part-time" | "Freelance" | "Contract" | "Full-time" | "Intern";
+  period: string;
+  location?: string;
   technologies: string[];
-  details: string;
-};
-
-export type FullTimePosition = {
-  url?: string;
-  title: string;
-  positions: string[];
-  technologies: string[];
+  summary?: string;
   details: string[];
 };
 
 export type SideProject = {
   url?: string;
   title: string;
-  compensation?: string;
   softwareType?: string;
   technologies?: string[];
+  details: string;
+};
+
+export type Volunteer = {
+  organization: string;
+  role: string;
+  period: string;
   details: string;
 };
 
@@ -33,181 +34,325 @@ export type Education = {
   courses?: string;
 };
 
-export const freelancing: FreelanceProject[] = [
+export const experience: WorkExperience[] = [
+  {
+    url: "https://zerrtech.com/",
+    company: "Zerrtech",
+    role: "Software Engineer",
+    type: "Part-time",
+    period: "Nov 2020 - Present",
+    location: "Boise, Idaho",
+    technologies: [
+      "Python",
+      "React",
+      "Next.js",
+      "AWS Lambda",
+      "Terraform",
+      "Expo React Native",
+      "PostgreSQL",
+      "AWS",
+      "Django",
+      "Django REST Framework",
+      "AWS CloudFormation",
+      "React Native",
+      "Full-Stack Development",
+      "Business Process Automation",
+    ],
+    summary:
+      "Zerrtech is a software consulting company based in Idaho, delivering custom-built digital solutions for businesses of all sizes — from local startups to enterprise clients. We specialize in full-stack development, cloud infrastructure, and intelligent automation.",
+    details: [
+      "Engineered LifeRaft, a secure client management platform for financial advisors featuring asset tracking, document management, PDF report generation, and two-factor authentication. Deployed on AWS with Terraform-managed infrastructure.",
+      "Built a production-ready Python SDK for the Harvest API (published to PyPI) alongside AWS Lambda automations with Slack integration. Automated daily timesheet validation and project categorization to prevent billing errors.",
+      "Co-developed a multilingual Contentful CMS and e-commerce site serving 5 countries, engineered with Next.js (SSR/SSG) and deployed on Netlify for strong SEO performance.",
+      "Built business analytics dashboards and reporting suites using React, D3, Django, and Pandas — including Suds, a real-time analytics platform for car wash dealers.",
+      "Revamped a React Native application to Expo and Expo Application Services for faster deployment cycles, paired with a Detox end-to-end testing suite.",
+      "Developed a Next.js quiz platform with Firebase backend featuring module licensing, group distribution, anonymous completion tracking, and role-based access control.",
+      "Built a web-scraping bot to monitor and track product price history across major retail stores for market analysis.",
+    ],
+  },
+  {
+    url: "https://risingsunsoberliving.com/",
+    company: "Rising Sun Sober Living",
+    role: "Freelance Software Engineer",
+    type: "Freelance",
+    period: "Jan 2014 - Present",
+    location: "Boise, Idaho (Remote)",
+    technologies: [
+      "AWS",
+      "Next.js",
+      "Expo React Native",
+      "NestJS",
+      "Amazon Cognito",
+      "Amazon ECS",
+      "Amazon RDS",
+    ],
+    summary:
+      "Sole developer of a full-stack residential management platform for sober living facilities across the Pacific Northwest, managing 6,500+ residents across 50+ locations.",
+    details: [
+      "Led a complete platform migration from Angular/Ionic + Firebase to a modern stack when performance limitations and desktop requirements demanded a new architecture.",
+      "Built manager and admin tools including rent collection, curfew compliance monitoring, UA drug testing workflows with photo documentation, secure document storage, automated mass SMS, and work order tracking.",
+      "Created a private, read-only parole officer portal scoped to assigned residents with access to records, UA documentation, and activity history.",
+      "Implemented fully automated CI/CD across three platforms — web via AWS Amplify, API via AWS ECS, and mobile via Fastlane to TestFlight — orchestrated through GitHub Actions.",
+    ],
+  },
   {
     url: "https://clouding.io",
-    title: "Clouding.io Website",
-    compensation: "Contract",
-    softwareType: "Website/Blog/Knowledge Base",
-    technologies: ["ES6", "Webpack", "Handlebars", "jQuery"],
-    details:
-      "Built out a static site generator for an IaaS (Infrastructure as a Service) company.",
-  },
-  {
-    url: "https://itunes.apple.com/us/app/fimarge/id1386638498?mt=8",
-    title: "Fimarge",
-    compensation: "Contract",
-    softwareType: "Android/iOS/PWA",
-    technologies: ["React", "Redux", "Cordova"],
-    details:
-      "Built mobile apps for a private brokerage firm. Deployed to Android, iOS, and as a Progressive Web App.",
-  },
-  {
-    title: "NCS Proforma Builder",
-    compensation: "Contract - in progress",
-    softwareType: "Web App",
-    technologies: ["Laravel", "Google Maps API", "jQuery", "Puppeteer"],
-    details:
-      "Building a car wash proforma builder that generates PDF reports with location data and financial projections.",
-  },
-  {
-    title: "Suds Dashboard",
-    compensation: "Contract",
-    softwareType: "Web App",
-    technologies: ["D3.js", "React", "Redux"],
-    details:
-      "Built an analytics dashboard for car wash dealers to track and visualize key business metrics.",
-  },
-  {
-    url: "https://itunes.apple.com/us/app/rising-sun-sober-living/id1274620239?mt=8",
-    title: "Rising Sun Sober Living",
-    compensation: "Contract",
-    softwareType: "Mobile App",
+    company: "Clouding.io",
+    role: "Freelance Software Engineer",
+    type: "Freelance",
+    period: "Jan 2019 - Dec 2025",
+    location: "Barcelona, Spain (Remote)",
     technologies: [
-      "Ionic 3",
-      "Typescript",
-      "Firebase",
-      "Google Cloud Functions",
-      "Google Cloud Storage",
+      "JavaScript",
+      "PHP",
+      "Webpack",
+      "Handlebars.js",
+      "SCSS/CSS",
+      "jQuery",
+      "WordPress",
+      "Zendesk",
+      "Node.js",
+      "Google Tag Manager",
+      "reCAPTCHA",
     ],
-    details:
-      "Built a rehab housing management app for tracking residents, payments, and house operations.",
+    summary:
+      "Sole software engineer for Clouding.io, a cloud hosting provider, independently designing and delivering the company's full web presence from the ground up.",
+    details: [
+      "Built the marketing website end-to-end with multi-language support (Spanish, English, Catalan), a dynamic pricing calculator, and integrations with Zendesk, Google reCAPTCHA, and Google Tag Manager.",
+      "Developed a self-hosted internet speed test application using PHP and Vanilla JavaScript with Web Workers — multi-threaded, multi-server architecture with download, upload, ping, and jitter measurement.",
+      "Customised the Zendesk Help Centre with a fully bespoke theme — 22 Handlebars templates, 5,500+ lines of custom CSS, and client-side JavaScript.",
+      "Maintained the company WordPress blog with a custom theme, WP Rocket caching, and Advanced Custom Fields.",
+    ],
   },
   {
-    url: "https://gamenightlive.com",
-    title: "Game Night Live!",
-    compensation: "Contract",
-    softwareType: "Website",
-    technologies: ["Wordpress", "Divi", "Figma"],
-    details:
-      "Designed and built a website for an entertainment company specializing in live game show events.",
+    company: "AIML Score",
+    role: "Freelance Software Engineer",
+    type: "Freelance",
+    period: "Dec 2023 - Oct 2025",
+    location: "Cape Town, South Africa (Remote)",
+    technologies: [
+      "Next.js",
+      "AWS Lambda",
+      "API Gateways",
+      "React",
+      "TypeScript",
+      "Amazon DynamoDB",
+      "Turborepo",
+      "Tailwind CSS",
+      "Terraform",
+      "FinTech",
+      "Emerging Markets",
+    ],
+    summary:
+      "Built and maintained the full frontend platform for an AI-powered lending and credit scoring solution serving the African market, initially launched in Uganda.",
+    details: [
+      "Architected a Next.js 15 / React 19 monorepo using Turborepo, delivering three production applications: a loan management portal, a role-based analytics dashboard, and an S3-backed document reporting system.",
+      "Implemented secure, multi-role authentication using NextAuth.js integrated with AWS Cognito, supporting approver workflows and access-gated reporting views.",
+      "Built interactive analytics dashboards with Recharts to visualise loan portfolio metrics including offer conversion rates, repayment performance, and risk exposure.",
+      "Contributed to backend development using AWS serverless architecture — Lambda functions behind API Gateway with DynamoDB.",
+      "Deployed infrastructure on AWS using Terraform and AWS Amplify with multi-environment support.",
+    ],
   },
-];
-
-export const fullTimePositions: FullTimePosition[] = [
+  {
+    url: "https://www.idearoom.com/",
+    company: "IdeaRoom",
+    role: "Contract Software Engineer",
+    type: "Contract",
+    period: "Jun 2020 - Aug 2021",
+    location: "Boise, Idaho (Remote)",
+    technologies: ["Node.js", "React", "Three.js", "PandaDoc"],
+    summary:
+      "Contracted to extend IdeaRoom's SaaS platform — a 3D configurator used by 300+ shed, carport, and building vendors across the US, UK, Canada, and Australia.",
+    details: [
+      "Built an automated document signing pipeline integrating PandaDoc for invoice generation and e-signature workflows, reducing manual processing overhead.",
+      "Implemented 3D measurement/dimension lines within IdeaRoom's WYSIWYG building designer, enhancing spatial accuracy during customization.",
+    ],
+  },
+  {
+    company: "EarthLab AI Systems",
+    role: "Contract Software Engineer",
+    type: "Contract",
+    period: "Jun 2020 - Aug 2020",
+    location: "Barcelona, Spain (Remote)",
+    technologies: ["Flask", "React", "Google Cloud Platform (GCP)"],
+    details: [
+      "Built the core platform — an interactive Mapbox-based tool where users draw regions of interest, manage GeoJSON data, and receive satellite image updates for those areas.",
+    ],
+  },
+  {
+    url: "https://www.linkedin.com/company/avanoo/",
+    company: "Avanoo",
+    role: "Freelance Software Engineer",
+    type: "Contract",
+    period: "Apr 2020 - Jun 2020",
+    location: "San Francisco Bay Area (Remote)",
+    technologies: ["React Native", "TypeScript"],
+    summary:
+      "Built and maintained mobile features for Avanoo's AI-driven employee engagement platform — a micro-learning app used by enterprise teams at Toyota, Cisco, and KPMG.",
+    details: [
+      "Developed React Native mobile features for daily 3-minute video programs driving culture change, leadership development, and behavioral growth.",
+    ],
+  },
+  {
+    url: "https://fimarge.com/",
+    company: "Fimarge",
+    role: "Freelance Software Engineer",
+    type: "Freelance",
+    period: "Jan 2019 - Dec 2019",
+    location: "Barcelona, Spain (Remote)",
+    technologies: [
+      "React",
+      "Apache Cordova",
+      "Redux.js",
+      "Redux-Form",
+      "SCSS/CSS",
+      "Webpack",
+      "Axios",
+    ],
+    summary:
+      "Core team member on a React-based fintech platform giving investors and financial advisors real-time visibility into portfolios, fund performance, and investment history.",
+    details: [
+      "Integrated Apache Cordova to package the web app as a native iOS and Android application, managing the full App Store and Google Play submission pipeline.",
+      "Overhauled client-side navigation to correctly restore session state on page reload using SessionStorage and redux-persist.",
+      "Implemented Chart.js doughnut and bar chart components with positive/negative colour coding for investment performance data.",
+      "Added cross-browser compatibility fixes including Promise polyfills for IE and Firefox rendering bug resolutions.",
+    ],
+  },
   {
     url: "https://tsheets.com",
-    title: "TSheets Inc. an Intuit Company",
-    positions: ["Mobile Software Engineer (iOS & Android): Oct '15 - Jan '19"],
+    company: "TSheets (Intuit)",
+    role: "Senior Mobile Engineer",
+    type: "Full-time",
+    period: "Oct 2015 - Jan 2018",
+    location: "Boise, Idaho",
     technologies: [
-      "Objective C",
       "Swift",
-      "Java 6",
-      "XML",
+      "Objective-C",
+      "Java",
       "SQLite",
-      "XCode",
+      "Xcode",
       "Android Studio",
     ],
+    summary:
+      "TSheets is the cloud-based time tracking and scheduling solution used by 500,000+ users in over 100 countries. Acquired by Intuit in 2018.",
     details: [
-      "Rebuilt the location engine used by ~12k users/day to track GPS locations in the background.",
-      "Improved the sync engine to handle large data sets more efficiently.",
-      "Built the scheduling feature that generated $30k in revenue in the first month.",
-      "Led the migration from SVN to Git for the mobile team.",
-      "Built the filter bar feature for quickly searching and filtering time entries.",
+      "Designed, built, and maintained native iOS and Android applications as a senior mobile developer.",
+      "Led cross-team collaboration to coordinate the release of bug fixes and features.",
     ],
   },
   {
     url: "https://whitecloud.com",
-    title: "WhiteCloud Analytics a Relias Company",
-    positions: [
-      "Frontend Software Engineer: Mar '14 - Oct '15",
-      "Full-stack Software Engineer: Mar '12 - Mar '14",
+    company: "WhiteCloud Analytics (Relias)",
+    role: "Frontend Software Engineer",
+    type: "Full-time",
+    period: "Mar 2012 - Oct 2015",
+    location: "Boise, Idaho",
+    technologies: [
+      "AngularJS",
+      "Backbone",
+      "D3.js",
+      "jQuery",
+      "LESS",
+      "Java Spring",
+      "MySQL",
     ],
-    technologies: ["AngularJS", "Backbone", "LESS", "Java Spring"],
+    summary:
+      "Collaborative team development using Angular and Spring to build data analysis applications for Health Systems.",
     details: [
-      "Built a reusable D3.js charting library used across multiple applications.",
-      "Developed the Angular-based Population Health application.",
-      "Introduced and set up the Jasmine testing framework for frontend code.",
-      "Led the migration from raw CSS to LESS for better style maintainability.",
-      "Set up the Gulp build system for frontend asset compilation.",
+      "Led a frontend team to design and implement a reusable D3.js charting library.",
+      "Co-developed a Population Health single page application in AngularJS.",
+      "Co-developed a Jasmine testing framework to maintain code quality.",
+      "Spearheaded the migration from vanilla CSS to LESS and mentored a team of 10 engineers.",
+      "Co-developed a Gulp build system running JS linting, Jasmine tests, and asset compilation.",
     ],
   },
   {
     url: "https://sap.com",
-    title: "SAP - Advantage Database Team",
-    positions: ["Software Intern: Mar '11 - Mar '12"],
+    company: "iAnywhere (SAP)",
+    role: "Software Engineer Intern",
+    type: "Intern",
+    period: "Mar 2011 - Mar 2012",
+    location: "Boise, Idaho",
     technologies: [
       "jQuery",
       "jQuery Mobile",
       "oData",
       "dataJS",
       "Apache Web Service",
-      "Advantage Database Server",
-      "Advantage Web Server",
     ],
     details: [
-      "Built a web-based configuration utility for the Advantage Database Server.",
+      "Created a web-based configuration utility that configures a database using oData calls to communicate between client and server.",
+      "Created multiple tests to exploit and fix bugs in Advantage Database Server and Web Server.",
     ],
   },
 ];
 
 export const sideProjects: SideProject[] = [
   {
-    url: "https://github.com/dcryan/dcryan.github.io",
-    title: "Personal Website",
-    softwareType: "Website",
-    technologies: ["Gatsby", "React", "GraphQL"],
-    details: "My personal website and portfolio built with modern web technologies.",
+    title: "LexiTales",
+    softwareType: "Mobile App",
+    technologies: ["React Native", "Expo", "AWS Lambda", "PostgreSQL"],
+    details:
+      "Bilingual interactive storytelling app for language learning.",
   },
   {
-    title: "Frontend Dev Meetup",
-    details:
-      "Co-hosted and organized a local frontend development meetup group.",
+    title: "Urban Interval Timer",
+    softwareType: "Mobile App",
+    technologies: ["React Native"],
+    details: "Cross-platform HIIT interval timer app.",
+  },
+  {
+    url: "https://github.com/dcryan/personal-website",
+    title: "DanielRyan.xyz",
+    softwareType: "Website",
+    technologies: ["Next.js", "React", "Tailwind CSS"],
+    details: "This personal website and portfolio.",
   },
   {
     url: "https://tacogato.app/",
     title: "TacoGato",
     softwareType: "Mobile App",
-    technologies: ["Ionic 1", "Firebase", "Firebase Auth"],
+    technologies: ["Ionic", "Firebase", "Firebase Auth"],
     details:
-      "A competitive taco counting app. Track and compare taco consumption with friends.",
-  },
-  {
-    title: "Boise Code Club",
-    compensation: "Volunteer",
-    details:
-      "Mentored junior high students in programming fundamentals and web development.",
+      "A socially competitive taco counting app. Join a league and compete with friends.",
   },
   {
     title: "D3.js Chart Library",
-    compensation: "Open Source Library",
+    softwareType: "Open Source Library",
     technologies: ["D3.js"],
     details:
-      "Built a dynamic charting layer on top of D3.js for reusable, configurable chart components.",
+      "Dynamic, customizable charting layer with API, iPad gesture support, data filters, and cross-browser support.",
   },
   {
     title: "Boise Art Hunt",
-    compensation: "Hack-a-thon",
     softwareType: "Web App",
     technologies: ["Angular", "Heroku", "Google Maps API"],
     details:
-      "A scavenger hunt app with geofencing that guides users to public art installations around Boise.",
+      "Hackathon project — a scavenger hunt game using geofencing to discover 600+ public art pieces in Boise.",
+  },
+];
+
+export const volunteer: Volunteer[] = [
+  {
+    organization: "Treefort Music Fest",
+    role: "Software Engineer",
+    period: "Feb 2014 - Mar 2017",
+    details:
+      "Built the festival mobile app and a real-time line status web app for venue-goers. Team of 10 volunteer developers.",
   },
   {
-    title: "Treefort Music Fest Mobile App",
-    compensation: "Volunteer",
-    softwareType: "Mobile App",
-    technologies: ["Ionic 1", "AWS DynamoDB"],
+    organization: "Boise Frontend Meetup",
+    role: "Co-organizer & Speaker",
+    period: "Jan 2016 - Apr 2017",
     details:
-      "Built a festival scheduling app for attendees to browse and save events at Treefort Music Fest.",
+      "Co-hosted meetup to educate engineers in the local area on frontend technologies.",
   },
   {
-    title: "Line-o-meter App for Treefort",
-    compensation: "Volunteer",
-    softwareType: "Responsive Web App",
-    technologies: ["Angular", "Cordova"],
+    organization: "Boise Code Camp",
+    role: "Student Mentor",
+    period: "Jan 2014 - Present",
     details:
-      "A line status app that let festival-goers check wait times at venues in real time.",
+      "Mentored junior high students in programming fundamentals and web development.",
   },
 ];
 
@@ -215,10 +360,10 @@ export const education: Education[] = [
   {
     url: "https://boisestate.edu",
     title: "Boise State University",
-    degree: "BS Computer Science",
+    degree: "Bachelor's in Computer Science",
     period: "Fall 2008 - Spring 2012",
-    honors: "Dean's List GPA > 3.75 Fall 2008",
+    honors: "Dean's List (GPA > 3.75) — Fall 2008",
     courses:
-      "Artificial Intelligence, Distributed Systems, Operating Systems, Cryptology, Networks",
+      "Data Structures and Algorithms, Software Engineering, Operating Systems, Distributed Systems, Parallel Computing, Programming Languages, Cryptology, Computer Networks, Artificial Intelligence, Theory of Computation",
   },
 ];
