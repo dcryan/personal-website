@@ -23,6 +23,16 @@ output "route53_name_servers" {
   value       = module.route53.name_servers
 }
 
+output "amplify_app_id" {
+  description = "Amplify app ID"
+  value       = module.amplify.app_id
+}
+
+output "amplify_default_domain" {
+  description = "Default Amplify domain"
+  value       = module.amplify.default_domain
+}
+
 output "account_id" {
   description = "AWS account ID where resources are deployed"
   value       = data.aws_caller_identity.current.account_id

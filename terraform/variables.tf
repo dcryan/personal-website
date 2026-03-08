@@ -35,3 +35,13 @@ variable "project_name" {
   type        = string
   default     = "personal-website"
 }
+
+variable "github_repository" {
+  description = "GitHub repository URL for Amplify"
+  type        = string
+}
+
+variable "amplify_service_role_arn" {
+  description = "IAM service role ARN for Amplify (created via console)"
+  type        = string
+}

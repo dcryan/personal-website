@@ -1,7 +1,9 @@
-aws_region      = "us-east-1"
-environment     = "production"
-domain          = "danielryan.xyz"
-recipient_email = "your-email@example.com"
-sender_email    = "contact@danielryan.xyz"
-allowed_origins = ["https://danielryan.xyz", "https://www.danielryan.xyz"]
-project_name    = "personal-website"
+aws_region              = "us-east-1"
+environment             = "production"
+domain                  = "danielryan.xyz"
+recipient_email         = "your-email@example.com"
+sender_email            = "contact@danielryan.xyz"
+allowed_origins         = ["https://danielryan.xyz", "https://www.danielryan.xyz"]
+project_name            = "personal-website"
+github_repository       = "https://github.com/your-user/your-repo"
+amplify_service_role_arn = "arn:aws:iam::123456789012:role/AmplifyServiceRole"
