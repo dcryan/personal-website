@@ -27,11 +27,23 @@
   overflow: hidden;
   white-space: nowrap;
   width: 0;
-  animation: typing 0.8s steps(20) forwards;
+  opacity: 0;
+  animation-name: typing-reveal;
+  animation-duration: 0.8s;
+  animation-timing-function: steps(20);
+  animation-fill-mode: forwards;
+}
+
+@keyframes typing-reveal {
+  0% { width: 0; opacity: 1; }
+  100% { width: 100%; opacity: 1; }
 }
 
 .animate-fade-in {
-  animation: fade-in 0.5s ease-in forwards;
+  animation-name: fade-in;
+  animation-duration: 0.1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
   opacity: 0;
 }
 
