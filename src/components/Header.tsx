@@ -26,13 +26,35 @@ export default function Header({ barColor }: HeaderProps) {
       )}
       <nav aria-label="Main navigation" className="py-2 px-4">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-sm hover:opacity-80 transition-opacity shrink-0">
-            <span className="text-onedark-green">daniel</span>
-            <span className="text-onedark-fg">@</span>
-            <span className="text-onedark-blue">barcelona</span>
-            <span className="text-onedark-fg">:~$</span>
-            <span className="terminal-cursor ml-0.5">_</span>
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link href="/" className="text-sm hover:opacity-80 transition-opacity shrink-0">
+              <span className="text-onedark-green">daniel</span>
+              <span className="text-onedark-fg">@</span>
+              <span className="text-onedark-blue">barcelona</span>
+              <span className="text-onedark-fg">:~$</span>
+              <span className="terminal-cursor ml-0.5">_</span>
+            </Link>
+            <div className="hidden md:flex items-center gap-2">
+              <Link
+                href="/experience"
+                className={`text-onedark-yellow hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "yellow" ? "underline" : ""}`}
+              >
+                experience/
+              </Link>
+              <Link
+                href="/blog"
+                className={`text-onedark-blue hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "blue" ? "underline" : ""}`}
+              >
+                blog/
+              </Link>
+              <Link
+                href="/contact"
+                className={`text-onedark-red hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "red" ? "underline" : ""}`}
+              >
+                contact/
+              </Link>
+            </div>
+          </div>
           <div className="flex items-center text-xl text-onedark-gutter gap-3">
             <a
               target="_blank"
@@ -72,7 +94,7 @@ export default function Header({ barColor }: HeaderProps) {
             </a>
           </div>
         </div>
-        <div className="flex items-center gap-3 mt-1">
+        <div className="flex md:hidden items-center gap-3 mt-1">
           <Link
             href="/experience"
             className={`text-onedark-yellow hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "yellow" ? "underline" : ""}`}
