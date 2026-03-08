@@ -308,15 +308,31 @@ export const sideProjects: SideProject[] = [
   {
     title: "LexiTales",
     softwareType: "Mobile App",
-    technologies: ["React Native", "Expo", "AWS Lambda", "PostgreSQL"],
+    technologies: [
+      "Expo React Native",
+      "TypeScript",
+      "AWS Lambda",
+      "Terraform",
+      "FastAPI",
+      "PostgreSQL",
+      "GitHub Actions",
+      "OpenAI API",
+      "In-App Purchases",
+    ],
     details:
-      "Bilingual interactive storytelling app for language learning.",
+      "Bilingual English/Spanish interactive storytelling app with branching narratives, chapter narration audio, and a freemium subscription model. Backend on AWS Lambda + PostgreSQL deployed via Terraform, with an AI-assisted story generation pipeline. Published on iOS and Android via automated CI/CD.",
   },
   {
     title: "Urban Interval Timer",
     softwareType: "Mobile App",
-    technologies: ["React Native"],
-    details: "Cross-platform HIIT interval timer app.",
+    technologies: [
+      "Expo React Native",
+      "TypeScript",
+      "iOS Development",
+      "Android Development",
+    ],
+    details:
+      "Cross-platform HIIT interval timer for iOS and Android. Features background-safe countdowns, audio cues with smart music ducking, configurable work/rest intervals, haptic feedback, and light/dark mode. Published via EAS Build.",
   },
   {
     url: "https://github.com/dcryan/personal-website",
@@ -324,6 +340,12 @@ export const sideProjects: SideProject[] = [
     softwareType: "Website",
     technologies: ["Next.js", "React", "Tailwind CSS"],
     details: "This personal website and portfolio.",
+  },
+  {
+    title: "Fil-Am Website",
+    softwareType: "Website",
+    details:
+      "Built and maintained a website for a local organization, showcasing members, events, announcements, and interests.",
   },
   {
     url: "https://tacogato.app/",
@@ -355,7 +377,7 @@ export const volunteer: Volunteer[] = [
     role: "Software Engineer",
     period: "Feb 2014 - Mar 2017",
     details:
-      "Built the festival mobile app and a real-time line status web app for venue-goers. Team of 10 volunteer developers.",
+      "Built the festival mobile app with a team of 10 volunteer developers, implementing music streaming playback, artist biographies, and a real-time line status web app for venue-goers.",
   },
   {
     organization: "Boise Frontend Meetup",
@@ -367,9 +389,9 @@ export const volunteer: Volunteer[] = [
   {
     organization: "Boise Code Camp",
     role: "Student Mentor",
-    period: "Jan 2014 - Present",
+    period: "Jan 2014",
     details:
-      "Mentored junior high students in programming fundamentals and web development.",
+      "Mentored junior and high school students in programming fundamentals and web development.",
   },
 ];
 
