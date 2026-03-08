@@ -23,38 +23,23 @@ export default function Header() {
         <span className="terminal-cursor">_</span>
       </div>
       <nav aria-label="Main navigation" className="flex justify-between items-center flex-wrap gap-4 py-2 px-4">
-        <div className="flex-auto text-xl">
+        <div className="flex items-center gap-2">
           <Link
             href="/experience"
-            className="group text-onedark-yellow hover:underline"
+            className="text-onedark-yellow hover:bg-onedark-currentline px-2 py-1 rounded transition-colors"
           >
-            <span className="hidden group-hover:inline text-onedark-gutter">
-              {">"}{" "}
-            </span>
             experience
           </Link>
-
-          <span className="mx-2 text-sm text-onedark-gutter">|</span>
-
           <Link
             href="/blog"
-            className="group text-onedark-blue hover:underline"
+            className="text-onedark-blue hover:bg-onedark-currentline px-2 py-1 rounded transition-colors"
           >
-            <span className="hidden group-hover:inline text-onedark-gutter">
-              {">"}{" "}
-            </span>
             blog
           </Link>
-
-          <span className="mx-2 text-sm text-onedark-gutter">|</span>
-
           <Link
             href="/contact"
-            className="group text-onedark-red hover:underline"
+            className="text-onedark-red hover:bg-onedark-currentline px-2 py-1 rounded transition-colors"
           >
-            <span className="hidden group-hover:inline text-onedark-gutter">
-              {">"}{" "}
-            </span>
             contact
           </Link>
         </div>
