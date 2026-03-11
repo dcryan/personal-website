@@ -41,7 +41,7 @@ data "aws_iam_policy_document" "lambda_permissions" {
       "ses:SendEmail",
       "ses:SendRawEmail",
     ]
-    resources = [var.ses_arn]
+    resources = ["arn:aws:ses:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:identity/*"]
     condition {
       test     = "StringEquals"
       variable = "ses:FromAddress"

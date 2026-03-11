@@ -3,7 +3,7 @@ variable "domain" {
   type        = string
 }
 
-variable "sender_email" {
-  description = "Sender email address to verify with SES"
+variable "recipient_email" {
+  description = "Recipient email address to verify with SES (required for sandbox mode)"
   type        = string
 }

@@ -4,8 +4,8 @@ data "aws_region" "current" {}
 module "ses" {
   source = "./modules/ses"
 
-  domain       = var.domain
-  sender_email = var.sender_email
+  domain          = var.domain
+  recipient_email = var.recipient_email
 }
 
 module "lambda" {
