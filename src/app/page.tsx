@@ -63,35 +63,39 @@ export default function Home() {
           <div className="mt-2 space-y-1">
             <Link
               href="/experience"
-              className="flex items-center gap-2 hover:bg-onedark-currentline px-2 py-1 transition-colors animate-fade-in"
+              className="group inline-block px-2 py-1 text-sm transition-colors animate-fade-in"
               style={{ animationDelay: "3.8s" }}
             >
-              <span className="text-onedark-gutter">{">"}</span>
-              <span className="text-onedark-yellow">experience/</span>
+              <span className="text-onedark-gutter group-hover:text-onedark-yellow transition-colors">[</span>
+              <span className="text-onedark-yellow"> experience </span>
+              <span className="text-onedark-gutter group-hover:text-onedark-yellow transition-colors">]</span>
             </Link>
             <Link
               href="/blog"
-              className="flex items-center gap-2 hover:bg-onedark-currentline px-2 py-1 transition-colors animate-fade-in"
+              className="group inline-block px-2 py-1 text-sm transition-colors animate-fade-in"
               style={{ animationDelay: "3.85s" }}
             >
-              <span className="text-onedark-gutter">{">"}</span>
-              <span className="text-onedark-blue">blog/</span>
+              <span className="text-onedark-gutter group-hover:text-onedark-blue transition-colors">[</span>
+              <span className="text-onedark-blue"> blog </span>
+              <span className="text-onedark-gutter group-hover:text-onedark-blue transition-colors">]</span>
             </Link>
             <Link
               href="/uses"
-              className="flex items-center gap-2 hover:bg-onedark-currentline px-2 py-1 transition-colors animate-fade-in"
+              className="group inline-block px-2 py-1 text-sm transition-colors animate-fade-in"
               style={{ animationDelay: "3.875s" }}
             >
-              <span className="text-onedark-gutter">{">"}</span>
-              <span className="text-onedark-purple">uses/</span>
+              <span className="text-onedark-gutter group-hover:text-onedark-purple transition-colors">[</span>
+              <span className="text-onedark-purple"> uses </span>
+              <span className="text-onedark-gutter group-hover:text-onedark-purple transition-colors">]</span>
             </Link>
             <Link
               href="/contact"
-              className="flex items-center gap-2 hover:bg-onedark-currentline px-2 py-1 transition-colors animate-fade-in"
+              className="group inline-block px-2 py-1 text-sm transition-colors animate-fade-in"
               style={{ animationDelay: "3.9s" }}
             >
-              <span className="text-onedark-gutter">{">"}</span>
-              <span className="text-onedark-red">contact/</span>
+              <span className="text-onedark-gutter group-hover:text-onedark-red transition-colors">[</span>
+              <span className="text-onedark-red"> contact </span>
+              <span className="text-onedark-gutter group-hover:text-onedark-red transition-colors">]</span>
             </Link>
           </div>
         </nav>
@@ -108,11 +112,11 @@ export default function Home() {
             <p className="text-onedark-fg mt-1">Open to remote contract &amp; consulting work.</p>
             <Link
               href="/contact"
-              className="hover:bg-onedark-currentline px-2 py-1 transition-colors mt-1 inline-block"
+              className="group inline-block px-2 py-1 text-sm transition-colors mt-1"
             >
-              <span className="text-onedark-gutter">[</span>
-              <span className="text-onedark-red"> contact/ </span>
-              <span className="text-onedark-gutter">]</span>
+              <span className="text-onedark-gutter group-hover:text-onedark-red transition-colors">[</span>
+              <span className="text-onedark-red"> contact </span>
+              <span className="text-onedark-gutter group-hover:text-onedark-red transition-colors">]</span>
             </Link>
           </div>
         </div>

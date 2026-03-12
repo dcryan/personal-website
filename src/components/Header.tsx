@@ -58,7 +58,7 @@ export default function Header({ barColor }: HeaderProps) {
               </Link>
             </div>
           </div>
-          <div className="flex items-center text-xl text-onedark-gutter gap-3">
+          <div className="flex items-center text-xl text-onedark-gutter gap-3 [&>a]:transition-colors">
             <a
               target="_blank"
               rel="noopener noreferrer"
