@@ -8,7 +8,7 @@ import {
 } from "react-icons/io5";
 
 type HeaderProps = {
-  barColor?: "green" | "yellow" | "blue" | "red";
+  barColor?: "green" | "yellow" | "blue" | "red" | "purple";
 };
 
 const barColorClasses = {
@@ -16,6 +16,7 @@ const barColorClasses = {
   yellow: "bg-onedark-yellow shadow-onedark-yellow",
   blue: "bg-onedark-blue shadow-onedark-blue",
   red: "bg-onedark-red shadow-onedark-red",
+  purple: "bg-onedark-purple shadow-onedark-purple",
 };
 
 export default function Header({ barColor }: HeaderProps) {
@@ -46,6 +47,12 @@ export default function Header({ barColor }: HeaderProps) {
                 className={`text-onedark-blue hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "blue" ? "underline" : ""}`}
               >
                 blog/
+              </Link>
+              <Link
+                href="/uses"
+                className={`text-onedark-purple hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "purple" ? "underline" : ""}`}
+              >
+                uses/
               </Link>
               <Link
                 href="/contact"
@@ -106,6 +113,12 @@ export default function Header({ barColor }: HeaderProps) {
             className={`text-onedark-blue hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "blue" ? "underline" : ""}`}
           >
             blog/
+          </Link>
+          <Link
+            href="/uses"
+            className={`text-onedark-purple hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "purple" ? "underline" : ""}`}
+          >
+            uses/
           </Link>
           <Link
             href="/contact"

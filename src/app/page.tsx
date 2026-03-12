@@ -78,6 +78,14 @@ export default function Home() {
               <span className="text-onedark-blue">blog/</span>
             </Link>
             <Link
+              href="/uses"
+              className="flex items-center gap-2 hover:bg-onedark-currentline rounded px-2 py-1 transition-colors animate-fade-in"
+              style={{ animationDelay: "3.875s" }}
+            >
+              <span className="text-onedark-gutter">{">"}</span>
+              <span className="text-onedark-purple">uses/</span>
+            </Link>
+            <Link
               href="/contact"
               className="flex items-center gap-2 hover:bg-onedark-currentline rounded px-2 py-1 transition-colors animate-fade-in"
               style={{ animationDelay: "3.9s" }}
@@ -87,6 +95,27 @@ export default function Home() {
             </Link>
           </div>
         </nav>
+
+        {/* availability */}
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="text-onedark-green font-bold animate-fade-in" style={{ animationDelay: "4.2s" }}>$</span>
+            <span className="typing-line" style={{ width: "18ch", animationDelay: "4.2s" }}>
+              cat availability.txt
+            </span>
+          </div>
+          <div className="animate-fade-in" style={{ animationDelay: "5.0s" }}>
+            <p className="text-onedark-fg mt-1">Open to remote contract &amp; consulting work.</p>
+            <Link
+              href="/contact"
+              className="hover:bg-onedark-currentline rounded px-2 py-1 transition-colors mt-1 inline-block"
+            >
+              <span className="text-onedark-gutter">[</span>
+              <span className="text-onedark-red"> contact/ </span>
+              <span className="text-onedark-gutter">]</span>
+            </Link>
+          </div>
+        </div>
       </div>
     </main>
   );
