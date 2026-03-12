@@ -97,7 +97,7 @@
 
 /* Let Shiki handle background colors on pre blocks */
 .blog-content pre {
-  @apply rounded-lg p-4 overflow-x-auto my-4 text-sm;
+  @apply p-4 overflow-x-auto my-4 text-sm;
 }
 
 .blog-content pre code {
@@ -105,7 +105,7 @@
 }
 
 .blog-content code {
-  @apply bg-onedark-selection px-1.5 py-0.5 rounded text-sm text-onedark-blue;
+  @apply bg-onedark-selection px-1.5 py-0.5 text-sm text-onedark-blue;
 }
 
 .blog-content strong {

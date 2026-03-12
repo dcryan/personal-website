@@ -31,28 +31,28 @@ export default function NotFound() {
           <nav className="mt-2 space-y-1" aria-label="Available pages">
             <Link
               href="/"
-              className="flex items-center gap-2 hover:bg-onedark-currentline rounded px-2 py-1 transition-colors"
+              className="flex items-center gap-2 hover:bg-onedark-currentline px-2 py-1 transition-colors"
             >
               <span className="text-onedark-gutter">{">"}</span>
               <span className="text-onedark-green">~/</span>
             </Link>
             <Link
               href="/experience"
-              className="flex items-center gap-2 hover:bg-onedark-currentline rounded px-2 py-1 transition-colors"
+              className="flex items-center gap-2 hover:bg-onedark-currentline px-2 py-1 transition-colors"
             >
               <span className="text-onedark-gutter">{">"}</span>
               <span className="text-onedark-yellow">experience/</span>
             </Link>
             <Link
               href="/blog"
-              className="flex items-center gap-2 hover:bg-onedark-currentline rounded px-2 py-1 transition-colors"
+              className="flex items-center gap-2 hover:bg-onedark-currentline px-2 py-1 transition-colors"
             >
               <span className="text-onedark-gutter">{">"}</span>
               <span className="text-onedark-blue">blog/</span>
             </Link>
             <Link
               href="/contact"
-              className="flex items-center gap-2 hover:bg-onedark-currentline rounded px-2 py-1 transition-colors"
+              className="flex items-center gap-2 hover:bg-onedark-currentline px-2 py-1 transition-colors"
             >
               <span className="text-onedark-gutter">{">"}</span>
               <span className="text-onedark-red">contact/</span>

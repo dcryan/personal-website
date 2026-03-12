@@ -63,7 +63,7 @@ export default function Home() {
           <div className="mt-2 space-y-1">
             <Link
               href="/experience"
-              className="flex items-center gap-2 hover:bg-onedark-currentline rounded px-2 py-1 transition-colors animate-fade-in"
+              className="flex items-center gap-2 hover:bg-onedark-currentline px-2 py-1 transition-colors animate-fade-in"
               style={{ animationDelay: "3.8s" }}
             >
               <span className="text-onedark-gutter">{">"}</span>
@@ -71,7 +71,7 @@ export default function Home() {
             </Link>
             <Link
               href="/blog"
-              className="flex items-center gap-2 hover:bg-onedark-currentline rounded px-2 py-1 transition-colors animate-fade-in"
+              className="flex items-center gap-2 hover:bg-onedark-currentline px-2 py-1 transition-colors animate-fade-in"
               style={{ animationDelay: "3.85s" }}
             >
               <span className="text-onedark-gutter">{">"}</span>
@@ -79,7 +79,7 @@ export default function Home() {
             </Link>
             <Link
               href="/uses"
-              className="flex items-center gap-2 hover:bg-onedark-currentline rounded px-2 py-1 transition-colors animate-fade-in"
+              className="flex items-center gap-2 hover:bg-onedark-currentline px-2 py-1 transition-colors animate-fade-in"
               style={{ animationDelay: "3.875s" }}
             >
               <span className="text-onedark-gutter">{">"}</span>
@@ -87,7 +87,7 @@ export default function Home() {
             </Link>
             <Link
               href="/contact"
-              className="flex items-center gap-2 hover:bg-onedark-currentline rounded px-2 py-1 transition-colors animate-fade-in"
+              className="flex items-center gap-2 hover:bg-onedark-currentline px-2 py-1 transition-colors animate-fade-in"
               style={{ animationDelay: "3.9s" }}
             >
               <span className="text-onedark-gutter">{">"}</span>
@@ -108,7 +108,7 @@ export default function Home() {
             <p className="text-onedark-fg mt-1">Open to remote contract &amp; consulting work.</p>
             <Link
               href="/contact"
-              className="hover:bg-onedark-currentline rounded px-2 py-1 transition-colors mt-1 inline-block"
+              className="hover:bg-onedark-currentline px-2 py-1 transition-colors mt-1 inline-block"
             >
               <span className="text-onedark-gutter">[</span>
               <span className="text-onedark-red"> contact/ </span>
