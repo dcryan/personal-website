@@ -1,21 +1,23 @@
 "use client";
 
-import { useState } from "react";
-
 export default function CollapsibleDetails({
   details,
+  expanded,
+  onToggle,
 }: {
   details: string[];
+  expanded: boolean;
+  onToggle: () => void;
 }) {
-  const [expanded, setExpanded] = useState(false);
-
   return (
     <>
       <button
-        onClick={() => setExpanded((prev) => !prev)}
-        className="text-onedark-gutter hover:text-onedark-fg text-sm mt-2 transition-colors"
+        onClick={(e) => { e.stopPropagation(); onToggle(); }}
+        className="text-sm mt-2 transition-colors"
       >
-        {expanded ? "▼ Hide details" : "▶ Show details"}
+        <span className="text-onedark-gutter group-hover:text-onedark-fg transition-colors">[</span>
+        <span className="text-onedark-gutter group-hover:text-onedark-fg transition-colors"> {expanded ? "hide details" : "show details"} </span>
+        <span className="text-onedark-gutter group-hover:text-onedark-fg transition-colors">]</span>
       </button>
       {expanded && (
         <ul className="mt-2 space-y-1">

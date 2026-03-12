@@ -28,7 +28,7 @@ type TabKey = (typeof tabs)[number]["key"];
 
 function TechPill({ tech }: { tech: string }) {
   return (
-    <span className="inline-block text-xs border border-onedark-gutter/50 text-onedark-fg rounded-full px-2 py-0.5">
+    <span className="inline-block text-[10px] border border-onedark-gutter/50 text-onedark-fg px-2 py-0.5 uppercase tracking-wider">
       {tech}
     </span>
   );
@@ -36,7 +36,7 @@ function TechPill({ tech }: { tech: string }) {
 
 function TypeBadge({ type }: { type: WorkExperience["type"] }) {
   return (
-    <span className="text-xs border border-onedark-yellow/40 text-onedark-yellow rounded-full px-2 py-0.5">
+    <span className="text-[10px] border border-onedark-yellow/40 text-onedark-yellow px-2 py-0.5 uppercase tracking-wider">
       {type}
     </span>
   );
@@ -78,39 +78,53 @@ function CompanyName({ url, name }: { url?: string; name: string }) {
   return <span className="text-onedark-yellow">{name}</span>;
 }
 
+function ExperienceItem({ job }: { job: WorkExperience }) {
+  const [expanded, setExpanded] = useState(false);
+  const hasDetails = job.details.length > 0;
+
+  return (
+    <div
+      className={`p-3 -ml-3 ${hasDetails ? "cursor-pointer group" : ""}`}
+      onClick={() => hasDetails && setExpanded((p) => !p)}
+    >
+      <div className="flex items-start justify-between gap-3 flex-wrap">
+        <div>
+          <span className="text-lg font-semibold">
+            <CompanyName url={job.url} name={job.company} />
+          </span>
+          <span className="text-white"> · {job.role}</span>
+        </div>
+        <TypeBadge type={job.type} />
+      </div>
+      <p className="text-sm text-onedark-fg mt-1">
+        {job.period}
+        {job.location && <> · {job.location}</>}
+      </p>
+      <div className="flex flex-wrap gap-2 mt-3">
+        {job.technologies.map((tech) => (
+          <TechPill key={tech} tech={tech} />
+        ))}
+      </div>
+      {job.summary && (
+        <p className="text-onedark-fg text-sm mt-3">{job.summary}</p>
+      )}
+      {hasDetails && (
+        <CollapsibleDetails
+          details={job.details}
+          expanded={expanded}
+          onToggle={() => setExpanded((p) => !p)}
+        />
+      )}
+    </div>
+  );
+}
+
 function ExperienceSection({ items }: { items: WorkExperience[] }) {
   return (
     <>
       {items.map((job, idx) => (
         <TreeGutter key={`exp-${idx}`} isLast={idx === items.length - 1}>
-          <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
-            <div className="flex items-start justify-between gap-3 flex-wrap">
-              <div>
-                <span className="text-lg font-semibold">
-                  <CompanyName url={job.url} name={job.company} />
-                </span>
-                <span className="text-white"> · {job.role}</span>
-              </div>
-              <TypeBadge type={job.type} />
-            </div>
-            <p className="text-sm text-onedark-fg mt-1">
-              {job.period}
-              {job.location && <> · {job.location}</>}
-            </p>
-            <div className="flex flex-wrap gap-2 mt-3">
-              {job.technologies.map((tech) => (
-                <TechPill key={tech} tech={tech} />
-              ))}
-            </div>
-            {job.summary && (
-              <p className="text-onedark-fg text-sm mt-3">
-                {job.summary}
-              </p>
-            )}
-            {job.details.length > 0 && (
-              <CollapsibleDetails details={job.details} />
-            )}
-          </div>
+          <ExperienceItem job={job} />
         </TreeGutter>
       ))}
     </>
@@ -122,7 +136,7 @@ function SideProjectsSection({ items }: { items: SideProject[] }) {
     <>
       {items.map((project, idx) => (
         <TreeGutter key={`proj-${idx}`} isLast={idx === items.length - 1}>
-          <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
+          <div className="p-3 -ml-3">
             <div className="flex items-start justify-between gap-3 flex-wrap">
               <div>
                 <span className="text-lg font-semibold">
@@ -157,7 +171,7 @@ function VolunteerSection({ items }: { items: Volunteer[] }) {
     <>
       {items.map((vol, idx) => (
         <TreeGutter key={`vol-${idx}`} isLast={idx === items.length - 1}>
-          <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
+          <div className="p-3 -ml-3">
             <span className="text-lg font-semibold text-white">
               {vol.organization}
             </span>
@@ -178,7 +192,7 @@ function EducationSection({ items }: { items: Education[] }) {
     <>
       {items.map((edu, idx) => (
         <TreeGutter key={`edu-${idx}`} isLast={idx === items.length - 1}>
-          <div className="hover:bg-onedark-currentline rounded-lg transition-colors p-3 -ml-3">
+          <div className="p-3 -ml-3">
             <span className="text-lg font-semibold">
               <CompanyName url={edu.url} name={edu.title} />
             </span>
@@ -225,13 +239,11 @@ export default function ExperienceTimeline({
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`transition-colors ${
-                activeTab === tab.key
-                  ? "text-onedark-yellow underline"
-                  : "text-onedark-fg underline decoration-onedark-gutter hover:text-onedark-yellow"
-              }`}
+              className="group text-sm transition-colors"
             >
-              {tab.label}
+              <span className={`transition-colors ${activeTab === tab.key ? "text-onedark-yellow" : "text-onedark-gutter group-hover:text-onedark-yellow"}`}>[</span>
+              <span className="text-onedark-yellow"> {tab.label.replace("/", "")} </span>
+              <span className={`transition-colors ${activeTab === tab.key ? "text-onedark-yellow" : "text-onedark-gutter group-hover:text-onedark-yellow"}`}>]</span>
             </button>
           ))}
         </div>
