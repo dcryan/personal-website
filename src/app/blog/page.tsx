@@ -18,10 +18,12 @@ export default function Blog() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="block border-b border-onedark-selection px-3 py-5 hover:bg-onedark-currentline rounded-lg transition-colors group"
+              className="block border-b border-dashed border-onedark-selection px-3 py-5 transition-colors group"
             >
-              <h2 className="text-lg font-bold text-onedark-blue group-hover:underline transition-colors">
-                {post.title}
+              <h2 className="text-lg font-bold">
+                <span className="text-onedark-gutter group-hover:text-onedark-blue transition-colors">[</span>
+                <span className="text-onedark-blue"> {post.title} </span>
+                <span className="text-onedark-gutter group-hover:text-onedark-blue transition-colors">]</span>
               </h2>
               <time className="text-xs text-onedark-gutter mt-1 block">
                 {new Date(post.date).toLocaleDateString("en-US", {

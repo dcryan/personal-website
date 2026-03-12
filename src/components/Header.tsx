@@ -36,29 +36,25 @@ export default function Header({ barColor }: HeaderProps) {
               <span className="terminal-cursor ml-0.5">_</span>
             </Link>
             <div className="hidden md:flex items-center gap-2">
-              <Link
-                href="/experience"
-                className={`text-onedark-yellow hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "yellow" ? "underline" : ""}`}
-              >
-                experience/
+              <Link href="/experience" className="group text-sm transition-colors px-1 py-1">
+                <span className={`transition-colors ${barColor === "yellow" ? "text-onedark-yellow" : "text-onedark-gutter group-hover:text-onedark-yellow"}`}>[</span>
+                <span className="text-onedark-yellow"> experience </span>
+                <span className={`transition-colors ${barColor === "yellow" ? "text-onedark-yellow" : "text-onedark-gutter group-hover:text-onedark-yellow"}`}>]</span>
               </Link>
-              <Link
-                href="/blog"
-                className={`text-onedark-blue hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "blue" ? "underline" : ""}`}
-              >
-                blog/
+              <Link href="/blog" className="group text-sm transition-colors px-1 py-1">
+                <span className={`transition-colors ${barColor === "blue" ? "text-onedark-blue" : "text-onedark-gutter group-hover:text-onedark-blue"}`}>[</span>
+                <span className="text-onedark-blue"> blog </span>
+                <span className={`transition-colors ${barColor === "blue" ? "text-onedark-blue" : "text-onedark-gutter group-hover:text-onedark-blue"}`}>]</span>
               </Link>
-              <Link
-                href="/uses"
-                className={`text-onedark-purple hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "purple" ? "underline" : ""}`}
-              >
-                uses/
+              <Link href="/uses" className="group text-sm transition-colors px-1 py-1">
+                <span className={`transition-colors ${barColor === "purple" ? "text-onedark-purple" : "text-onedark-gutter group-hover:text-onedark-purple"}`}>[</span>
+                <span className="text-onedark-purple"> uses </span>
+                <span className={`transition-colors ${barColor === "purple" ? "text-onedark-purple" : "text-onedark-gutter group-hover:text-onedark-purple"}`}>]</span>
               </Link>
-              <Link
-                href="/contact"
-                className={`text-onedark-red hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "red" ? "underline" : ""}`}
-              >
-                contact/
+              <Link href="/contact" className="group text-sm transition-colors px-1 py-1">
+                <span className={`transition-colors ${barColor === "red" ? "text-onedark-red" : "text-onedark-gutter group-hover:text-onedark-red"}`}>[</span>
+                <span className="text-onedark-red"> contact </span>
+                <span className={`transition-colors ${barColor === "red" ? "text-onedark-red" : "text-onedark-gutter group-hover:text-onedark-red"}`}>]</span>
               </Link>
             </div>
           </div>
@@ -101,30 +97,26 @@ export default function Header({ barColor }: HeaderProps) {
             </a>
           </div>
         </div>
-        <div className="flex md:hidden items-center gap-3 mt-1">
-          <Link
-            href="/experience"
-            className={`text-onedark-yellow hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "yellow" ? "underline" : ""}`}
-          >
-            experience/
+        <div className="flex md:hidden items-center gap-2 mt-1">
+          <Link href="/experience" className="group text-sm transition-colors px-1 py-1">
+            <span className={`transition-colors ${barColor === "yellow" ? "text-onedark-yellow" : "text-onedark-gutter group-hover:text-onedark-yellow"}`}>[</span>
+            <span className="text-onedark-yellow"> experience </span>
+            <span className={`transition-colors ${barColor === "yellow" ? "text-onedark-yellow" : "text-onedark-gutter group-hover:text-onedark-yellow"}`}>]</span>
           </Link>
-          <Link
-            href="/blog"
-            className={`text-onedark-blue hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "blue" ? "underline" : ""}`}
-          >
-            blog/
+          <Link href="/blog" className="group text-sm transition-colors px-1 py-1">
+            <span className={`transition-colors ${barColor === "blue" ? "text-onedark-blue" : "text-onedark-gutter group-hover:text-onedark-blue"}`}>[</span>
+            <span className="text-onedark-blue"> blog </span>
+            <span className={`transition-colors ${barColor === "blue" ? "text-onedark-blue" : "text-onedark-gutter group-hover:text-onedark-blue"}`}>]</span>
           </Link>
-          <Link
-            href="/uses"
-            className={`text-onedark-purple hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "purple" ? "underline" : ""}`}
-          >
-            uses/
+          <Link href="/uses" className="group text-sm transition-colors px-1 py-1">
+            <span className={`transition-colors ${barColor === "purple" ? "text-onedark-purple" : "text-onedark-gutter group-hover:text-onedark-purple"}`}>[</span>
+            <span className="text-onedark-purple"> uses </span>
+            <span className={`transition-colors ${barColor === "purple" ? "text-onedark-purple" : "text-onedark-gutter group-hover:text-onedark-purple"}`}>]</span>
           </Link>
-          <Link
-            href="/contact"
-            className={`text-onedark-red hover:bg-onedark-currentline px-2 py-1 rounded transition-colors text-sm ${barColor === "red" ? "underline" : ""}`}
-          >
-            contact/
+          <Link href="/contact" className="group text-sm transition-colors px-1 py-1">
+            <span className={`transition-colors ${barColor === "red" ? "text-onedark-red" : "text-onedark-gutter group-hover:text-onedark-red"}`}>[</span>
+            <span className="text-onedark-red"> contact </span>
+            <span className={`transition-colors ${barColor === "red" ? "text-onedark-red" : "text-onedark-gutter group-hover:text-onedark-red"}`}>]</span>
           </Link>
         </div>
       </nav>
