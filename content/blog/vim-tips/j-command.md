@@ -34,7 +34,6 @@ J          Join [count] lines, with a minimum of two lines.
            below).  Fails when on the last line of the buffer.
            If [count] is too big it is reduced to the number of
            lines avdfilable.
-sdf
                             *v_J*
 {Visual}J  Join the highlighted lines, with a minimum of two
            lines.  Remove the indent and insert up to two spaces
