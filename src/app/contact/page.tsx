@@ -17,6 +17,8 @@ declare global {
 const CONTACT_API = "https://uh016457ti.execute-api.us-east-1.amazonaws.com/contact";
 const TURNSTILE_SITE_KEY = "0x4AAAAAACoBZt99Fb4iUWS7";
 
+const inputClass = "flex-1 bg-transparent border-b border-onedark-gutter/40 focus:border-onedark-red focus:outline-none text-white text-sm py-1 transition-colors";
+
 export default function Contact() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
@@ -30,6 +32,7 @@ export default function Contact() {
       window.turnstile.render(turnstileRef.current, {
         sitekey: TURNSTILE_SITE_KEY,
         theme: "dark",
+        appearance: "interaction-only",
         callback: (token: string) => setTurnstileToken(token),
         "expired-callback": () => setTurnstileToken(""),
       });
@@ -85,77 +88,60 @@ export default function Contact() {
       <Header barColor="red" />
 
       <div className="max-w-md w-full mx-auto px-6 pb-16">
-        <div className="mt-12 mb-6">
+        <div className="mt-12">
           <span className="text-onedark-gutter">daniel@barcelona:~$</span>{" "}
           <span className="text-onedark-fg">./contact.sh</span>
         </div>
-        <form
-          className="p-6 rounded-lg border border-onedark-gutter/40"
-          onSubmit={handleFormSubmit}
-        >
-          <h1 className="text-2xl font-bold text-onedark-red mb-5">
-            Hello world!
-          </h1>
 
-          <label className="block text-sm text-onedark-fg ml-1 mb-3">
-            name<span className="text-onedark-red">*</span>
-            <input
-              placeholder="Your name"
-              name="name"
-              id="name"
-              type="text"
-              required
-              className="w-full mt-1 p-2.5 bg-onedark-currentline/50 border border-onedark-gutter/40 rounded-md text-sm text-white placeholder:text-onedark-gutter focus:border-onedark-red focus:outline-none transition-colors"
-            />
-          </label>
+        <form onSubmit={handleFormSubmit} className="relative border border-onedark-gutter/40 mt-8 p-6">
+          <span className="absolute -top-[0.6rem] left-4 bg-onedark-bg px-2 text-onedark-gutter text-sm">
+            ./contact.sh
+          </span>
+          <p className="text-onedark-gutter text-sm mb-6">
+            # open to new work & collaborations.
+          </p>
+          <div className="grid grid-cols-[max-content_1fr] gap-x-3 gap-y-5 items-center">
+            <label htmlFor="name" className="text-onedark-fg text-sm whitespace-nowrap">
+              name<span className="text-onedark-red">*</span> ❯
+            </label>
+            <input name="name" id="name" type="text" required className={inputClass} />
 
-          <label className="block text-sm text-onedark-fg ml-1 mb-3">
-            email<span className="text-onedark-red">*</span>
-            <input
-              placeholder="Your email address"
-              name="email"
-              id="email"
-              type="email"
-              required
-              className="w-full mt-1 p-2.5 bg-onedark-currentline/50 border border-onedark-gutter/40 rounded-md text-sm text-white placeholder:text-onedark-gutter focus:border-onedark-red focus:outline-none transition-colors"
-            />
-          </label>
+            <label htmlFor="email" className="text-onedark-fg text-sm whitespace-nowrap">
+              email<span className="text-onedark-red">*</span> ❯
+            </label>
+            <input name="email" id="email" type="email" required className={inputClass} />
 
-          <label className="block text-sm text-onedark-fg ml-1 mb-3">
-            phone number
-            <input
-              placeholder="Your phone number"
-              type="tel"
-              name="phone-number"
-              id="phone-number"
-              className="w-full mt-1 p-2.5 bg-onedark-currentline/50 border border-onedark-gutter/40 rounded-md text-sm text-white placeholder:text-onedark-gutter focus:border-onedark-red focus:outline-none transition-colors"
-            />
-          </label>
+            <label htmlFor="phone-number" className="text-onedark-fg text-sm whitespace-nowrap">
+              phone ❯
+            </label>
+            <input name="phone-number" id="phone-number" type="tel" className={inputClass} />
 
-          <label className="block text-sm text-onedark-fg ml-1 mb-3">
-            message<span className="text-onedark-red">*</span>
+            <label htmlFor="message" className="text-onedark-fg text-sm whitespace-nowrap self-start pt-1">
+              message<span className="text-onedark-red">*</span> ❯
+            </label>
             <textarea
-              placeholder="Type your message here..."
               name="message"
               id="message"
               required
-              rows={4}
-              className="w-full mt-1 p-2.5 bg-onedark-currentline/50 border border-onedark-gutter/40 rounded-md text-sm text-white placeholder:text-onedark-gutter focus:border-onedark-red focus:outline-none transition-colors resize-y"
+              rows={5}
+              className="w-full bg-transparent border-b border-onedark-gutter/40 focus:border-onedark-red focus:outline-none text-white text-sm py-1 transition-colors resize-none"
             />
-          </label>
+          </div>
 
-          <div ref={turnstileRef} className="mt-3" />
+          <div ref={turnstileRef} className="mt-6" />
 
           {error && (
-            <p className="text-onedark-red text-sm mt-2">{error}</p>
+            <p className="text-onedark-red text-sm mt-4">bash: ./contact.sh: {error}</p>
           )}
 
           <button
             type="submit"
-            disabled={submitting || !turnstileToken}
-            className="w-full mt-4 text-onedark-red font-bold p-2.5 rounded-md border border-onedark-red hover:bg-onedark-red/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={submitting}
+            className="group text-onedark-red transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm mt-6 block"
           >
-            {submitting ? "sending..." : "submit"}
+            <span className="text-onedark-gutter group-hover:text-onedark-red transition-colors">[</span>
+            <span> {submitting ? "sending..." : "send message"} </span>
+            <span className="text-onedark-gutter group-hover:text-onedark-red transition-colors">]</span>
           </button>
         </form>
       </div>
