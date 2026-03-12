@@ -88,7 +88,7 @@ export default function Uses() {
             <Item
               name="Neovim"
               description="custom LazyVim config"
-              href="https://github.com/dcryan/.dotfiles"
+              href="https://github.com/dcryan/.dotfiles-nvim"
             />
             <Item name="IBM Plex Mono" />
             <Item name="One Dark" description="theme" />
@@ -121,10 +121,6 @@ export default function Uses() {
           <Section title="gaming/">
             <Item name="GeForce Now" />
             <Item name="Meta Quest 3" />
-          </Section>
-
-          <Section title="cloud/">
-            <Item name="AWS" />
           </Section>
         </div>
       </div>
