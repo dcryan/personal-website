@@ -97,7 +97,7 @@ export default function Header({ barColor }: HeaderProps) {
             </a>
           </div>
         </div>
-        <div className="flex md:hidden items-center gap-2 mt-1">
+        <div className="flex md:hidden items-center gap-1 mt-1 whitespace-nowrap overflow-x-auto">
           <Link href="/experience" className="group text-sm transition-colors px-1 py-1">
             <span className={`transition-colors ${barColor === "yellow" ? "text-onedark-yellow" : "text-onedark-gutter group-hover:text-onedark-yellow"}`}>[</span>
             <span className="text-onedark-yellow"> experience </span>
