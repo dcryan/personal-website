@@ -9,7 +9,7 @@ function Section({
 }) {
   return (
     <div>
-      <h2 className="text-onedark-yellow font-bold mb-3">{title}</h2>
+      <h2 className="text-onedark-purple font-bold mb-3">{title}</h2>
       <ul className="space-y-1 ml-2">{children}</ul>
     </div>
   );
